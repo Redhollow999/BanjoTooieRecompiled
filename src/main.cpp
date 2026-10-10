@@ -115,7 +115,7 @@ ultramodern::renderer::WindowHandle create_window(
     flags |= SDL_WINDOW_VULKAN;
 #endif
 
-    window = SDL_CreateWindow("Banjo-Tooie: Recompiled",
+    window = SDL_CreateWindow("Project A - Banjo-Tooie",
                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                               1600, 900, flags);
     if (window == nullptr) {
@@ -589,7 +589,7 @@ int main(int argc, char** argv) {
     }
     std::fprintf(stderr, "[tooie] step nfd\n"); std::fflush(stderr);
 
-    recompui::programconfig::set_program_name("Banjo-Tooie: Recompiled");
+    recompui::programconfig::set_program_name("Project A - Banjo-Tooie");
     recompui::programconfig::set_program_id(u8"BanjoTooieRecompiled");
 
     // recompui requires a primary font and the project stylesheet under
