@@ -251,6 +251,55 @@ extern "C" void tooie_boot_pi_raw_start_dma(uint8_t* rdram,
 extern "C" void tooie_probe(uint8_t* rdram, recomp_context* ctx, uint32_t id) {
     (void)rdram;
 
+    if (id == 103) {
+        const gpr base = ctx->r5;
+
+        const uint32_t map =
+            static_cast<uint32_t>(MEM_HU(0x00, base));
+
+        static uint32_t last_mapcfg = 0xFFFFFFFFu;
+
+        if (map != last_mapcfg) {
+            const gpr current_map_addr =
+                static_cast<gpr>(0xFFFFFFFF80132DC2ULL);
+            const uint32_t active_map =
+                static_cast<uint32_t>(MEM_HU(0x00, current_map_addr));
+
+            const uint32_t resA = MEM_HU(0x02, base);
+            const uint32_t resB = MEM_HU(0x04, base);
+
+            const uint32_t h3 = MEM_HU(0x06, base);
+            const uint32_t h4 = MEM_HU(0x08, base);
+            const uint32_t h5 = MEM_HU(0x0A, base);
+
+            const uint32_t b12 = MEM_BU(0x0C, base);
+            const uint32_t b13 = MEM_BU(0x0D, base);
+
+            std::fprintf(
+                stderr,
+                "[mapcfg103] active=0x%04X src=0x%016llX map=0x%04X "
+                "resA=0x%04X resB=0x%04X "
+                "h3=0x%04X h4=0x%04X h5=0x%04X "
+                "b12=0x%02X b13=0x%02X\n",
+                active_map,
+                static_cast<unsigned long long>(base),
+                map,
+                resA,
+                resB,
+                h3,
+                h4,
+                h5,
+                b12,
+                b13
+            );
+
+            std::fflush(stderr);
+            last_mapcfg = map;
+        }
+
+        return;
+    }
+
     if (id == 102) {
         static uint32_t last_map = 0xFFFFFFFFu;
         const uint32_t map = (uint32_t)ctx->r2 & 0xFFFFu;

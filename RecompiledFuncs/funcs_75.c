@@ -7815,6 +7815,7 @@ L_80800890:
     // 0x808008E8: jal         0x8001BBA0
     // 0x808008EC: addiu       $a2, $zero, 0xE
     ctx->r6 = ADD32(0, 0XE);
+    tooie_probe(rdram, ctx, 103);
     rare_memcpy(rdram, ctx);
         goto after_4;
     // 0x808008EC: addiu       $a2, $zero, 0xE
