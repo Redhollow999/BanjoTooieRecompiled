@@ -2040,6 +2040,11 @@ extern "C" void recomp_syscall_handler(uint8_t* rdram, recomp_context* ctx,
                                        int32_t instruction_vram) {
     const uint32_t instruction = MEM_W(instruction_vram, 0);
 
+    // Project A: log level/map loads through gclevel entrypoint 0.
+    if (static_cast<uint32_t>(instruction_vram) == 0x80088220U) {
+        tooie_probe(rdram, ctx, 100);
+    }
+
     // First entry: the thunk still holds the raw `syscall`. Restore the
     // exception path's `$t0` (the faulting thunk address) and let the game's own
     // handler load and relocate the overlay. It rewrites the thunk into
