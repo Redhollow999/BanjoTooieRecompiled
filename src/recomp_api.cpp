@@ -250,6 +250,18 @@ extern "C" void tooie_boot_pi_raw_start_dma(uint8_t* rdram,
 
 extern "C" void tooie_probe(uint8_t* rdram, recomp_context* ctx, uint32_t id) {
     (void)rdram;
+
+    if (id == 102) {
+        static uint32_t last_map = 0xFFFFFFFFu;
+        const uint32_t map = (uint32_t)ctx->r2 & 0xFFFFu;
+
+        if (map != last_map) {
+            std::fprintf(stderr, "[map102] map=0x%04X (%u)\n", map, map);
+            std::fflush(stderr);
+            last_map = map;
+        }
+        return;
+    }
     std::fprintf(stderr,
         "[probe%u] a0=0x%08X a1=0x%08X a2=0x%08X a3=0x%08X s6=0x%08X s7=0x%08X "
         "sp=0x%08X ra=0x%08X\n",

@@ -8520,6 +8520,7 @@ RECOMP_FUNC void func_800EA05C(uint8_t* rdram, recomp_context* ctx) {
     // 0x800EA060: jr          $ra
     // 0x800EA064: lhu         $v0, 0x2DC2($v0)
     ctx->r2 = MEM_HU(ctx->r2, 0X2DC2);
+    tooie_probe(rdram, ctx, 102);
     return;
     // 0x800EA064: lhu         $v0, 0x2DC2($v0)
     ctx->r2 = MEM_HU(ctx->r2, 0X2DC2);
