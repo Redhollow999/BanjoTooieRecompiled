@@ -1,0 +1,17 @@
+﻿============================================================
+FUNCTION: func_800DF818
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_31.c
+LINES: 875-886
+============================================================
+   875: RECOMP_FUNC void func_800DF818(uint8_t* rdram, recomp_context* ctx) {
+   876:     uint64_t hi = 0, lo = 0, result = 0;
+   877:     int c1cs = 0;
+   878:     // 0x800DF818: lui         $at, 0x8013
+   879:     ctx->r1 = S32(0X8013 << 16);
+   880:     // 0x800DF81C: jr          $ra
+   881:     // 0x800DF820: sw          $a0, -0x369C($at)
+   882:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   883:     return;
+   884:     // 0x800DF820: sw          $a0, -0x369C($at)
+   885:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   886: ;}

@@ -251,6 +251,87 @@ extern "C" void tooie_boot_pi_raw_start_dma(uint8_t* rdram,
 extern "C" void tooie_probe(uint8_t* rdram, recomp_context* ctx, uint32_t id) {
     (void)rdram;
 
+    if (id >= 106 && id <= 110) {
+        const gpr state = ctx->r16;
+
+        const uint32_t map =
+            static_cast<uint32_t>(MEM_HU(0x58, state));
+
+        const uint32_t resA =
+            static_cast<uint32_t>(MEM_HU(0x5A, state));
+
+        std::fprintf(
+            stderr,
+            "[mapstage%u] map=0x%04X resA=0x%04X "
+            "v0=0x%08X state=0x%016llX\n",
+            id,
+            map,
+            resA,
+            static_cast<uint32_t>(ctx->r2),
+            static_cast<unsigned long long>(state)
+        );
+
+        std::fflush(stderr);
+        return;
+    }
+
+    if (id == 105) {
+        const gpr state = ctx->r16;
+
+        const uint32_t map =
+            static_cast<uint32_t>(MEM_HU(0x58, state));
+        const uint32_t resA =
+            static_cast<uint32_t>(MEM_HU(0x5A, state));
+
+        const uint32_t asset =
+            static_cast<uint32_t>(MEM_W(0x0C, state));
+        const uint32_t part0 =
+            static_cast<uint32_t>(MEM_W(0x00, state));
+        const uint32_t part10 =
+            static_cast<uint32_t>(MEM_W(0x10, state));
+        const uint32_t part20 =
+            static_cast<uint32_t>(MEM_W(0x20, state));
+
+        static uint32_t last_map105 = 0xFFFFFFFFu;
+
+        if (map != last_map105) {
+            std::fprintf(
+                stderr,
+                "[mapasset105] map=0x%04X resA=0x%04X "
+                "asset=0x%08X "
+                "part0=0x%08X(delta=%d) "
+                "part10=0x%08X(delta=%d) "
+                "part20=0x%08X(delta=%d)\n",
+                map,
+                resA,
+                asset,
+                part0,  static_cast<int32_t>(part0 - asset),
+                part10, static_cast<int32_t>(part10 - asset),
+                part20, static_cast<int32_t>(part20 - asset)
+            );
+
+            if (asset >= 0x80000000u && asset < 0x80800000u) {
+                const gpr asset_addr =
+                    static_cast<gpr>(static_cast<int32_t>(asset));
+
+                std::fprintf(stderr, "[mapasset105-bytes]");
+                for (uint32_t i = 0; i < 32; i++) {
+                    std::fprintf(
+                        stderr,
+                        " %02X",
+                        static_cast<unsigned>(MEM_BU(i, asset_addr))
+                    );
+                }
+                std::fprintf(stderr, "\n");
+            }
+
+            std::fflush(stderr);
+            last_map105 = map;
+        }
+
+        return;
+    }
+
     if (id == 103) {
         const gpr base = ctx->r5;
 

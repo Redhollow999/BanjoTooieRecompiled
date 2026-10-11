@@ -1,0 +1,55 @@
+﻿============================================================
+FUNCTION: func_800DE448
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINES: 26471-26520
+============================================================
+ 26471: RECOMP_FUNC void func_800DE448(uint8_t* rdram, recomp_context* ctx) {
+ 26472:     uint64_t hi = 0, lo = 0, result = 0;
+ 26473:     int c1cs = 0;
+ 26474:     // 0x800DE448: addiu       $sp, $sp, -0x20
+ 26475:     ctx->r29 = ADD32(ctx->r29, -0X20);
+ 26476:     // 0x800DE44C: sw          $ra, 0x1C($sp)
+ 26477:     MEM_W(0X1C, ctx->r29) = ctx->r31;
+ 26478:     // 0x800DE450: sw          $a0, 0x20($sp)
+ 26479:     MEM_W(0X20, ctx->r29) = ctx->r4;
+ 26480:     // 0x800DE454: sw          $a1, 0x24($sp)
+ 26481:     MEM_W(0X24, ctx->r29) = ctx->r5;
+ 26482:     // 0x800DE458: sw          $a2, 0x28($sp)
+ 26483:     MEM_W(0X28, ctx->r29) = ctx->r6;
+ 26484:     // 0x800DE45C: jal         0x800A7180
+ 26485:     // 0x800DE460: sw          $a3, 0x2C($sp)
+ 26486:     MEM_W(0X2C, ctx->r29) = ctx->r7;
+ 26487:     func_800A7180(rdram, ctx);
+ 26488:         goto after_0;
+ 26489:     // 0x800DE460: sw          $a3, 0x2C($sp)
+ 26490:     MEM_W(0X2C, ctx->r29) = ctx->r7;
+ 26491:     after_0:
+ 26492:     // 0x800DE464: lw          $t6, 0x2C($sp)
+ 26493:     ctx->r14 = MEM_W(ctx->r29, 0X2C);
+ 26494:     // 0x800DE468: lw          $t7, 0x30($sp)
+ 26495:     ctx->r15 = MEM_W(ctx->r29, 0X30);
+ 26496:     // 0x800DE46C: or          $a0, $v0, $zero
+ 26497:     ctx->r4 = ctx->r2 | 0;
+ 26498:     // 0x800DE470: lw          $a1, 0x20($sp)
+ 26499:     ctx->r5 = MEM_W(ctx->r29, 0X20);
+ 26500:     // 0x800DE474: lw          $a2, 0x24($sp)
+ 26501:     ctx->r6 = MEM_W(ctx->r29, 0X24);
+ 26502:     // 0x800DE478: lw          $a3, 0x28($sp)
+ 26503:     ctx->r7 = MEM_W(ctx->r29, 0X28);
+ 26504:     // 0x800DE47C: sw          $t6, 0x10($sp)
+ 26505:     MEM_W(0X10, ctx->r29) = ctx->r14;
+ 26506:     // 0x800DE480: jal         0x800DE498
+ 26507:     // 0x800DE484: sw          $t7, 0x14($sp)
+ 26508:     MEM_W(0X14, ctx->r29) = ctx->r15;
+ 26509:     func_800DE498(rdram, ctx);
+ 26510:         goto after_1;
+ 26511:     // 0x800DE484: sw          $t7, 0x14($sp)
+ 26512:     MEM_W(0X14, ctx->r29) = ctx->r15;
+ 26513:     after_1:
+ 26514:     // 0x800DE488: lw          $ra, 0x1C($sp)
+ 26515:     ctx->r31 = MEM_W(ctx->r29, 0X1C);
+ 26516:     // 0x800DE48C: addiu       $sp, $sp, 0x20
+ 26517:     ctx->r29 = ADD32(ctx->r29, 0X20);
+ 26518:     // 0x800DE490: jr          $ra
+ 26519:     return;
+ 26520: ;}

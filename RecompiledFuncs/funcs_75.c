@@ -7821,6 +7821,7 @@ L_80800890:
     // 0x808008EC: addiu       $a2, $zero, 0xE
     ctx->r6 = ADD32(0, 0XE);
     after_4:
+    tooie_probe(rdram, ctx, 106);
     // 0x808008F0: lhu         $v0, 0x5A($s0)
     ctx->r2 = MEM_HU(ctx->r16, 0X5A);
     // 0x808008F4: sb          $zero, 0x55($s0)
@@ -7845,6 +7846,7 @@ L_80800890:
     // 0x8080090C: or          $a0, $v0, $zero
     ctx->r4 = ctx->r2 | 0;
     after_5:
+    tooie_probe(rdram, ctx, 107);
     // 0x80800910: sw          $v0, 0xC($s0)
     MEM_W(0XC, ctx->r16) = ctx->r2;
     // 0x80800914: jal         0x800D70D0
@@ -7871,6 +7873,7 @@ L_80800890:
     // 0x80800928: lw          $a0, 0xC($s0)
     ctx->r4 = MEM_W(ctx->r16, 0XC);
     after_8:
+    tooie_probe(rdram, ctx, 108);
     // 0x8080092C: sw          $v0, 0x0($s0)
     MEM_W(0X0, ctx->r16) = ctx->r2;
     // 0x80800930: jal         0x800B2840
@@ -7881,6 +7884,7 @@ L_80800890:
     // 0x80800934: lw          $a0, 0xC($s0)
     ctx->r4 = MEM_W(ctx->r16, 0XC);
     after_9:
+    tooie_probe(rdram, ctx, 109);
     // 0x80800938: sw          $v0, 0x10($s0)
     MEM_W(0X10, ctx->r16) = ctx->r2;
     // 0x8080093C: jal         0x800B284C
@@ -7891,6 +7895,7 @@ L_80800890:
     // 0x80800940: lw          $a0, 0xC($s0)
     ctx->r4 = MEM_W(ctx->r16, 0XC);
     after_10:
+    tooie_probe(rdram, ctx, 110);
     // 0x80800944: beq         $v0, $zero, L_8080097C
     if (ctx->r2 == 0) {
         // 0x80800948: sw          $v0, 0x20($s0)
@@ -7941,6 +7946,7 @@ L_8080096C:
     // 0x80800978: sw          $zero, 0x20($s0)
     MEM_W(0X20, ctx->r16) = 0;
 L_8080097C:
+    tooie_probe(rdram, ctx, 105);
     // 0x8080097C: lhu         $v0, 0x5C($s0)
     ctx->r2 = MEM_HU(ctx->r16, 0X5C);
 L_80800980:

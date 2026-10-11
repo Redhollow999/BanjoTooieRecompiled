@@ -1,0 +1,26 @@
+﻿ 16469: RECOMP_FUNC void func_800FF038(uint8_t* rdram, recomp_context* ctx) {
+ 16470:     uint64_t hi = 0, lo = 0, result = 0;
+ 16471:     int c1cs = 0;
+ 16472:     // 0x800FF038: addiu       $sp, $sp, -0x18
+ 16473:     ctx->r29 = ADD32(ctx->r29, -0X18);
+ 16474:     // 0x800FF03C: or          $a1, $a0, $zero
+ 16475:     ctx->r5 = ctx->r4 | 0;
+ 16476:     // 0x800FF040: sw          $ra, 0x14($sp)
+ 16477:     MEM_W(0X14, ctx->r29) = ctx->r31;
+ 16478:     // 0x800FF044: lui         $a0, 0x8013
+ 16479:     ctx->r4 = S32(0X8013 << 16);
+ 16480:     // 0x800FF048: jal         0x80087868
+ 16481:     // 0x800FF04C: addiu       $a0, $a0, 0x59C0
+ 16482:     ctx->r4 = ADD32(ctx->r4, 0X59C0);
+ 16483:     _cothemedll_entrypoint_2(rdram, ctx);
+ 16484:         goto after_0;
+ 16485:     // 0x800FF04C: addiu       $a0, $a0, 0x59C0
+ 16486:     ctx->r4 = ADD32(ctx->r4, 0X59C0);
+ 16487:     after_0:
+ 16488:     // 0x800FF050: lw          $ra, 0x14($sp)
+ 16489:     ctx->r31 = MEM_W(ctx->r29, 0X14);
+ 16490:     // 0x800FF054: addiu       $sp, $sp, 0x18
+ 16491:     ctx->r29 = ADD32(ctx->r29, 0X18);
+ 16492:     // 0x800FF058: jr          $ra
+ 16493:     return;
+ 16494: ;}

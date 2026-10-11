@@ -1,0 +1,396 @@
+﻿ 19616: RECOMP_FUNC void func_800B2720(uint8_t* rdram, recomp_context* ctx) {
+ 19617:     uint64_t hi = 0, lo = 0, result = 0;
+ 19618:     int c1cs = 0;
+ 19619:     // 0x800B2720: bnel        $a0, $zero, L_800B2734
+ 19620:     if (ctx->r4 != 0) {
+ 19621:             // 0x800B2724: lw          $v1, 0x1C($a0)
+ 19622:     ctx->r3 = MEM_W(ctx->r4, 0X1C);
+ 19623:     static_3_800B2734(rdram, ctx);
+ 19624:     return;
+ 19625:     }
+ 19626:     goto skip_0;
+ 19627:     // 0x800B2724: lw          $v1, 0x1C($a0)
+ 19628:     ctx->r3 = MEM_W(ctx->r4, 0X1C);
+ 19629:     skip_0:
+ 19630:     // 0x800B2728: jr          $ra
+ 19631:     // 0x800B272C: or          $v0, $zero, $zero
+ 19632:     ctx->r2 = 0 | 0;
+ 19633:     return;
+ 19634:     // 0x800B272C: or          $v0, $zero, $zero
+ 19635:     ctx->r2 = 0 | 0;
+ 19636: ;}
+ 19637: RECOMP_FUNC void func_800B2730(uint8_t* rdram, recomp_context* ctx) {
+ 19638:     uint64_t hi = 0, lo = 0, result = 0;
+ 19639:     int c1cs = 0;
+ 19640:     // 0x800B2730: lw          $v1, 0x1C($a0)
+ 19641:     ctx->r3 = MEM_W(ctx->r4, 0X1C);
+ 19642:     // 0x800B2734: bne         $v1, $zero, L_800B2744
+ 19643:     if (ctx->r3 != 0) {
+ 19644:             // 0x800B2738: addu        $v0, $a0, $v1
+ 19645:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19646:     func_800B2744(rdram, ctx);
+ 19647:     return;
+ 19648:     }
+ 19649:     // 0x800B2738: addu        $v0, $a0, $v1
+ 19650:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19651:     // 0x800B273C: jr          $ra
+ 19652:     // 0x800B2740: or          $v0, $zero, $zero
+ 19653:     ctx->r2 = 0 | 0;
+ 19654:     return;
+ 19655:     // 0x800B2740: or          $v0, $zero, $zero
+ 19656:     ctx->r2 = 0 | 0;
+ 19657: ;}
+ 19658: RECOMP_FUNC void func_800B2744(uint8_t* rdram, recomp_context* ctx) {
+ 19659:     uint64_t hi = 0, lo = 0, result = 0;
+ 19660:     int c1cs = 0;
+ 19661:     // 0x800B2744: jr          $ra
+ 19662:     // 0x800B2748: nop
+ 19663: 
+ 19664:     return;
+ 19665:     // 0x800B2748: nop
+ 19666: 
+ 19667: ;}
+ 19668: RECOMP_FUNC void func_800B274C(uint8_t* rdram, recomp_context* ctx) {
+ 19669:     uint64_t hi = 0, lo = 0, result = 0;
+ 19670:     int c1cs = 0;
+ 19671:     // 0x800B274C: lw          $v1, 0x24($a0)
+ 19672:     ctx->r3 = MEM_W(ctx->r4, 0X24);
+ 19673:     // 0x800B2750: bne         $v1, $zero, L_800B2760
+ 19674:     if (ctx->r3 != 0) {
+ 19675:             // 0x800B2754: addu        $v0, $a0, $v1
+ 19676:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19677:     func_800B2760(rdram, ctx);
+ 19678:     return;
+ 19679:     }
+ 19680:     // 0x800B2754: addu        $v0, $a0, $v1
+ 19681:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19682:     // 0x800B2758: jr          $ra
+ 19683:     // 0x800B275C: or          $v0, $zero, $zero
+ 19684:     ctx->r2 = 0 | 0;
+ 19685:     return;
+ 19686:     // 0x800B275C: or          $v0, $zero, $zero
+ 19687:     ctx->r2 = 0 | 0;
+ 19688: ;}
+ 19689: RECOMP_FUNC void func_800B2760(uint8_t* rdram, recomp_context* ctx) {
+ 19690:     uint64_t hi = 0, lo = 0, result = 0;
+ 19691:     int c1cs = 0;
+ 19692:     // 0x800B2760: jr          $ra
+ 19693:     // 0x800B2764: nop
+ 19694: 
+ 19695:     return;
+ 19696:     // 0x800B2764: nop
+ 19697: 
+ 19698: ;}
+ 19699: RECOMP_FUNC void func_800B2768(uint8_t* rdram, recomp_context* ctx) {
+ 19700:     uint64_t hi = 0, lo = 0, result = 0;
+ 19701:     int c1cs = 0;
+ 19702:     // 0x800B2768: lw          $v1, 0x40($a0)
+ 19703:     ctx->r3 = MEM_W(ctx->r4, 0X40);
+ 19704:     // 0x800B276C: bne         $v1, $zero, L_800B277C
+ 19705:     if (ctx->r3 != 0) {
+ 19706:             // 0x800B2770: addu        $v0, $a0, $v1
+ 19707:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19708:     func_800B277C(rdram, ctx);
+ 19709:     return;
+ 19710:     }
+ 19711:     // 0x800B2770: addu        $v0, $a0, $v1
+ 19712:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19713:     // 0x800B2774: jr          $ra
+ 19714:     // 0x800B2778: or          $v0, $zero, $zero
+ 19715:     ctx->r2 = 0 | 0;
+ 19716:     return;
+ 19717:     // 0x800B2778: or          $v0, $zero, $zero
+ 19718:     ctx->r2 = 0 | 0;
+ 19719: ;}
+ 19720: RECOMP_FUNC void func_800B277C(uint8_t* rdram, recomp_context* ctx) {
+ 19721:     uint64_t hi = 0, lo = 0, result = 0;
+ 19722:     int c1cs = 0;
+ 19723:     // 0x800B277C: jr          $ra
+ 19724:     // 0x800B2780: nop
+ 19725: 
+ 19726:     return;
+ 19727:     // 0x800B2780: nop
+ 19728: 
+ 19729: ;}
+ 19730: RECOMP_FUNC void func_800B2784(uint8_t* rdram, recomp_context* ctx) {
+ 19731:     uint64_t hi = 0, lo = 0, result = 0;
+ 19732:     int c1cs = 0;
+ 19733:     // 0x800B2784: lw          $v1, 0x3C($a0)
+ 19734:     ctx->r3 = MEM_W(ctx->r4, 0X3C);
+ 19735:     // 0x800B2788: bne         $v1, $zero, L_800B2798
+ 19736:     if (ctx->r3 != 0) {
+ 19737:             // 0x800B278C: addu        $v0, $a0, $v1
+ 19738:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19739:     func_800B2798(rdram, ctx);
+ 19740:     return;
+ 19741:     }
+ 19742:     // 0x800B278C: addu        $v0, $a0, $v1
+ 19743:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19744:     // 0x800B2790: jr          $ra
+ 19745:     // 0x800B2794: or          $v0, $zero, $zero
+ 19746:     ctx->r2 = 0 | 0;
+ 19747:     return;
+ 19748:     // 0x800B2794: or          $v0, $zero, $zero
+ 19749:     ctx->r2 = 0 | 0;
+ 19750: ;}
+ 19751: RECOMP_FUNC void func_800B2798(uint8_t* rdram, recomp_context* ctx) {
+ 19752:     uint64_t hi = 0, lo = 0, result = 0;
+ 19753:     int c1cs = 0;
+ 19754:     // 0x800B2798: jr          $ra
+ 19755:     // 0x800B279C: nop
+ 19756: 
+ 19757:     return;
+ 19758:     // 0x800B279C: nop
+ 19759: 
+ 19760: ;}
+ 19761: RECOMP_FUNC void func_800B27A0(uint8_t* rdram, recomp_context* ctx) {
+ 19762:     uint64_t hi = 0, lo = 0, result = 0;
+ 19763:     int c1cs = 0;
+ 19764:     // 0x800B27A0: lw          $v1, 0x38($a0)
+ 19765:     ctx->r3 = MEM_W(ctx->r4, 0X38);
+ 19766:     // 0x800B27A4: bne         $v1, $zero, L_800B27B4
+ 19767:     if (ctx->r3 != 0) {
+ 19768:             // 0x800B27A8: addu        $v0, $a0, $v1
+ 19769:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19770:     func_800B27B4(rdram, ctx);
+ 19771:     return;
+ 19772:     }
+ 19773:     // 0x800B27A8: addu        $v0, $a0, $v1
+ 19774:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19775:     // 0x800B27AC: jr          $ra
+ 19776:     // 0x800B27B0: or          $v0, $zero, $zero
+ 19777:     ctx->r2 = 0 | 0;
+ 19778:     return;
+ 19779:     // 0x800B27B0: or          $v0, $zero, $zero
+ 19780:     ctx->r2 = 0 | 0;
+ 19781: ;}
+ 19782: RECOMP_FUNC void func_800B27B4(uint8_t* rdram, recomp_context* ctx) {
+ 19783:     uint64_t hi = 0, lo = 0, result = 0;
+ 19784:     int c1cs = 0;
+ 19785:     // 0x800B27B4: jr          $ra
+ 19786:     // 0x800B27B8: nop
+ 19787: 
+ 19788:     return;
+ 19789:     // 0x800B27B8: nop
+ 19790: 
+ 19791: ;}
+ 19792: RECOMP_FUNC void func_800B27BC(uint8_t* rdram, recomp_context* ctx) {
+ 19793:     uint64_t hi = 0, lo = 0, result = 0;
+ 19794:     int c1cs = 0;
+ 19795:     // 0x800B27BC: lw          $v1, 0x30($a0)
+ 19796:     ctx->r3 = MEM_W(ctx->r4, 0X30);
+ 19797:     // 0x800B27C0: bne         $v1, $zero, L_800B27D0
+ 19798:     if (ctx->r3 != 0) {
+ 19799:             // 0x800B27C4: addu        $v0, $a0, $v1
+ 19800:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19801:     func_800B27D0(rdram, ctx);
+ 19802:     return;
+ 19803:     }
+ 19804:     // 0x800B27C4: addu        $v0, $a0, $v1
+ 19805:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19806:     // 0x800B27C8: jr          $ra
+ 19807:     // 0x800B27CC: or          $v0, $zero, $zero
+ 19808:     ctx->r2 = 0 | 0;
+ 19809:     return;
+ 19810:     // 0x800B27CC: or          $v0, $zero, $zero
+ 19811:     ctx->r2 = 0 | 0;
+ 19812: ;}
+ 19813: RECOMP_FUNC void func_800B27D0(uint8_t* rdram, recomp_context* ctx) {
+ 19814:     uint64_t hi = 0, lo = 0, result = 0;
+ 19815:     int c1cs = 0;
+ 19816:     // 0x800B27D0: jr          $ra
+ 19817:     // 0x800B27D4: nop
+ 19818: 
+ 19819:     return;
+ 19820:     // 0x800B27D4: nop
+ 19821: 
+ 19822: ;}
+ 19823: RECOMP_FUNC void func_800B27D8(uint8_t* rdram, recomp_context* ctx) {
+ 19824:     uint64_t hi = 0, lo = 0, result = 0;
+ 19825:     int c1cs = 0;
+ 19826:     // 0x800B27D8: jr          $ra
+ 19827:     // 0x800B27DC: lwc1        $f0, 0x48($a0)
+ 19828:     ctx->f0.u32l = MEM_W(ctx->r4, 0X48);
+ 19829:     return;
+ 19830:     // 0x800B27DC: lwc1        $f0, 0x48($a0)
+ 19831:     ctx->f0.u32l = MEM_W(ctx->r4, 0X48);
+ 19832: ;}
+ 19833: RECOMP_FUNC void func_800B27E0(uint8_t* rdram, recomp_context* ctx) {
+ 19834:     uint64_t hi = 0, lo = 0, result = 0;
+ 19835:     int c1cs = 0;
+ 19836:     // 0x800B27E0: lw          $v1, 0x18($a0)
+ 19837:     ctx->r3 = MEM_W(ctx->r4, 0X18);
+ 19838:     // 0x800B27E4: bne         $v1, $zero, L_800B27F4
+ 19839:     if (ctx->r3 != 0) {
+ 19840:             // 0x800B27E8: addu        $v0, $a0, $v1
+ 19841:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19842:     func_800B27F4(rdram, ctx);
+ 19843:     return;
+ 19844:     }
+ 19845:     // 0x800B27E8: addu        $v0, $a0, $v1
+ 19846:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19847:     // 0x800B27EC: jr          $ra
+ 19848:     // 0x800B27F0: or          $v0, $zero, $zero
+ 19849:     ctx->r2 = 0 | 0;
+ 19850:     return;
+ 19851:     // 0x800B27F0: or          $v0, $zero, $zero
+ 19852:     ctx->r2 = 0 | 0;
+ 19853: ;}
+ 19854: RECOMP_FUNC void func_800B27F4(uint8_t* rdram, recomp_context* ctx) {
+ 19855:     uint64_t hi = 0, lo = 0, result = 0;
+ 19856:     int c1cs = 0;
+ 19857:     // 0x800B27F4: jr          $ra
+ 19858:     // 0x800B27F8: nop
+ 19859: 
+ 19860:     return;
+ 19861:     // 0x800B27F8: nop
+ 19862: 
+ 19863: ;}
+ 19864: RECOMP_FUNC void func_800B27FC(uint8_t* rdram, recomp_context* ctx) {
+ 19865:     uint64_t hi = 0, lo = 0, result = 0;
+ 19866:     int c1cs = 0;
+ 19867:     // 0x800B27FC: lh          $t6, 0x8($a0)
+ 19868:     ctx->r14 = MEM_H(ctx->r4, 0X8);
+ 19869:     // 0x800B2800: jr          $ra
+ 19870:     // 0x800B2804: addu        $v0, $a0, $t6
+ 19871:     ctx->r2 = ADD32(ctx->r4, ctx->r14);
+ 19872:     return;
+ 19873:     // 0x800B2804: addu        $v0, $a0, $t6
+ 19874:     ctx->r2 = ADD32(ctx->r4, ctx->r14);
+ 19875: ;}
+ 19876: RECOMP_FUNC void func_800B2808(uint8_t* rdram, recomp_context* ctx) {
+ 19877:     uint64_t hi = 0, lo = 0, result = 0;
+ 19878:     int c1cs = 0;
+ 19879:     // 0x800B2808: lw          $v1, 0x2C($a0)
+ 19880:     ctx->r3 = MEM_W(ctx->r4, 0X2C);
+ 19881:     // 0x800B280C: bne         $v1, $zero, L_800B281C
+ 19882:     if (ctx->r3 != 0) {
+ 19883:             // 0x800B2810: addu        $v0, $a0, $v1
+ 19884:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19885:     func_800B281C(rdram, ctx);
+ 19886:     return;
+ 19887:     }
+ 19888:     // 0x800B2810: addu        $v0, $a0, $v1
+ 19889:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19890:     // 0x800B2814: jr          $ra
+ 19891:     // 0x800B2818: or          $v0, $zero, $zero
+ 19892:     ctx->r2 = 0 | 0;
+ 19893:     return;
+ 19894:     // 0x800B2818: or          $v0, $zero, $zero
+ 19895:     ctx->r2 = 0 | 0;
+ 19896: ;}
+ 19897: RECOMP_FUNC void func_800B281C(uint8_t* rdram, recomp_context* ctx) {
+ 19898:     uint64_t hi = 0, lo = 0, result = 0;
+ 19899:     int c1cs = 0;
+ 19900:     // 0x800B281C: jr          $ra
+ 19901:     // 0x800B2820: nop
+ 19902: 
+ 19903:     return;
+ 19904:     // 0x800B2820: nop
+ 19905: 
+ 19906: ;}
+ 19907: RECOMP_FUNC void func_800B2824(uint8_t* rdram, recomp_context* ctx) {
+ 19908:     uint64_t hi = 0, lo = 0, result = 0;
+ 19909:     int c1cs = 0;
+ 19910:     // 0x800B2824: lw          $v1, 0x14($a0)
+ 19911:     ctx->r3 = MEM_W(ctx->r4, 0X14);
+ 19912:     // 0x800B2828: bne         $v1, $zero, L_800B2838
+ 19913:     if (ctx->r3 != 0) {
+ 19914:             // 0x800B282C: addu        $v0, $a0, $v1
+ 19915:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19916:     func_800B2838(rdram, ctx);
+ 19917:     return;
+ 19918:     }
+ 19919:     // 0x800B282C: addu        $v0, $a0, $v1
+ 19920:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19921:     // 0x800B2830: jr          $ra
+ 19922:     // 0x800B2834: or          $v0, $zero, $zero
+ 19923:     ctx->r2 = 0 | 0;
+ 19924:     return;
+ 19925:     // 0x800B2834: or          $v0, $zero, $zero
+ 19926:     ctx->r2 = 0 | 0;
+ 19927: ;}
+ 19928: RECOMP_FUNC void func_800B2838(uint8_t* rdram, recomp_context* ctx) {
+ 19929:     uint64_t hi = 0, lo = 0, result = 0;
+ 19930:     int c1cs = 0;
+ 19931:     // 0x800B2838: jr          $ra
+ 19932:     // 0x800B283C: nop
+ 19933: 
+ 19934:     return;
+ 19935:     // 0x800B283C: nop
+ 19936: 
+ 19937: ;}
+ 19938: RECOMP_FUNC void func_800B2840(uint8_t* rdram, recomp_context* ctx) {
+ 19939:     uint64_t hi = 0, lo = 0, result = 0;
+ 19940:     int c1cs = 0;
+ 19941:     // 0x800B2840: lw          $t6, 0x10($a0)
+ 19942:     ctx->r14 = MEM_W(ctx->r4, 0X10);
+ 19943:     // 0x800B2844: jr          $ra
+ 19944:     // 0x800B2848: addu        $v0, $a0, $t6
+ 19945:     ctx->r2 = ADD32(ctx->r4, ctx->r14);
+ 19946:     return;
+ 19947:     // 0x800B2848: addu        $v0, $a0, $t6
+ 19948:     ctx->r2 = ADD32(ctx->r4, ctx->r14);
+ 19949: ;}
+ 19950: RECOMP_FUNC void func_800B284C(uint8_t* rdram, recomp_context* ctx) {
+ 19951:     uint64_t hi = 0, lo = 0, result = 0;
+ 19952:     int c1cs = 0;
+ 19953:     // 0x800B284C: lw          $v0, 0x20($a0)
+ 19954:     ctx->r2 = MEM_W(ctx->r4, 0X20);
+ 19955:     // 0x800B2850: bne         $v0, $zero, L_800B2860
+ 19956:     if (ctx->r2 != 0) {
+ 19957:             // 0x800B2854: addu        $v1, $a0, $v0
+ 19958:     ctx->r3 = ADD32(ctx->r4, ctx->r2);
+ 19959:     func_800B2860(rdram, ctx);
+ 19960:     return;
+ 19961:     }
+ 19962:     // 0x800B2854: addu        $v1, $a0, $v0
+ 19963:     ctx->r3 = ADD32(ctx->r4, ctx->r2);
+ 19964:     // 0x800B2858: jr          $ra
+ 19965:     // 0x800B285C: or          $v0, $zero, $zero
+ 19966:     ctx->r2 = 0 | 0;
+ 19967:     return;
+ 19968:     // 0x800B285C: or          $v0, $zero, $zero
+ 19969:     ctx->r2 = 0 | 0;
+ 19970: ;}
+ 19971: RECOMP_FUNC void func_800B2860(uint8_t* rdram, recomp_context* ctx) {
+ 19972:     uint64_t hi = 0, lo = 0, result = 0;
+ 19973:     int c1cs = 0;
+ 19974:     // 0x800B2860: jr          $ra
+ 19975:     // 0x800B2864: or          $v0, $v1, $zero
+ 19976:     ctx->r2 = ctx->r3 | 0;
+ 19977:     return;
+ 19978:     // 0x800B2864: or          $v0, $v1, $zero
+ 19979:     ctx->r2 = ctx->r3 | 0;
+ 19980: ;}
+ 19981: RECOMP_FUNC void func_800B2868(uint8_t* rdram, recomp_context* ctx) {
+ 19982:     uint64_t hi = 0, lo = 0, result = 0;
+ 19983:     int c1cs = 0;
+ 19984:     // 0x800B2868: lw          $v1, 0x34($a0)
+ 19985:     ctx->r3 = MEM_W(ctx->r4, 0X34);
+ 19986:     // 0x800B286C: bne         $v1, $zero, L_800B287C
+ 19987:     if (ctx->r3 != 0) {
+ 19988:             // 0x800B2870: addu        $v0, $a0, $v1
+ 19989:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19990:     func_800B287C(rdram, ctx);
+ 19991:     return;
+ 19992:     }
+ 19993:     // 0x800B2870: addu        $v0, $a0, $v1
+ 19994:     ctx->r2 = ADD32(ctx->r4, ctx->r3);
+ 19995:     // 0x800B2874: jr          $ra
+ 19996:     // 0x800B2878: or          $v0, $zero, $zero
+ 19997:     ctx->r2 = 0 | 0;
+ 19998:     return;
+ 19999:     // 0x800B2878: or          $v0, $zero, $zero
+ 20000:     ctx->r2 = 0 | 0;
+ 20001: ;}
+ 20002: RECOMP_FUNC void func_800B287C(uint8_t* rdram, recomp_context* ctx) {
+ 20003:     uint64_t hi = 0, lo = 0, result = 0;
+ 20004:     int c1cs = 0;
+ 20005:     // 0x800B287C: jr          $ra
+ 20006:     // 0x800B2880: nop
+ 20007: 
+ 20008:     return;
+ 20009:     // 0x800B2880: nop
+ 20010: 
+ 20011: ;}

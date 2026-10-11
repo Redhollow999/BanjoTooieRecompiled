@@ -1,0 +1,413 @@
+﻿ 19620: RECOMP_FUNC void gsworldDll_entrypoint_1(uint8_t* rdram, recomp_context* ctx) {
+ 19621:     uint64_t hi = 0, lo = 0, result = 0;
+ 19622:     int c1cs = 0;
+ 19623:     // 0x80800100: addiu       $sp, $sp, -0x18
+ 19624:     ctx->r29 = ADD32(ctx->r29, -0X18);
+ 19625:     // 0x80800104: sw          $ra, 0x14($sp)
+ 19626:     MEM_W(0X14, ctx->r29) = ctx->r31;
+ 19627:     // 0x80800108: jal         0x80088038
+ 19628:     // 0x8080010C: sw          $a0, 0x18($sp)
+ 19629:     MEM_W(0X18, ctx->r29) = ctx->r4;
+ 19630:     _gccollectDll_entrypoint_5(rdram, ctx);
+ 19631:         goto after_0;
+ 19632:     // 0x8080010C: sw          $a0, 0x18($sp)
+ 19633:     MEM_W(0X18, ctx->r29) = ctx->r4;
+ 19634:     after_0:
+ 19635:     // 0x80800110: jal         0x800EA148
+ 19636:     // 0x80800114: addiu       $a0, $zero, 0x3
+ 19637:     ctx->r4 = ADD32(0, 0X3);
+ 19638:     func_800EA148(rdram, ctx);
+ 19639:         goto after_1;
+ 19640:     // 0x80800114: addiu       $a0, $zero, 0x3
+ 19641:     ctx->r4 = ADD32(0, 0X3);
+ 19642:     after_1:
+ 19643:     // 0x80800118: jal         0x800C00E0
+ 19644:     // 0x8080011C: nop
+ 19645: 
+ 19646:     func_800C00E0(rdram, ctx);
+ 19647:         goto after_2;
+ 19648:     // 0x8080011C: nop
+ 19649: 
+ 19650:     after_2:
+ 19651:     // 0x80800120: jal         0x8008A900
+ 19652:     // 0x80800124: nop
+ 19653: 
+ 19654:     _sufade_entrypoint_2(rdram, ctx);
+ 19655:         goto after_3;
+ 19656:     // 0x80800124: nop
+ 19657: 
+ 19658:     after_3:
+ 19659:     // 0x80800128: jal         0x80089F58
+ 19660:     // 0x8080012C: nop
+ 19661: 
+ 19662:     _subaddierouteDll_entrypoint_0(rdram, ctx);
+ 19663:         goto after_4;
+ 19664:     // 0x8080012C: nop
+ 19665: 
+ 19666:     after_4:
+ 19667:     // 0x80800130: jal         0x800C7500
+ 19668:     // 0x80800134: nop
+ 19669: 
+ 19670:     func_800C7500(rdram, ctx);
+ 19671:         goto after_5;
+ 19672:     // 0x80800134: nop
+ 19673: 
+ 19674:     after_5:
+ 19675:     // 0x80800138: jal         0x800D8800
+ 19676:     // 0x8080013C: nop
+ 19677: 
+ 19678:     func_800D8800(rdram, ctx);
+ 19679:         goto after_6;
+ 19680:     // 0x8080013C: nop
+ 19681: 
+ 19682:     after_6:
+ 19683:     // 0x80800140: jal         0x800D743C
+ 19684:     // 0x80800144: nop
+ 19685: 
+ 19686:     func_800D743C(rdram, ctx);
+ 19687:         goto after_7;
+ 19688:     // 0x80800144: nop
+ 19689: 
+ 19690:     after_7:
+ 19691:     // 0x80800148: jal         0x800A5CC4
+ 19692:     // 0x8080014C: nop
+ 19693: 
+ 19694:     func_800A5CC4(rdram, ctx);
+ 19695:         goto after_8;
+ 19696:     // 0x8080014C: nop
+ 19697: 
+ 19698:     after_8:
+ 19699:     // 0x80800150: jal         0x800D8898
+ 19700:     // 0x80800154: nop
+ 19701: 
+ 19702:     func_800D8898(rdram, ctx);
+ 19703:         goto after_9;
+ 19704:     // 0x80800154: nop
+ 19705: 
+ 19706:     after_9:
+ 19707:     // 0x80800158: jal         0x800887D0
+ 19708:     // 0x8080015C: nop
+ 19709: 
+ 19710:     _glcutDll_entrypoint_5(rdram, ctx);
+ 19711:         goto after_10;
+ 19712:     // 0x8080015C: nop
+ 19713: 
+ 19714:     after_10:
+ 19715:     // 0x80800160: jal         0x800F732C
+ 19716:     // 0x80800164: nop
+ 19717: 
+ 19718:     func_800F732C(rdram, ctx);
+ 19719:         goto after_11;
+ 19720:     // 0x80800164: nop
+ 19721: 
+ 19722:     after_11:
+ 19723:     // 0x80800168: jal         0x800B5E04
+ 19724:     // 0x8080016C: nop
+ 19725: 
+ 19726:     func_800B5E04(rdram, ctx);
+ 19727:         goto after_12;
+ 19728:     // 0x8080016C: nop
+ 19729: 
+ 19730:     after_12:
+ 19731:     // 0x80800170: jal         0x800FA660
+ 19732:     // 0x80800174: nop
+ 19733: 
+ 19734:     func_800FA660(rdram, ctx);
+ 19735:         goto after_13;
+ 19736:     // 0x80800174: nop
+ 19737: 
+ 19738:     after_13:
+ 19739:     // 0x80800178: jal         0x800858D0
+ 19740:     // 0x8080017C: nop
+ 19741: 
+ 19742:     _chbounce_entrypoint_1(rdram, ctx);
+ 19743:         goto after_14;
+ 19744:     // 0x8080017C: nop
+ 19745: 
+ 19746:     after_14:
+ 19747:     // 0x80800180: jal         0x800E1748
+ 19748:     // 0x80800184: nop
+ 19749: 
+ 19750:     func_800E1748(rdram, ctx);
+ 19751:         goto after_15;
+ 19752:     // 0x80800184: nop
+ 19753: 
+ 19754:     after_15:
+ 19755:     // 0x80800188: jal         0x800A5630
+ 19756:     // 0x8080018C: nop
+ 19757: 
+ 19758:     func_800A5630(rdram, ctx);
+ 19759:         goto after_16;
+ 19760:     // 0x8080018C: nop
+ 19761: 
+ 19762:     after_16:
+ 19763:     // 0x80800190: jal         0x800B5AD4
+ 19764:     // 0x80800194: nop
+ 19765: 
+ 19766:     func_800B5AD4(rdram, ctx);
+ 19767:         goto after_17;
+ 19768:     // 0x80800194: nop
+ 19769: 
+ 19770:     after_17:
+ 19771:     // 0x80800198: jal         0x800B5824
+ 19772:     // 0x8080019C: nop
+ 19773: 
+ 19774:     func_800B5824(rdram, ctx);
+ 19775:         goto after_18;
+ 19776:     // 0x8080019C: nop
+ 19777: 
+ 19778:     after_18:
+ 19779:     // 0x808001A0: jal         0x800B5054
+ 19780:     // 0x808001A4: nop
+ 19781: 
+ 19782:     func_800B5054(rdram, ctx);
+ 19783:         goto after_19;
+ 19784:     // 0x808001A4: nop
+ 19785: 
+ 19786:     after_19:
+ 19787:     // 0x808001A8: jal         0x800B7CC4
+ 19788:     // 0x808001AC: nop
+ 19789: 
+ 19790:     func_800B7CC4(rdram, ctx);
+ 19791:         goto after_20;
+ 19792:     // 0x808001AC: nop
+ 19793: 
+ 19794:     after_20:
+ 19795:     // 0x808001B0: jal         0x80087AB0
+ 19796:     // 0x808001B4: nop
+ 19797: 
+ 19798:     _gcgoto_entrypoint_12(rdram, ctx);
+ 19799:         goto after_21;
+ 19800:     // 0x808001B4: nop
+ 19801: 
+ 19802:     after_21:
+ 19803:     // 0x808001B8: jal         0x800BD5DC
+ 19804:     // 0x808001BC: nop
+ 19805: 
+ 19806:     func_800BD5DC(rdram, ctx);
+ 19807:         goto after_22;
+ 19808:     // 0x808001BC: nop
+ 19809: 
+ 19810:     after_22:
+ 19811:     // 0x808001C0: jal         0x800CB9AC
+ 19812:     // 0x808001C4: nop
+ 19813: 
+ 19814:     func_800CB9AC(rdram, ctx);
+ 19815:         goto after_23;
+ 19816:     // 0x808001C4: nop
+ 19817: 
+ 19818:     after_23:
+ 19819:     // 0x808001C8: jal         0x800C5770
+ 19820:     // 0x808001CC: nop
+ 19821: 
+ 19822:     func_800C5770(rdram, ctx);
+ 19823:         goto after_24;
+ 19824:     // 0x808001CC: nop
+ 19825: 
+ 19826:     after_24:
+ 19827:     // 0x808001D0: jal         0x800BF420
+ 19828:     // 0x808001D4: nop
+ 19829: 
+ 19830:     func_800BF420(rdram, ctx);
+ 19831:         goto after_25;
+ 19832:     // 0x808001D4: nop
+ 19833: 
+ 19834:     after_25:
+ 19835:     // 0x808001D8: jal         0x800BFCB4
+ 19836:     // 0x808001DC: nop
+ 19837: 
+ 19838:     func_800BFCB4(rdram, ctx);
+ 19839:         goto after_26;
+ 19840:     // 0x808001DC: nop
+ 19841: 
+ 19842:     after_26:
+ 19843:     // 0x808001E0: jal         0x800C90D0
+ 19844:     // 0x808001E4: nop
+ 19845: 
+ 19846:     func_800C90D0(rdram, ctx);
+ 19847:         goto after_27;
+ 19848:     // 0x808001E4: nop
+ 19849: 
+ 19850:     after_27:
+ 19851:     // 0x808001E8: jal         0x800BFF28
+ 19852:     // 0x808001EC: nop
+ 19853: 
+ 19854:     func_800BFF28(rdram, ctx);
+ 19855:         goto after_28;
+ 19856:     // 0x808001EC: nop
+ 19857: 
+ 19858:     after_28:
+ 19859:     // 0x808001F0: jal         0x80088F38
+ 19860:     // 0x808001F4: nop
+ 19861: 
+ 19862:     _idworldmake_entrypoint_3(rdram, ctx);
+ 19863:         goto after_29;
+ 19864:     // 0x808001F4: nop
+ 19865: 
+ 19866:     after_29:
+ 19867:     // 0x808001F8: jal         0x80100610
+ 19868:     // 0x808001FC: nop
+ 19869: 
+ 19870:     func_80100610(rdram, ctx);
+ 19871:         goto after_30;
+ 19872:     // 0x808001FC: nop
+ 19873: 
+ 19874:     after_30:
+ 19875:     // 0x80800200: jal         0x80100B4C
+ 19876:     // 0x80800204: nop
+ 19877: 
+ 19878:     func_80100B4C(rdram, ctx);
+ 19879:         goto after_31;
+ 19880:     // 0x80800204: nop
+ 19881: 
+ 19882:     after_31:
+ 19883:     // 0x80800208: jal         0x8008A8E0
+ 19884:     // 0x8080020C: nop
+ 19885: 
+ 19886:     _sulights_entrypoint_8(rdram, ctx);
+ 19887:         goto after_32;
+ 19888:     // 0x8080020C: nop
+ 19889: 
+ 19890:     after_32:
+ 19891:     // 0x80800210: jal         0x800C7A60
+ 19892:     // 0x80800214: nop
+ 19893: 
+ 19894:     func_800C7A60(rdram, ctx);
+ 19895:         goto after_33;
+ 19896:     // 0x80800214: nop
+ 19897: 
+ 19898:     after_33:
+ 19899:     // 0x80800218: jal         0x800AB9D0
+ 19900:     // 0x8080021C: nop
+ 19901: 
+ 19902:     func_800AB9D0(rdram, ctx);
+ 19903:         goto after_34;
+ 19904:     // 0x8080021C: nop
+ 19905: 
+ 19906:     after_34:
+ 19907:     // 0x80800220: jal         0x800FFDBC
+ 19908:     // 0x80800224: nop
+ 19909: 
+ 19910:     func_800FFDBC(rdram, ctx);
+ 19911:         goto after_35;
+ 19912:     // 0x80800224: nop
+ 19913: 
+ 19914:     after_35:
+ 19915:     // 0x80800228: jal         0x8010D89C
+ 19916:     // 0x8080022C: nop
+ 19917: 
+ 19918:     func_8010D89C(rdram, ctx);
+ 19919:         goto after_36;
+ 19920:     // 0x8080022C: nop
+ 19921: 
+ 19922:     after_36:
+ 19923:     // 0x80800230: jal         0x800E4CE8
+ 19924:     // 0x80800234: nop
+ 19925: 
+ 19926:     func_800E4CE8(rdram, ctx);
+ 19927:         goto after_37;
+ 19928:     // 0x80800234: nop
+ 19929: 
+ 19930:     after_37:
+ 19931:     // 0x80800238: jal         0x800E9774
+ 19932:     // 0x8080023C: nop
+ 19933: 
+ 19934:     func_800E9774(rdram, ctx);
+ 19935:         goto after_38;
+ 19936:     // 0x8080023C: nop
+ 19937: 
+ 19938:     after_38:
+ 19939:     // 0x80800240: jal         0x800C6A60
+ 19940:     // 0x80800244: nop
+ 19941: 
+ 19942:     func_800C6A60(rdram, ctx);
+ 19943:         goto after_39;
+ 19944:     // 0x80800244: nop
+ 19945: 
+ 19946:     after_39:
+ 19947:     // 0x80800248: jal         0x800D2E4C
+ 19948:     // 0x8080024C: nop
+ 19949: 
+ 19950:     func_800D2E4C(rdram, ctx);
+ 19951:         goto after_40;
+ 19952:     // 0x8080024C: nop
+ 19953: 
+ 19954:     after_40:
+ 19955:     // 0x80800250: jal         0x800EBC04
+ 19956:     // 0x80800254: nop
+ 19957: 
+ 19958:     func_800EBC04(rdram, ctx);
+ 19959:         goto after_41;
+ 19960:     // 0x80800254: nop
+ 19961: 
+ 19962:     after_41:
+ 19963:     // 0x80800258: jal         0x80088748
+ 19964:     // 0x8080025C: nop
+ 19965: 
+ 19966:     _gldialog_entrypoint_3(rdram, ctx);
+ 19967:         goto after_42;
+ 19968:     // 0x8080025C: nop
+ 19969: 
+ 19970:     after_42:
+ 19971:     // 0x80800260: lw          $t6, 0x18($sp)
+ 19972:     ctx->r14 = MEM_W(ctx->r29, 0X18);
+ 19973:     // 0x80800264: jal         0x800FF038
+ 19974:     // 0x80800268: lhu         $a0, 0x2($t6)
+ 19975:     ctx->r4 = MEM_HU(ctx->r14, 0X2);
+ 19976:     func_800FF038(rdram, ctx);
+ 19977:         goto after_43;
+ 19978:     // 0x80800268: lhu         $a0, 0x2($t6)
+ 19979:     ctx->r4 = MEM_HU(ctx->r14, 0X2);
+ 19980:     after_43:
+ 19981:     // 0x8080026C: jal         0x800DBB24
+ 19982:     // 0x80800270: nop
+ 19983: 
+ 19984:     func_800DBB24(rdram, ctx);
+ 19985:         goto after_44;
+ 19986:     // 0x80800270: nop
+ 19987: 
+ 19988:     after_44:
+ 19989:     // 0x80800274: jal         0x800E8B04
+ 19990:     // 0x80800278: nop
+ 19991: 
+ 19992:     func_800E8B04(rdram, ctx);
+ 19993:         goto after_45;
+ 19994:     // 0x80800278: nop
+ 19995: 
+ 19996:     after_45:
+ 19997:     // 0x8080027C: jal         0x800D2970
+ 19998:     // 0x80800280: nop
+ 19999: 
+ 20000:     func_800D2970(rdram, ctx);
+ 20001:         goto after_46;
+ 20002:     // 0x80800280: nop
+ 20003: 
+ 20004:     after_46:
+ 20005:     // 0x80800284: jal         0x800E86DC
+ 20006:     // 0x80800288: nop
+ 20007: 
+ 20008:     func_800E86DC(rdram, ctx);
+ 20009:         goto after_47;
+ 20010:     // 0x80800288: nop
+ 20011: 
+ 20012:     after_47:
+ 20013:     // 0x8080028C: jal         0x800BC8A0
+ 20014:     // 0x80800290: nop
+ 20015: 
+ 20016:     func_800BC8A0(rdram, ctx);
+ 20017:         goto after_48;
+ 20018:     // 0x80800290: nop
+ 20019: 
+ 20020:     after_48:
+ 20021:     // 0x80800294: lw          $ra, 0x14($sp)
+ 20022:     ctx->r31 = MEM_W(ctx->r29, 0X14);
+ 20023:     // 0x80800298: addiu       $sp, $sp, 0x18
+ 20024:     ctx->r29 = ADD32(ctx->r29, 0X18);
+ 20025:     // 0x8080029C: jr          $ra
+ 20026:     // 0x808002A0: nop
+ 20027: 
+ 20028:     return;
+ 20029:     // 0x808002A0: nop
+ 20030: 
+ 20031: ;}
+ 20032: RECOMP_FUNC void gsworldDll_entrypoint_2(uint8_t* rdram, recomp_context* ctx) {

@@ -1,0 +1,199 @@
+﻿============================================================
+ACCESSOR: func_800B27FC
+============================================================
+funcs_75.c | line 8651 | caller gcmapDll_entrypoint_6 (starts 8599)
+funcs_75.c | line 8704 | caller gcmapDll_entrypoint_6 (starts 8599)
+funcs_75.c | line 9135 | caller func_80800250_gcmapsects (starts 9071)
+funcs_75.c | line 9153 | caller func_80800250_gcmapsects (starts 9071)
+funcs_75.c | line 9227 | caller func_80800250_gcmapsects (starts 9071)
+funcs_75.c | line 9245 | caller func_80800250_gcmapsects (starts 9071)
+funcs_75.c | line 38174 | caller gcskyDll_entrypoint_1 (starts 38071)
+funcs_76.c | line 71 | caller gcskyDll_entrypoint_2 (starts 4)
+
+============================================================
+ACCESSOR: func_800B2840
+============================================================
+funcs_21.c | line 1394 | caller func_80092EC8 (starts 1163)
+funcs_21.c | line 1446 | caller func_80092EC8 (starts 1163)
+funcs_21.c | line 1572 | caller func_80093070 (starts 1477)
+funcs_24.c | line 4846 | caller func_800A6250 (starts 3898)
+funcs_26.c | line 13733 | caller func_800BC948 (starts 13376)
+funcs_32.c | line 10028 | caller func_800EA628 (starts 9688)
+funcs_32.c | line 10074 | caller func_800EA628 (starts 9688)
+funcs_32.c | line 10783 | caller func_800EAA2C (starts 10531)
+funcs_32.c | line 11555 | caller func_800EADFC (starts 11305)
+funcs_32.c | line 15746 | caller func_800EC504 (starts 15653)
+funcs_35.c | line 21563 | caller func_801007B8 (starts 21349)
+funcs_35.c | line 22512 | caller func_80100D24 (starts 22470)
+funcs_35.c | line 22954 | caller func_80100F0C (starts 22826)
+funcs_36.c | line 1052 | caller func_80103328 (starts 996)
+funcs_36.c | line 1669 | caller func_80103508 (starts 1348)
+funcs_36.c | line 1712 | caller func_80103508 (starts 1348)
+funcs_36.c | line 2766 | caller func_80103B24 (starts 2655)
+funcs_36.c | line 2938 | caller func_80103BF0 (starts 2820)
+funcs_36.c | line 3672 | caller func_80104004 (starts 3619)
+funcs_52.c | line 11791 | caller func_80800050_chbanjocurrent (starts 11728)
+funcs_52.c | line 17641 | caller func_808004D4_chbiggafoot (starts 17216)
+funcs_53.c | line 3076 | caller func_80800B94_chboilerboss (starts 2807)
+funcs_53.c | line 4230 | caller func_808010F4_chboilerboss (starts 3890)
+funcs_60.c | line 32158 | caller func_808000EC_chfiregen (starts 30785)
+funcs_61.c | line 38837 | caller func_80801D74_chgameselect (starts 38586)
+funcs_65.c | line 36309 | caller func_80800724_chlakemonster (starts 36133)
+funcs_65.c | line 36389 | caller func_80800838_chlakemonster (starts 36343)
+funcs_69.c | line 2444 | caller func_808003DC_chpoolkids (starts 2207)
+funcs_73.c | line 42823 | caller dbvtxnormal_entrypoint_2 (starts 42813)
+funcs_75.c | line 7882 | caller gcmapDll_entrypoint_3 (starts 7733)
+funcs_75.c | line 8004 | caller gcmapDll_entrypoint_3 (starts 7733)
+funcs_75.c | line 10136 | caller func_808005D0_gcmapsects (starts 9723)
+funcs_75.c | line 14252 | caller gcmapsects_entrypoint_18 (starts 14114)
+funcs_75.c | line 14576 | caller gcmapsects_entrypoint_19 (starts 14440)
+funcs_75.c | line 14814 | caller gcmapsects_entrypoint_20 (starts 14737)
+funcs_75.c | line 14964 | caller gcmapsects_entrypoint_21 (starts 14887)
+funcs_75.c | line 15191 | caller gcmapsects_entrypoint_22 (starts 15033)
+funcs_75.c | line 15309 | caller gcmapsects_entrypoint_22 (starts 15033)
+funcs_75.c | line 15544 | caller gcmapsects_entrypoint_23 (starts 15398)
+funcs_75.c | line 15808 | caller gcmapsects_entrypoint_25 (starts 15689)
+funcs_75.c | line 15950 | caller gcmapsects_entrypoint_25 (starts 15689)
+funcs_75.c | line 16154 | caller gcmapsects_entrypoint_26 (starts 16014)
+funcs_75.c | line 38256 | caller gcskyDll_entrypoint_1 (starts 38071)
+funcs_76.c | line 25516 | caller glidmake_entrypoint_5 (starts 25453)
+funcs_77.c | line 16707 | caller func_80800050_gspropprop (starts 16681)
+funcs_80.c | line 5431 | caller subaddiepalette_entrypoint_3 (starts 5336)
+funcs_81.c | line 6618 | caller suexpressmorph_entrypoint_2 (starts 6568)
+
+============================================================
+ACCESSOR: func_800B2824
+============================================================
+funcs_36.c | line 2506 | caller func_801039E4 (starts 2405)
+funcs_36.c | line 3194 | caller func_80103D98 (starts 3124)
+funcs_64.c | line 6833 | caller func_80802590_chinflatableboss (starts 6752)
+funcs_70.c | line 36855 | caller func_80801724_chstatueboss (starts 36763)
+funcs_79.c | line 25552 | caller subaddiecustomhits_entrypoint_2 (starts 25470)
+
+============================================================
+ACCESSOR: func_800B27E0
+============================================================
+funcs_20.c | line 15047 | caller func_80092444 (starts 14730)
+funcs_21.c | line 1303 | caller func_80092EC8 (starts 1163)
+funcs_21.c | line 2943 | caller func_8009375C (starts 2814)
+funcs_24.c | line 4481 | caller func_800A6250 (starts 3898)
+funcs_24.c | line 4491 | caller func_800A6250 (starts 3898)
+funcs_30.c | line 28221 | caller func_800DE498 (starts 26521)
+funcs_30.c | line 28248 | caller func_800DE498 (starts 26521)
+funcs_35.c | line 24312 | caller func_801015D0 (starts 24161)
+funcs_35.c | line 26698 | caller func_80102204 (starts 26612)
+funcs_37.c | line 10171 | caller func_8010DD20 (starts 10071)
+funcs_40.c | line 22458 | caller func_80800008_batranslate (starts 22436)
+funcs_55.c | line 30287 | caller func_808006F8_chdiggerboss (starts 30231)
+funcs_55.c | line 42524 | caller func_808042FC_chdiggerboss (starts 42474)
+funcs_56.c | line 2461 | caller func_80806528_chdiggerboss (starts 2330)
+funcs_58.c | line 25513 | caller func_80800154_chexploder (starts 25486)
+funcs_58.c | line 27348 | caller func_80800AC8_chexploder (starts 27294)
+funcs_58.c | line 27854 | caller func_80800D7C_chexploder (starts 27794)
+funcs_59.c | line 14511 | caller func_80800424_chfactoryrobot (starts 14389)
+funcs_60.c | line 37963 | caller func_8080000C_chfishshootgame (starts 37758)
+funcs_61.c | line 10993 | caller func_80803224_chflysaucer (starts 10973)
+funcs_61.c | line 12105 | caller func_808035C4_chflysaucer (starts 11693)
+funcs_61.c | line 38309 | caller func_80801BA8_chgameselect (starts 38211)
+funcs_61.c | line 38670 | caller func_80801D74_chgameselect (starts 38586)
+funcs_64.c | line 3735 | caller func_80801554_chinflatableboss (starts 3600)
+funcs_64.c | line 6973 | caller func_8080267C_chinflatableboss (starts 6929)
+funcs_68.c | line 4348 | caller chnewfreezy_entrypoint_0 (starts 4187)
+funcs_70.c | line 21475 | caller func_808005CC_chskeletonexplode (starts 21421)
+funcs_70.c | line 22008 | caller func_80800894_chskeletonexplode (starts 21948)
+funcs_70.c | line 23067 | caller func_80800E88_chskeletonexplode (starts 23023)
+funcs_80.c | line 10843 | caller subaddieskeleton_entrypoint_0 (starts 10793)
+funcs_80.c | line 10926 | caller subaddieskeleton_entrypoint_0 (starts 10793)
+
+============================================================
+ACCESSOR: func_800B2720
+============================================================
+funcs_32.c | line 9853 | caller func_800EA628 (starts 9688)
+funcs_32.c | line 10312 | caller func_800EA628 (starts 9688)
+funcs_32.c | line 10653 | caller func_800EAA2C (starts 10531)
+funcs_32.c | line 11166 | caller func_800EAA2C (starts 10531)
+funcs_32.c | line 11425 | caller func_800EADFC (starts 11305)
+funcs_32.c | line 11870 | caller func_800EADFC (starts 11305)
+funcs_75.c | line 7871 | caller gcmapDll_entrypoint_3 (starts 7733)
+funcs_75.c | line 7994 | caller gcmapDll_entrypoint_3 (starts 7733)
+funcs_75.c | line 14804 | caller gcmapsects_entrypoint_20 (starts 14737)
+funcs_75.c | line 14954 | caller gcmapsects_entrypoint_21 (starts 14887)
+funcs_75.c | line 15181 | caller gcmapsects_entrypoint_22 (starts 15033)
+funcs_75.c | line 15293 | caller gcmapsects_entrypoint_22 (starts 15033)
+funcs_75.c | line 15534 | caller gcmapsects_entrypoint_23 (starts 15398)
+funcs_75.c | line 15798 | caller gcmapsects_entrypoint_25 (starts 15689)
+funcs_75.c | line 15922 | caller gcmapsects_entrypoint_25 (starts 15689)
+funcs_75.c | line 15940 | caller gcmapsects_entrypoint_25 (starts 15689)
+funcs_75.c | line 16144 | caller gcmapsects_entrypoint_26 (starts 16014)
+funcs_76.c | line 3262 | caller gcwater_entrypoint_0 (starts 3232)
+funcs_76.c | line 3313 | caller gcwater_entrypoint_0 (starts 3232)
+
+============================================================
+ACCESSOR: func_800B284C
+============================================================
+funcs_75.c | line 7893 | caller gcmapDll_entrypoint_3 (starts 7733)
+funcs_75.c | line 8014 | caller gcmapDll_entrypoint_3 (starts 7733)
+
+============================================================
+ACCESSOR: func_800B274C
+============================================================
+funcs_75.c | line 6529 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 6625 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 9950 | caller func_808005D0_gcmapsects (starts 9723)
+funcs_75.c | line 38209 | caller gcskyDll_entrypoint_1 (starts 38071)
+funcs_76.c | line 25082 | caller glidmake_entrypoint_1 (starts 25064)
+funcs_76.c | line 25146 | caller glidmake_entrypoint_2 (starts 25098)
+funcs_76.c | line 25385 | caller glidmake_entrypoint_3 (starts 25365)
+funcs_76.c | line 25493 | caller glidmake_entrypoint_5 (starts 25453)
+
+============================================================
+ACCESSOR: func_800B2808
+============================================================
+NO CALLERS FOUND
+
+============================================================
+ACCESSOR: func_800B27BC
+============================================================
+funcs_75.c | line 6021 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 6156 | caller gcmapDll_entrypoint_1 (starts 5967)
+
+============================================================
+ACCESSOR: func_800B2868
+============================================================
+funcs_75.c | line 6291 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 6361 | caller gcmapDll_entrypoint_1 (starts 5967)
+
+============================================================
+ACCESSOR: func_800B27A0
+============================================================
+funcs_26.c | line 19633 | caller func_800BEBD4 (starts 19609)
+funcs_36.c | line 11912 | caller func_80106A98 (starts 11782)
+funcs_73.c | line 42851 | caller dbvtxnormal_entrypoint_2 (starts 42813)
+funcs_75.c | line 6060 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 6095 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 6195 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_75.c | line 6230 | caller gcmapDll_entrypoint_1 (starts 5967)
+funcs_76.c | line 24520 | caller glid_entrypoint_3 (starts 24466)
+
+============================================================
+ACCESSOR: func_800B2784
+============================================================
+NO CALLERS FOUND
+
+============================================================
+ACCESSOR: func_800B2768
+============================================================
+funcs_52.c | line 17619 | caller func_808004D4_chbiggafoot (starts 17216)
+funcs_53.c | line 3054 | caller func_80800B94_chboilerboss (starts 2807)
+funcs_53.c | line 4208 | caller func_808010F4_chboilerboss (starts 3890)
+funcs_60.c | line 32148 | caller func_808000EC_chfiregen (starts 30785)
+funcs_65.c | line 36287 | caller func_80800724_chlakemonster (starts 36133)
+funcs_65.c | line 36367 | caller func_80800838_chlakemonster (starts 36343)
+funcs_69.c | line 2422 | caller func_808003DC_chpoolkids (starts 2207)
+funcs_81.c | line 6628 | caller suexpressmorph_entrypoint_2 (starts 6568)
+
+============================================================
+ACCESSOR: func_800B27D8
+============================================================
+NO CALLERS FOUND
+

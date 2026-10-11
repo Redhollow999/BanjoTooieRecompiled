@@ -1,0 +1,72 @@
+﻿
+============================================================
+FUNCTION: func_800B2720
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_25.c
+LINES: 19616-19636 (21 lines)
+============================================================
+ 19616: RECOMP_FUNC void func_800B2720(uint8_t* rdram, recomp_context* ctx) {
+ 19617:     uint64_t hi = 0, lo = 0, result = 0;
+ 19618:     int c1cs = 0;
+ 19619:     // 0x800B2720: bnel        $a0, $zero, L_800B2734
+ 19620:     if (ctx->r4 != 0) {
+ 19621:             // 0x800B2724: lw          $v1, 0x1C($a0)
+ 19622:     ctx->r3 = MEM_W(ctx->r4, 0X1C);
+ 19623:     static_3_800B2734(rdram, ctx);
+ 19624:     return;
+ 19625:     }
+ 19626:     goto skip_0;
+ 19627:     // 0x800B2724: lw          $v1, 0x1C($a0)
+ 19628:     ctx->r3 = MEM_W(ctx->r4, 0X1C);
+ 19629:     skip_0:
+ 19630:     // 0x800B2728: jr          $ra
+ 19631:     // 0x800B272C: or          $v0, $zero, $zero
+ 19632:     ctx->r2 = 0 | 0;
+ 19633:     return;
+ 19634:     // 0x800B272C: or          $v0, $zero, $zero
+ 19635:     ctx->r2 = 0 | 0;
+ 19636: ;}
+
+============================================================
+FUNCTION: func_800B2840
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_25.c
+LINES: 19938-19949 (12 lines)
+============================================================
+ 19938: RECOMP_FUNC void func_800B2840(uint8_t* rdram, recomp_context* ctx) {
+ 19939:     uint64_t hi = 0, lo = 0, result = 0;
+ 19940:     int c1cs = 0;
+ 19941:     // 0x800B2840: lw          $t6, 0x10($a0)
+ 19942:     ctx->r14 = MEM_W(ctx->r4, 0X10);
+ 19943:     // 0x800B2844: jr          $ra
+ 19944:     // 0x800B2848: addu        $v0, $a0, $t6
+ 19945:     ctx->r2 = ADD32(ctx->r4, ctx->r14);
+ 19946:     return;
+ 19947:     // 0x800B2848: addu        $v0, $a0, $t6
+ 19948:     ctx->r2 = ADD32(ctx->r4, ctx->r14);
+ 19949: ;}
+
+============================================================
+FUNCTION: func_800B284C
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_25.c
+LINES: 19950-19970 (21 lines)
+============================================================
+ 19950: RECOMP_FUNC void func_800B284C(uint8_t* rdram, recomp_context* ctx) {
+ 19951:     uint64_t hi = 0, lo = 0, result = 0;
+ 19952:     int c1cs = 0;
+ 19953:     // 0x800B284C: lw          $v0, 0x20($a0)
+ 19954:     ctx->r2 = MEM_W(ctx->r4, 0X20);
+ 19955:     // 0x800B2850: bne         $v0, $zero, L_800B2860
+ 19956:     if (ctx->r2 != 0) {
+ 19957:             // 0x800B2854: addu        $v1, $a0, $v0
+ 19958:     ctx->r3 = ADD32(ctx->r4, ctx->r2);
+ 19959:     func_800B2860(rdram, ctx);
+ 19960:     return;
+ 19961:     }
+ 19962:     // 0x800B2854: addu        $v1, $a0, $v0
+ 19963:     ctx->r3 = ADD32(ctx->r4, ctx->r2);
+ 19964:     // 0x800B2858: jr          $ra
+ 19965:     // 0x800B285C: or          $v0, $zero, $zero
+ 19966:     ctx->r2 = 0 | 0;
+ 19967:     return;
+ 19968:     // 0x800B285C: or          $v0, $zero, $zero
+ 19969:     ctx->r2 = 0 | 0;
+ 19970: ;}

@@ -1,0 +1,108 @@
+﻿
+============================================================
+FILE: funcs_31.c
+CALLER: func_800DF818 (starts 875)
+MATCH LINE: 881
+============================================================
+   873:     MEM_W(0X8, ctx->r2) = ctx->f14.u32l;
+   874: ;}
+   875: RECOMP_FUNC void func_800DF818(uint8_t* rdram, recomp_context* ctx) {
+   876:     uint64_t hi = 0, lo = 0, result = 0;
+   877:     int c1cs = 0;
+   878:     // 0x800DF818: lui         $at, 0x8013
+   879:     ctx->r1 = S32(0X8013 << 16);
+   880:     // 0x800DF81C: jr          $ra
+   881:     // 0x800DF820: sw          $a0, -0x369C($at)
+   882:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   883:     return;
+   884:     // 0x800DF820: sw          $a0, -0x369C($at)
+   885:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   886: ;}
+   887: RECOMP_FUNC void func_800DF824(uint8_t* rdram, recomp_context* ctx) {
+   888:     uint64_t hi = 0, lo = 0, result = 0;
+   889:     int c1cs = 0;
+   890:     // 0x800DF824: lui         $at, 0x8013
+   891:     ctx->r1 = S32(0X8013 << 16);
+   892:     // 0x800DF828: jr          $ra
+   893:     // 0x800DF82C: sw          $a0, -0x3688($at)
+
+============================================================
+FILE: funcs_31.c
+CALLER: func_800DF818 (starts 875)
+MATCH LINE: 882
+============================================================
+   874: ;}
+   875: RECOMP_FUNC void func_800DF818(uint8_t* rdram, recomp_context* ctx) {
+   876:     uint64_t hi = 0, lo = 0, result = 0;
+   877:     int c1cs = 0;
+   878:     // 0x800DF818: lui         $at, 0x8013
+   879:     ctx->r1 = S32(0X8013 << 16);
+   880:     // 0x800DF81C: jr          $ra
+   881:     // 0x800DF820: sw          $a0, -0x369C($at)
+   882:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   883:     return;
+   884:     // 0x800DF820: sw          $a0, -0x369C($at)
+   885:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   886: ;}
+   887: RECOMP_FUNC void func_800DF824(uint8_t* rdram, recomp_context* ctx) {
+   888:     uint64_t hi = 0, lo = 0, result = 0;
+   889:     int c1cs = 0;
+   890:     // 0x800DF824: lui         $at, 0x8013
+   891:     ctx->r1 = S32(0X8013 << 16);
+   892:     // 0x800DF828: jr          $ra
+   893:     // 0x800DF82C: sw          $a0, -0x3688($at)
+   894:     MEM_W(-0X3688, ctx->r1) = ctx->r4;
+
+============================================================
+FILE: funcs_31.c
+CALLER: func_800DF818 (starts 875)
+MATCH LINE: 884
+============================================================
+   876:     uint64_t hi = 0, lo = 0, result = 0;
+   877:     int c1cs = 0;
+   878:     // 0x800DF818: lui         $at, 0x8013
+   879:     ctx->r1 = S32(0X8013 << 16);
+   880:     // 0x800DF81C: jr          $ra
+   881:     // 0x800DF820: sw          $a0, -0x369C($at)
+   882:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   883:     return;
+   884:     // 0x800DF820: sw          $a0, -0x369C($at)
+   885:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   886: ;}
+   887: RECOMP_FUNC void func_800DF824(uint8_t* rdram, recomp_context* ctx) {
+   888:     uint64_t hi = 0, lo = 0, result = 0;
+   889:     int c1cs = 0;
+   890:     // 0x800DF824: lui         $at, 0x8013
+   891:     ctx->r1 = S32(0X8013 << 16);
+   892:     // 0x800DF828: jr          $ra
+   893:     // 0x800DF82C: sw          $a0, -0x3688($at)
+   894:     MEM_W(-0X3688, ctx->r1) = ctx->r4;
+   895:     return;
+   896:     // 0x800DF82C: sw          $a0, -0x3688($at)
+
+============================================================
+FILE: funcs_31.c
+CALLER: func_800DF818 (starts 875)
+MATCH LINE: 885
+============================================================
+   877:     int c1cs = 0;
+   878:     // 0x800DF818: lui         $at, 0x8013
+   879:     ctx->r1 = S32(0X8013 << 16);
+   880:     // 0x800DF81C: jr          $ra
+   881:     // 0x800DF820: sw          $a0, -0x369C($at)
+   882:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   883:     return;
+   884:     // 0x800DF820: sw          $a0, -0x369C($at)
+   885:     MEM_W(-0X369C, ctx->r1) = ctx->r4;
+   886: ;}
+   887: RECOMP_FUNC void func_800DF824(uint8_t* rdram, recomp_context* ctx) {
+   888:     uint64_t hi = 0, lo = 0, result = 0;
+   889:     int c1cs = 0;
+   890:     // 0x800DF824: lui         $at, 0x8013
+   891:     ctx->r1 = S32(0X8013 << 16);
+   892:     // 0x800DF828: jr          $ra
+   893:     // 0x800DF82C: sw          $a0, -0x3688($at)
+   894:     MEM_W(-0X3688, ctx->r1) = ctx->r4;
+   895:     return;
+   896:     // 0x800DF82C: sw          $a0, -0x3688($at)
+   897:     MEM_W(-0X3688, ctx->r1) = ctx->r4;

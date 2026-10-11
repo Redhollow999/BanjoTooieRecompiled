@@ -1,0 +1,3328 @@
+﻿============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20565
+    ctx->r31 = MEM_W(ctx->r29, 0X14);
+    // 0x800DC56C: b           L_800DC574
+    // 0x800DC570: addiu       $v0, $zero, 0x1
+    ctx->r2 = ADD32(0, 0X1);
+        goto L_800DC574;
+    // 0x800DC570: addiu       $v0, $zero, 0x1
+    ctx->r2 = ADD32(0, 0X1);
+L_800DC574:
+    // 0x800DC574: jr          $ra
+    // 0x800DC578: addiu       $sp, $sp, 0x18
+    ctx->r29 = ADD32(ctx->r29, 0X18);
+    return;
+    // 0x800DC578: addiu       $sp, $sp, 0x18
+    ctx->r29 = ADD32(ctx->r29, 0X18);
+;}
+RECOMP_FUNC void func_800DC580(uint8_t* rdram, recomp_context* ctx) {
+    uint64_t hi = 0, lo = 0, result = 0;
+    int c1cs = 0;
+    // 0x800DC580: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DC584: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DC588: lwc1        $f6, 0x0($v0)
+    ctx->f6.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC58C: lwc1        $f4, 0x0($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X0);
+    // 0x800DC590: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC594: swc1        $f8, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f8.u32l;
+    // 0x800DC598: lwc1        $f16, 0x0($v0)
+    ctx->f16.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC59C: lwc1        $f10, 0x4($a1)
+    ctx->f10.u32l = MEM_W(ctx->r5, 0X4);
+    // 0x800DC5A0: mul.s       $f18, $f10, $f16
+    CHECK_FR(ctx, 18);
+    CHECK_FR(ctx, 10);
+    CHECK_FR(ctx, 16);
+    NAN_CHECK(ctx->f10.fl); NAN_CHECK(ctx->f16.fl); 
+    ctx->f18.fl = MUL_S(ctx->f10.fl, ctx->f16.fl);
+    // 0x800DC5A4: swc1        $f18, 0x4($a0)
+    MEM_W(0X4, ctx->r4) = ctx->f18.u32l;
+    // 0x800DC5A8: lwc1        $f6, 0x0($v0)
+    ctx->f6.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC5AC: lwc1        $f4, 0x8($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X8);
+    // 0x800DC5B0: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC5B4: jr          $ra
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+    return;
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20566
+    // 0x800DC56C: b           L_800DC574
+    // 0x800DC570: addiu       $v0, $zero, 0x1
+    ctx->r2 = ADD32(0, 0X1);
+        goto L_800DC574;
+    // 0x800DC570: addiu       $v0, $zero, 0x1
+    ctx->r2 = ADD32(0, 0X1);
+L_800DC574:
+    // 0x800DC574: jr          $ra
+    // 0x800DC578: addiu       $sp, $sp, 0x18
+    ctx->r29 = ADD32(ctx->r29, 0X18);
+    return;
+    // 0x800DC578: addiu       $sp, $sp, 0x18
+    ctx->r29 = ADD32(ctx->r29, 0X18);
+;}
+RECOMP_FUNC void func_800DC580(uint8_t* rdram, recomp_context* ctx) {
+    uint64_t hi = 0, lo = 0, result = 0;
+    int c1cs = 0;
+    // 0x800DC580: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DC584: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DC588: lwc1        $f6, 0x0($v0)
+    ctx->f6.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC58C: lwc1        $f4, 0x0($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X0);
+    // 0x800DC590: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC594: swc1        $f8, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f8.u32l;
+    // 0x800DC598: lwc1        $f16, 0x0($v0)
+    ctx->f16.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC59C: lwc1        $f10, 0x4($a1)
+    ctx->f10.u32l = MEM_W(ctx->r5, 0X4);
+    // 0x800DC5A0: mul.s       $f18, $f10, $f16
+    CHECK_FR(ctx, 18);
+    CHECK_FR(ctx, 10);
+    CHECK_FR(ctx, 16);
+    NAN_CHECK(ctx->f10.fl); NAN_CHECK(ctx->f16.fl); 
+    ctx->f18.fl = MUL_S(ctx->f10.fl, ctx->f16.fl);
+    // 0x800DC5A4: swc1        $f18, 0x4($a0)
+    MEM_W(0X4, ctx->r4) = ctx->f18.u32l;
+    // 0x800DC5A8: lwc1        $f6, 0x0($v0)
+    ctx->f6.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC5AC: lwc1        $f4, 0x8($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X8);
+    // 0x800DC5B0: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC5B4: jr          $ra
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+    return;
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20613
+    // 0x800DC5AC: lwc1        $f4, 0x8($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X8);
+    // 0x800DC5B0: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC5B4: jr          $ra
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+    return;
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+;}
+RECOMP_FUNC void func_800DC5BC(uint8_t* rdram, recomp_context* ctx) {
+    uint64_t hi = 0, lo = 0, result = 0;
+    int c1cs = 0;
+    // 0x800DC5BC: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DC5C0: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DC5C4: lwc1        $f6, 0x0($v0)
+    ctx->f6.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC5C8: lwc1        $f4, 0x0($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X0);
+    // 0x800DC5CC: lw          $t6, 0x4($v0)
+    ctx->r14 = MEM_W(ctx->r2, 0X4);
+    // 0x800DC5D0: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC5D4: lwc1        $f10, 0x0($t6)
+    ctx->f10.u32l = MEM_W(ctx->r14, 0X0);
+    // 0x800DC5D8: add.s       $f16, $f10, $f8
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 10);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f10.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f16.fl = ctx->f10.fl + ctx->f8.fl;
+    // 0x800DC5DC: swc1        $f16, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f16.u32l;
+    // 0x800DC5E0: lwc1        $f4, 0x0($v0)
+    ctx->f4.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC5E4: lwc1        $f18, 0x4($a1)
+    ctx->f18.u32l = MEM_W(ctx->r5, 0X4);
+    // 0x800DC5E8: lw          $t7, 0x4($v0)
+    ctx->r15 = MEM_W(ctx->r2, 0X4);
+    // 0x800DC5EC: mul.s       $f6, $f18, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 18);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f18.fl); NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = MUL_S(ctx->f18.fl, ctx->f4.fl);
+    // 0x800DC5F0: lwc1        $f10, 0x4($t7)
+    ctx->f10.u32l = MEM_W(ctx->r15, 0X4);
+    // 0x800DC5F4: add.s       $f8, $f10, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 10);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20614
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X8);
+    // 0x800DC5B0: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC5B4: jr          $ra
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+    return;
+    // 0x800DC5B8: swc1        $f8, 0x8($a0)
+    MEM_W(0X8, ctx->r4) = ctx->f8.u32l;
+;}
+RECOMP_FUNC void func_800DC5BC(uint8_t* rdram, recomp_context* ctx) {
+    uint64_t hi = 0, lo = 0, result = 0;
+    int c1cs = 0;
+    // 0x800DC5BC: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DC5C0: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DC5C4: lwc1        $f6, 0x0($v0)
+    ctx->f6.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC5C8: lwc1        $f4, 0x0($a1)
+    ctx->f4.u32l = MEM_W(ctx->r5, 0X0);
+    // 0x800DC5CC: lw          $t6, 0x4($v0)
+    ctx->r14 = MEM_W(ctx->r2, 0X4);
+    // 0x800DC5D0: mul.s       $f8, $f4, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 6);
+    NAN_CHECK(ctx->f4.fl); NAN_CHECK(ctx->f6.fl); 
+    ctx->f8.fl = MUL_S(ctx->f4.fl, ctx->f6.fl);
+    // 0x800DC5D4: lwc1        $f10, 0x0($t6)
+    ctx->f10.u32l = MEM_W(ctx->r14, 0X0);
+    // 0x800DC5D8: add.s       $f16, $f10, $f8
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 10);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f10.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f16.fl = ctx->f10.fl + ctx->f8.fl;
+    // 0x800DC5DC: swc1        $f16, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f16.u32l;
+    // 0x800DC5E0: lwc1        $f4, 0x0($v0)
+    ctx->f4.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DC5E4: lwc1        $f18, 0x4($a1)
+    ctx->f18.u32l = MEM_W(ctx->r5, 0X4);
+    // 0x800DC5E8: lw          $t7, 0x4($v0)
+    ctx->r15 = MEM_W(ctx->r2, 0X4);
+    // 0x800DC5EC: mul.s       $f6, $f18, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 18);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f18.fl); NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = MUL_S(ctx->f18.fl, ctx->f4.fl);
+    // 0x800DC5F0: lwc1        $f10, 0x4($t7)
+    ctx->f10.u32l = MEM_W(ctx->r15, 0X4);
+    // 0x800DC5F4: add.s       $f8, $f10, $f6
+    CHECK_FR(ctx, 8);
+    CHECK_FR(ctx, 10);
+    CHECK_FR(ctx, 6);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20789
+    // 0x800DC684: bne         $t7, $zero, L_800DC694
+    if (ctx->r15 != 0) {
+        // 0x800DC688: nop
+    
+            goto L_800DC694;
+    }
+    // 0x800DC688: nop
+
+    // 0x800DC68C: jal         0x80018F50
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC694:
+    // 0x800DC694: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC698: jal         0x80019148
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC6A0: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC6A4: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC6A8: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC6AC: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC6B0: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC6B4: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC6B8: jal         0x80019C84
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC6C0: jal         0x80018C28
+    // 0x800DC6C4: lw          $a0, 0x4($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20790
+    if (ctx->r15 != 0) {
+        // 0x800DC688: nop
+    
+            goto L_800DC694;
+    }
+    // 0x800DC688: nop
+
+    // 0x800DC68C: jal         0x80018F50
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC694:
+    // 0x800DC694: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC698: jal         0x80019148
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC6A0: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC6A4: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC6A8: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC6AC: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC6B0: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC6B4: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC6B8: jal         0x80019C84
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC6C0: jal         0x80018C28
+    // 0x800DC6C4: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20793
+            goto L_800DC694;
+    }
+    // 0x800DC688: nop
+
+    // 0x800DC68C: jal         0x80018F50
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC694:
+    // 0x800DC694: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC698: jal         0x80019148
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC6A0: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC6A4: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC6A8: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC6AC: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC6B0: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC6B4: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC6B8: jal         0x80019C84
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC6C0: jal         0x80018C28
+    // 0x800DC6C4: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_6;
+    // 0x800DC6C4: lw          $a0, 0x4($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20794
+    }
+    // 0x800DC688: nop
+
+    // 0x800DC68C: jal         0x80018F50
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC690: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC694:
+    // 0x800DC694: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC698: jal         0x80019148
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC69C: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC6A0: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC6A4: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC6A8: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC6AC: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC6B0: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC6B4: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC6B8: jal         0x80019C84
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC6BC: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC6C0: jal         0x80018C28
+    // 0x800DC6C4: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_6;
+    // 0x800DC6C4: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20987
+    // 0x800DC790: bne         $t7, $zero, L_800DC7A0
+    if (ctx->r15 != 0) {
+        // 0x800DC794: nop
+    
+            goto L_800DC7A0;
+    }
+    // 0x800DC794: nop
+
+    // 0x800DC798: jal         0x80018F50
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC7A0:
+    // 0x800DC7A0: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC7A4: jal         0x80019148
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC7AC: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC7B0: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC7B4: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC7B8: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC7BC: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC7C0: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC7C4: jal         0x80019C84
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC7CC: jal         0x80018C28
+    // 0x800DC7D0: lw          $a0, 0x4($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20988
+    if (ctx->r15 != 0) {
+        // 0x800DC794: nop
+    
+            goto L_800DC7A0;
+    }
+    // 0x800DC794: nop
+
+    // 0x800DC798: jal         0x80018F50
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC7A0:
+    // 0x800DC7A0: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC7A4: jal         0x80019148
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC7AC: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC7B0: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC7B4: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC7B8: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC7BC: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC7C0: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC7C4: jal         0x80019C84
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC7CC: jal         0x80018C28
+    // 0x800DC7D0: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20991
+            goto L_800DC7A0;
+    }
+    // 0x800DC794: nop
+
+    // 0x800DC798: jal         0x80018F50
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC7A0:
+    // 0x800DC7A0: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC7A4: jal         0x80019148
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC7AC: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC7B0: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC7B4: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC7B8: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC7BC: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC7C0: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC7C4: jal         0x80019C84
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC7CC: jal         0x80018C28
+    // 0x800DC7D0: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_6;
+    // 0x800DC7D0: lw          $a0, 0x4($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 20992
+    }
+    // 0x800DC794: nop
+
+    // 0x800DC798: jal         0x80018F50
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC79C: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC7A0:
+    // 0x800DC7A0: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC7A4: jal         0x80019148
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC7A8: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC7AC: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC7B0: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC7B4: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC7B8: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC7BC: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC7C0: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC7C4: jal         0x80019C84
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC7C8: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC7CC: jal         0x80018C28
+    // 0x800DC7D0: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_6;
+    // 0x800DC7D0: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 21185
+    // 0x800DC89C: bne         $t7, $zero, L_800DC8AC
+    if (ctx->r15 != 0) {
+        // 0x800DC8A0: nop
+    
+            goto L_800DC8AC;
+    }
+    // 0x800DC8A0: nop
+
+    // 0x800DC8A4: jal         0x80018F50
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC8AC:
+    // 0x800DC8AC: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC8B0: jal         0x80019148
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC8B8: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC8BC: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC8C0: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC8C4: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC8C8: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC8CC: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC8D0: jal         0x80019C84
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC8D8: jal         0x80018C28
+    // 0x800DC8DC: lw          $a0, 0x4($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 21186
+    if (ctx->r15 != 0) {
+        // 0x800DC8A0: nop
+    
+            goto L_800DC8AC;
+    }
+    // 0x800DC8A0: nop
+
+    // 0x800DC8A4: jal         0x80018F50
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC8AC:
+    // 0x800DC8AC: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC8B0: jal         0x80019148
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC8B8: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC8BC: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC8C0: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC8C4: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC8C8: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC8CC: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC8D0: jal         0x80019C84
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC8D8: jal         0x80018C28
+    // 0x800DC8DC: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 21189
+            goto L_800DC8AC;
+    }
+    // 0x800DC8A0: nop
+
+    // 0x800DC8A4: jal         0x80018F50
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC8AC:
+    // 0x800DC8AC: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC8B0: jal         0x80019148
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC8B8: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC8BC: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC8C0: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC8C4: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC8C8: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC8CC: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC8D0: jal         0x80019C84
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC8D8: jal         0x80018C28
+    // 0x800DC8DC: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_6;
+    // 0x800DC8DC: lw          $a0, 0x4($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 21190
+    }
+    // 0x800DC8A0: nop
+
+    // 0x800DC8A4: jal         0x80018F50
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    func_80018F50(rdram, ctx);
+        goto after_3;
+    // 0x800DC8A8: lwc1        $f12, -0x3158($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X3158);
+    after_3:
+L_800DC8AC:
+    // 0x800DC8AC: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DC8B0: jal         0x80019148
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    func_80019148(rdram, ctx);
+        goto after_4;
+    // 0x800DC8B4: lwc1        $f12, -0x36B8($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X36B8);
+    after_4:
+    // 0x800DC8B8: lwc1        $f4, 0x14($s1)
+    ctx->f4.u32l = MEM_W(ctx->r17, 0X14);
+    // 0x800DC8BC: lwc1        $f12, 0xC($s1)
+    ctx->f12.u32l = MEM_W(ctx->r17, 0XC);
+    // 0x800DC8C0: lwc1        $f14, 0x10($s1)
+    ctx->f14.u32l = MEM_W(ctx->r17, 0X10);
+    // 0x800DC8C4: neg.s       $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f4.fl); 
+    ctx->f6.fl = -ctx->f4.fl;
+    // 0x800DC8C8: neg.s       $f12, $f12
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    NAN_CHECK(ctx->f12.fl); 
+    ctx->f12.fl = -ctx->f12.fl;
+    // 0x800DC8CC: mfc1        $a2, $f6
+    ctx->r6 = (int32_t)ctx->f6.u32l;
+    // 0x800DC8D0: jal         0x80019C84
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    func_80019C84(rdram, ctx);
+        goto after_5;
+    // 0x800DC8D4: neg.s       $f14, $f14
+    CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 14);
+    NAN_CHECK(ctx->f14.fl); 
+    ctx->f14.fl = -ctx->f14.fl;
+    after_5:
+    // 0x800DC8D8: jal         0x80018C28
+    // 0x800DC8DC: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_6;
+    // 0x800DC8DC: lw          $a0, 0x4($s0)
+    ctx->r4 = MEM_W(ctx->r16, 0X4);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 22815
+    // 0x800DD098: sw          $s3, 0x24($sp)
+    MEM_W(0X24, ctx->r29) = ctx->r19;
+    // 0x800DD09C: sw          $s2, 0x20($sp)
+    MEM_W(0X20, ctx->r29) = ctx->r18;
+    // 0x800DD0A0: sw          $s1, 0x1C($sp)
+    MEM_W(0X1C, ctx->r29) = ctx->r17;
+    // 0x800DD0A4: sw          $s0, 0x18($sp)
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DD0A8: lw          $s0, 0x0($a0)
+    ctx->r16 = MEM_W(ctx->r4, 0X0);
+    // 0x800DD0AC: lui         $s7, 0xDE00
+    ctx->r23 = S32(0XDE00 << 16);
+    // 0x800DD0B0: lui         $fp, 0x8013
+    ctx->r30 = S32(0X8013 << 16);
+    // 0x800DD0B4: or          $s1, $s0, $zero
+    ctx->r17 = ctx->r16 | 0;
+    // 0x800DD0B8: sw          $s7, 0x0($s1)
+    MEM_W(0X0, ctx->r17) = ctx->r23;
+    // 0x800DD0BC: lh          $t6, 0x8($a1)
+    ctx->r14 = MEM_H(ctx->r5, 0X8);
+    // 0x800DD0C0: addiu       $fp, $fp, -0x36B8
+    ctx->r30 = ADD32(ctx->r30, -0X36B8);
+    // 0x800DD0C4: lw          $t8, 0x18($fp)
+    ctx->r24 = MEM_W(ctx->r30, 0X18);
+    // 0x800DD0C8: or          $s4, $a0, $zero
+    ctx->r20 = ctx->r4 | 0;
+    // 0x800DD0CC: sll         $t7, $t6, 3
+    ctx->r15 = S32(ctx->r14 << 3);
+    // 0x800DD0D0: addu        $a0, $t7, $t8
+    ctx->r4 = ADD32(ctx->r15, ctx->r24);
+    // 0x800DD0D4: or          $s6, $a1, $zero
+    ctx->r22 = ctx->r5 | 0;
+    // 0x800DD0D8: or          $s3, $a1, $zero
+    ctx->r19 = ctx->r5 | 0;
+    // 0x800DD0DC: addiu       $a0, $a0, 0x8
+    ctx->r4 = ADD32(ctx->r4, 0X8);
+    // 0x800DD0E0: jal         0x8002E330
+    // 0x800DD0E4: addiu       $s0, $s0, 0x8
+    ctx->r16 = ADD32(ctx->r16, 0X8);
+    osVirtualToPhysical_recomp(rdram, ctx);
+        goto after_0;
+    // 0x800DD0E4: addiu       $s0, $s0, 0x8
+    ctx->r16 = ADD32(ctx->r16, 0X8);
+    after_0:
+    // 0x800DD0E8: sw          $v0, 0x4($s1)
+    MEM_W(0X4, ctx->r17) = ctx->r2;
+    // 0x800DD0EC: jal         0x80018C28
+    // 0x800DD0F0: lw          $a0, 0x4($s4)
+    ctx->r4 = MEM_W(ctx->r20, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_1;
+    // 0x800DD0F0: lw          $a0, 0x4($s4)
+    ctx->r4 = MEM_W(ctx->r20, 0X4);
+    after_1:
+    // 0x800DD0F4: lh          $t9, 0xA($s6)
+    ctx->r25 = MEM_H(ctx->r22, 0XA);
+    // 0x800DD0F8: addiu       $s1, $s3, 0x2
+    ctx->r17 = ADD32(ctx->r19, 0X2);
+    // 0x800DD0FC: addiu       $s2, $s6, 0x2
+    ctx->r18 = ADD32(ctx->r22, 0X2);
+    // 0x800DD100: beq         $t9, $zero, L_800DD15C
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 22816
+    MEM_W(0X24, ctx->r29) = ctx->r19;
+    // 0x800DD09C: sw          $s2, 0x20($sp)
+    MEM_W(0X20, ctx->r29) = ctx->r18;
+    // 0x800DD0A0: sw          $s1, 0x1C($sp)
+    MEM_W(0X1C, ctx->r29) = ctx->r17;
+    // 0x800DD0A4: sw          $s0, 0x18($sp)
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DD0A8: lw          $s0, 0x0($a0)
+    ctx->r16 = MEM_W(ctx->r4, 0X0);
+    // 0x800DD0AC: lui         $s7, 0xDE00
+    ctx->r23 = S32(0XDE00 << 16);
+    // 0x800DD0B0: lui         $fp, 0x8013
+    ctx->r30 = S32(0X8013 << 16);
+    // 0x800DD0B4: or          $s1, $s0, $zero
+    ctx->r17 = ctx->r16 | 0;
+    // 0x800DD0B8: sw          $s7, 0x0($s1)
+    MEM_W(0X0, ctx->r17) = ctx->r23;
+    // 0x800DD0BC: lh          $t6, 0x8($a1)
+    ctx->r14 = MEM_H(ctx->r5, 0X8);
+    // 0x800DD0C0: addiu       $fp, $fp, -0x36B8
+    ctx->r30 = ADD32(ctx->r30, -0X36B8);
+    // 0x800DD0C4: lw          $t8, 0x18($fp)
+    ctx->r24 = MEM_W(ctx->r30, 0X18);
+    // 0x800DD0C8: or          $s4, $a0, $zero
+    ctx->r20 = ctx->r4 | 0;
+    // 0x800DD0CC: sll         $t7, $t6, 3
+    ctx->r15 = S32(ctx->r14 << 3);
+    // 0x800DD0D0: addu        $a0, $t7, $t8
+    ctx->r4 = ADD32(ctx->r15, ctx->r24);
+    // 0x800DD0D4: or          $s6, $a1, $zero
+    ctx->r22 = ctx->r5 | 0;
+    // 0x800DD0D8: or          $s3, $a1, $zero
+    ctx->r19 = ctx->r5 | 0;
+    // 0x800DD0DC: addiu       $a0, $a0, 0x8
+    ctx->r4 = ADD32(ctx->r4, 0X8);
+    // 0x800DD0E0: jal         0x8002E330
+    // 0x800DD0E4: addiu       $s0, $s0, 0x8
+    ctx->r16 = ADD32(ctx->r16, 0X8);
+    osVirtualToPhysical_recomp(rdram, ctx);
+        goto after_0;
+    // 0x800DD0E4: addiu       $s0, $s0, 0x8
+    ctx->r16 = ADD32(ctx->r16, 0X8);
+    after_0:
+    // 0x800DD0E8: sw          $v0, 0x4($s1)
+    MEM_W(0X4, ctx->r17) = ctx->r2;
+    // 0x800DD0EC: jal         0x80018C28
+    // 0x800DD0F0: lw          $a0, 0x4($s4)
+    ctx->r4 = MEM_W(ctx->r20, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_1;
+    // 0x800DD0F0: lw          $a0, 0x4($s4)
+    ctx->r4 = MEM_W(ctx->r20, 0X4);
+    after_1:
+    // 0x800DD0F4: lh          $t9, 0xA($s6)
+    ctx->r25 = MEM_H(ctx->r22, 0XA);
+    // 0x800DD0F8: addiu       $s1, $s3, 0x2
+    ctx->r17 = ADD32(ctx->r19, 0X2);
+    // 0x800DD0FC: addiu       $s2, $s6, 0x2
+    ctx->r18 = ADD32(ctx->r22, 0X2);
+    // 0x800DD100: beq         $t9, $zero, L_800DD15C
+    if (ctx->r25 == 0) {
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 23593
+    // 0x800DD4AC: lui         $t6, 0x8013
+    ctx->r14 = S32(0X8013 << 16);
+    // 0x800DD4B0: lw          $t6, -0x37BC($t6)
+    ctx->r14 = MEM_W(ctx->r14, -0X37BC);
+    // 0x800DD4B4: addiu       $sp, $sp, -0x28
+    ctx->r29 = ADD32(ctx->r29, -0X28);
+    // 0x800DD4B8: sw          $ra, 0x14($sp)
+    MEM_W(0X14, ctx->r29) = ctx->r31;
+    // 0x800DD4BC: sw          $a0, 0x28($sp)
+    MEM_W(0X28, ctx->r29) = ctx->r4;
+    // 0x800DD4C0: beq         $t6, $zero, L_800DD4F4
+    if (ctx->r14 == 0) {
+        // 0x800DD4C4: sw          $a1, 0x2C($sp)
+        MEM_W(0X2C, ctx->r29) = ctx->r5;
+            goto L_800DD4F4;
+    }
+    // 0x800DD4C4: sw          $a1, 0x2C($sp)
+    MEM_W(0X2C, ctx->r29) = ctx->r5;
+    // 0x800DD4C8: lui         $a2, 0x8013
+    ctx->r6 = S32(0X8013 << 16);
+    // 0x800DD4CC: lw          $a2, -0x36B8($a2)
+    ctx->r6 = MEM_W(ctx->r6, -0X36B8);
+    // 0x800DD4D0: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    // 0x800DD4D4: jal         0x800EFA20
+    // 0x800DD4D8: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    func_800EFA20(rdram, ctx);
+        goto after_0;
+    // 0x800DD4D8: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    after_0:
+    // 0x800DD4DC: lw          $t7, 0x2C($sp)
+    ctx->r15 = MEM_W(ctx->r29, 0X2C);
+    // 0x800DD4E0: lui         $a0, 0x8013
+    ctx->r4 = S32(0X8013 << 16);
+    // 0x800DD4E4: lw          $a0, -0x37BC($a0)
+    ctx->r4 = MEM_W(ctx->r4, -0X37BC);
+    // 0x800DD4E8: addiu       $a2, $sp, 0x18
+    ctx->r6 = ADD32(ctx->r29, 0X18);
+    // 0x800DD4EC: jal         0x800DC028
+    // 0x800DD4F0: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    func_800DC028(rdram, ctx);
+        goto after_1;
+    // 0x800DD4F0: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    after_1:
+L_800DD4F4:
+    // 0x800DD4F4: lw          $ra, 0x14($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X14);
+    // 0x800DD4F8: addiu       $sp, $sp, 0x28
+    ctx->r29 = ADD32(ctx->r29, 0X28);
+    // 0x800DD4FC: jr          $ra
+    // 0x800DD500: nop
+
+    return;
+    // 0x800DD500: nop
+
+;}
+RECOMP_FUNC void func_800DD504(uint8_t* rdram, recomp_context* ctx) {
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 23594
+    ctx->r14 = S32(0X8013 << 16);
+    // 0x800DD4B0: lw          $t6, -0x37BC($t6)
+    ctx->r14 = MEM_W(ctx->r14, -0X37BC);
+    // 0x800DD4B4: addiu       $sp, $sp, -0x28
+    ctx->r29 = ADD32(ctx->r29, -0X28);
+    // 0x800DD4B8: sw          $ra, 0x14($sp)
+    MEM_W(0X14, ctx->r29) = ctx->r31;
+    // 0x800DD4BC: sw          $a0, 0x28($sp)
+    MEM_W(0X28, ctx->r29) = ctx->r4;
+    // 0x800DD4C0: beq         $t6, $zero, L_800DD4F4
+    if (ctx->r14 == 0) {
+        // 0x800DD4C4: sw          $a1, 0x2C($sp)
+        MEM_W(0X2C, ctx->r29) = ctx->r5;
+            goto L_800DD4F4;
+    }
+    // 0x800DD4C4: sw          $a1, 0x2C($sp)
+    MEM_W(0X2C, ctx->r29) = ctx->r5;
+    // 0x800DD4C8: lui         $a2, 0x8013
+    ctx->r6 = S32(0X8013 << 16);
+    // 0x800DD4CC: lw          $a2, -0x36B8($a2)
+    ctx->r6 = MEM_W(ctx->r6, -0X36B8);
+    // 0x800DD4D0: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    // 0x800DD4D4: jal         0x800EFA20
+    // 0x800DD4D8: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    func_800EFA20(rdram, ctx);
+        goto after_0;
+    // 0x800DD4D8: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    after_0:
+    // 0x800DD4DC: lw          $t7, 0x2C($sp)
+    ctx->r15 = MEM_W(ctx->r29, 0X2C);
+    // 0x800DD4E0: lui         $a0, 0x8013
+    ctx->r4 = S32(0X8013 << 16);
+    // 0x800DD4E4: lw          $a0, -0x37BC($a0)
+    ctx->r4 = MEM_W(ctx->r4, -0X37BC);
+    // 0x800DD4E8: addiu       $a2, $sp, 0x18
+    ctx->r6 = ADD32(ctx->r29, 0X18);
+    // 0x800DD4EC: jal         0x800DC028
+    // 0x800DD4F0: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    func_800DC028(rdram, ctx);
+        goto after_1;
+    // 0x800DD4F0: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    after_1:
+L_800DD4F4:
+    // 0x800DD4F4: lw          $ra, 0x14($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X14);
+    // 0x800DD4F8: addiu       $sp, $sp, 0x28
+    ctx->r29 = ADD32(ctx->r29, 0X28);
+    // 0x800DD4FC: jr          $ra
+    // 0x800DD500: nop
+
+    return;
+    // 0x800DD500: nop
+
+;}
+RECOMP_FUNC void func_800DD504(uint8_t* rdram, recomp_context* ctx) {
+    uint64_t hi = 0, lo = 0, result = 0;
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 23656
+    // 0x800DD504: lui         $t6, 0x8013
+    ctx->r14 = S32(0X8013 << 16);
+    // 0x800DD508: lw          $t6, -0x37BC($t6)
+    ctx->r14 = MEM_W(ctx->r14, -0X37BC);
+    // 0x800DD50C: addiu       $sp, $sp, -0x28
+    ctx->r29 = ADD32(ctx->r29, -0X28);
+    // 0x800DD510: sw          $ra, 0x14($sp)
+    MEM_W(0X14, ctx->r29) = ctx->r31;
+    // 0x800DD514: sw          $a0, 0x28($sp)
+    MEM_W(0X28, ctx->r29) = ctx->r4;
+    // 0x800DD518: beq         $t6, $zero, L_800DD55C
+    if (ctx->r14 == 0) {
+        // 0x800DD51C: sw          $a1, 0x2C($sp)
+        MEM_W(0X2C, ctx->r29) = ctx->r5;
+            goto L_800DD55C;
+    }
+    // 0x800DD51C: sw          $a1, 0x2C($sp)
+    MEM_W(0X2C, ctx->r29) = ctx->r5;
+    // 0x800DD520: lui         $a2, 0x8013
+    ctx->r6 = S32(0X8013 << 16);
+    // 0x800DD524: lw          $a2, -0x36B8($a2)
+    ctx->r6 = MEM_W(ctx->r6, -0X36B8);
+    // 0x800DD528: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    // 0x800DD52C: jal         0x800EFA20
+    // 0x800DD530: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    func_800EFA20(rdram, ctx);
+        goto after_0;
+    // 0x800DD530: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    after_0:
+    // 0x800DD534: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DD538: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DD53C: jal         0x800EF04C
+    // 0x800DD540: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    func_800EF04C(rdram, ctx);
+        goto after_1;
+    // 0x800DD540: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    after_1:
+    // 0x800DD544: lw          $t7, 0x2C($sp)
+    ctx->r15 = MEM_W(ctx->r29, 0X2C);
+    // 0x800DD548: lui         $a0, 0x8013
+    ctx->r4 = S32(0X8013 << 16);
+    // 0x800DD54C: lw          $a0, -0x37BC($a0)
+    ctx->r4 = MEM_W(ctx->r4, -0X37BC);
+    // 0x800DD550: addiu       $a2, $sp, 0x18
+    ctx->r6 = ADD32(ctx->r29, 0X18);
+    // 0x800DD554: jal         0x800DC028
+    // 0x800DD558: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    func_800DC028(rdram, ctx);
+        goto after_2;
+    // 0x800DD558: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    after_2:
+L_800DD55C:
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 23657
+    ctx->r14 = S32(0X8013 << 16);
+    // 0x800DD508: lw          $t6, -0x37BC($t6)
+    ctx->r14 = MEM_W(ctx->r14, -0X37BC);
+    // 0x800DD50C: addiu       $sp, $sp, -0x28
+    ctx->r29 = ADD32(ctx->r29, -0X28);
+    // 0x800DD510: sw          $ra, 0x14($sp)
+    MEM_W(0X14, ctx->r29) = ctx->r31;
+    // 0x800DD514: sw          $a0, 0x28($sp)
+    MEM_W(0X28, ctx->r29) = ctx->r4;
+    // 0x800DD518: beq         $t6, $zero, L_800DD55C
+    if (ctx->r14 == 0) {
+        // 0x800DD51C: sw          $a1, 0x2C($sp)
+        MEM_W(0X2C, ctx->r29) = ctx->r5;
+            goto L_800DD55C;
+    }
+    // 0x800DD51C: sw          $a1, 0x2C($sp)
+    MEM_W(0X2C, ctx->r29) = ctx->r5;
+    // 0x800DD520: lui         $a2, 0x8013
+    ctx->r6 = S32(0X8013 << 16);
+    // 0x800DD524: lw          $a2, -0x36B8($a2)
+    ctx->r6 = MEM_W(ctx->r6, -0X36B8);
+    // 0x800DD528: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    // 0x800DD52C: jal         0x800EFA20
+    // 0x800DD530: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    func_800EFA20(rdram, ctx);
+        goto after_0;
+    // 0x800DD530: addiu       $a1, $a1, 0xC
+    ctx->r5 = ADD32(ctx->r5, 0XC);
+    after_0:
+    // 0x800DD534: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DD538: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DD53C: jal         0x800EF04C
+    // 0x800DD540: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    func_800EF04C(rdram, ctx);
+        goto after_1;
+    // 0x800DD540: addiu       $a0, $sp, 0x18
+    ctx->r4 = ADD32(ctx->r29, 0X18);
+    after_1:
+    // 0x800DD544: lw          $t7, 0x2C($sp)
+    ctx->r15 = MEM_W(ctx->r29, 0X2C);
+    // 0x800DD548: lui         $a0, 0x8013
+    ctx->r4 = S32(0X8013 << 16);
+    // 0x800DD54C: lw          $a0, -0x37BC($a0)
+    ctx->r4 = MEM_W(ctx->r4, -0X37BC);
+    // 0x800DD550: addiu       $a2, $sp, 0x18
+    ctx->r6 = ADD32(ctx->r29, 0X18);
+    // 0x800DD554: jal         0x800DC028
+    // 0x800DD558: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    func_800DC028(rdram, ctx);
+        goto after_2;
+    // 0x800DD558: lh          $a1, 0x8($t7)
+    ctx->r5 = MEM_H(ctx->r15, 0X8);
+    after_2:
+L_800DD55C:
+    // 0x800DD55C: lw          $ra, 0x14($sp)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 24831
+    // 0x800DDB60: sw          $s2, 0x20($sp)
+    MEM_W(0X20, ctx->r29) = ctx->r18;
+    // 0x800DDB64: sw          $s0, 0x18($sp)
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DDB68: or          $s5, $a1, $zero
+    ctx->r21 = ctx->r5 | 0;
+    // 0x800DDB6C: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DDB70: jal         0x80018C28
+    // 0x800DDB74: lw          $a0, 0x4($a0)
+    ctx->r4 = MEM_W(ctx->r4, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_0;
+    // 0x800DDB74: lw          $a0, 0x4($a0)
+    ctx->r4 = MEM_W(ctx->r4, 0X4);
+    after_0:
+    // 0x800DDB78: lui         $fp, 0xDA38
+    ctx->r30 = S32(0XDA38 << 16);
+    // 0x800DDB7C: lui         $s7, 0x8013
+    ctx->r23 = S32(0X8013 << 16);
+    // 0x800DDB80: addiu       $s7, $s7, -0x36B8
+    ctx->r23 = ADD32(ctx->r23, -0X36B8);
+    // 0x800DDB84: ori         $fp, $fp, 0x2
+    ctx->r30 = ctx->r30 | 0X2;
+    // 0x800DDB88: or          $s2, $s0, $zero
+    ctx->r18 = ctx->r16 | 0;
+    // 0x800DDB8C: or          $s3, $s5, $zero
+    ctx->r19 = ctx->r21 | 0;
+    // 0x800DDB90: lui         $s6, 0xDE00
+    ctx->r22 = S32(0XDE00 << 16);
+    // 0x800DDB94: lw          $s4, 0x0($s1)
+    ctx->r20 = MEM_W(ctx->r17, 0X0);
+L_800DDB98:
+    // 0x800DDB98: addiu       $t6, $s4, 0x8
+    ctx->r14 = ADD32(ctx->r20, 0X8);
+    // 0x800DDB9C: sw          $t6, 0x0($s1)
+    MEM_W(0X0, ctx->r17) = ctx->r14;
+    // 0x800DDBA0: sw          $s6, 0x0($s4)
+    MEM_W(0X0, ctx->r20) = ctx->r22;
+    // 0x800DDBA4: lh          $t7, 0x8($s3)
+    ctx->r15 = MEM_H(ctx->r19, 0X8);
+    // 0x800DDBA8: lw          $t9, 0x18($s7)
+    ctx->r25 = MEM_W(ctx->r23, 0X18);
+    // 0x800DDBAC: sll         $t8, $t7, 3
+    ctx->r24 = S32(ctx->r15 << 3);
+    // 0x800DDBB0: addu        $a0, $t8, $t9
+    ctx->r4 = ADD32(ctx->r24, ctx->r25);
+    // 0x800DDBB4: jal         0x8002E330
+    // 0x800DDBB8: addiu       $a0, $a0, 0x8
+    ctx->r4 = ADD32(ctx->r4, 0X8);
+    osVirtualToPhysical_recomp(rdram, ctx);
+        goto after_1;
+    // 0x800DDBB8: addiu       $a0, $a0, 0x8
+    ctx->r4 = ADD32(ctx->r4, 0X8);
+    after_1:
+    // 0x800DDBBC: sw          $v0, 0x4($s4)
+    MEM_W(0X4, ctx->r20) = ctx->r2;
+    // 0x800DDBC0: lw          $s0, 0x0($s1)
+    ctx->r16 = MEM_W(ctx->r17, 0X0);
+    // 0x800DDBC4: addiu       $s2, $s2, 0x2
+    ctx->r18 = ADD32(ctx->r18, 0X2);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 24832
+    MEM_W(0X20, ctx->r29) = ctx->r18;
+    // 0x800DDB64: sw          $s0, 0x18($sp)
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DDB68: or          $s5, $a1, $zero
+    ctx->r21 = ctx->r5 | 0;
+    // 0x800DDB6C: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DDB70: jal         0x80018C28
+    // 0x800DDB74: lw          $a0, 0x4($a0)
+    ctx->r4 = MEM_W(ctx->r4, 0X4);
+    func_80018C28(rdram, ctx);
+        goto after_0;
+    // 0x800DDB74: lw          $a0, 0x4($a0)
+    ctx->r4 = MEM_W(ctx->r4, 0X4);
+    after_0:
+    // 0x800DDB78: lui         $fp, 0xDA38
+    ctx->r30 = S32(0XDA38 << 16);
+    // 0x800DDB7C: lui         $s7, 0x8013
+    ctx->r23 = S32(0X8013 << 16);
+    // 0x800DDB80: addiu       $s7, $s7, -0x36B8
+    ctx->r23 = ADD32(ctx->r23, -0X36B8);
+    // 0x800DDB84: ori         $fp, $fp, 0x2
+    ctx->r30 = ctx->r30 | 0X2;
+    // 0x800DDB88: or          $s2, $s0, $zero
+    ctx->r18 = ctx->r16 | 0;
+    // 0x800DDB8C: or          $s3, $s5, $zero
+    ctx->r19 = ctx->r21 | 0;
+    // 0x800DDB90: lui         $s6, 0xDE00
+    ctx->r22 = S32(0XDE00 << 16);
+    // 0x800DDB94: lw          $s4, 0x0($s1)
+    ctx->r20 = MEM_W(ctx->r17, 0X0);
+L_800DDB98:
+    // 0x800DDB98: addiu       $t6, $s4, 0x8
+    ctx->r14 = ADD32(ctx->r20, 0X8);
+    // 0x800DDB9C: sw          $t6, 0x0($s1)
+    MEM_W(0X0, ctx->r17) = ctx->r14;
+    // 0x800DDBA0: sw          $s6, 0x0($s4)
+    MEM_W(0X0, ctx->r20) = ctx->r22;
+    // 0x800DDBA4: lh          $t7, 0x8($s3)
+    ctx->r15 = MEM_H(ctx->r19, 0X8);
+    // 0x800DDBA8: lw          $t9, 0x18($s7)
+    ctx->r25 = MEM_W(ctx->r23, 0X18);
+    // 0x800DDBAC: sll         $t8, $t7, 3
+    ctx->r24 = S32(ctx->r15 << 3);
+    // 0x800DDBB0: addu        $a0, $t8, $t9
+    ctx->r4 = ADD32(ctx->r24, ctx->r25);
+    // 0x800DDBB4: jal         0x8002E330
+    // 0x800DDBB8: addiu       $a0, $a0, 0x8
+    ctx->r4 = ADD32(ctx->r4, 0X8);
+    osVirtualToPhysical_recomp(rdram, ctx);
+        goto after_1;
+    // 0x800DDBB8: addiu       $a0, $a0, 0x8
+    ctx->r4 = ADD32(ctx->r4, 0X8);
+    after_1:
+    // 0x800DDBBC: sw          $v0, 0x4($s4)
+    MEM_W(0X4, ctx->r20) = ctx->r2;
+    // 0x800DDBC0: lw          $s0, 0x0($s1)
+    ctx->r16 = MEM_W(ctx->r17, 0X0);
+    // 0x800DDBC4: addiu       $s2, $s2, 0x2
+    ctx->r18 = ADD32(ctx->r18, 0X2);
+    // 0x800DDBC8: addiu       $s3, $s3, 0x2
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 24952
+    // 0x800DDC28: addiu       $sp, $sp, -0x48
+    ctx->r29 = ADD32(ctx->r29, -0X48);
+    // 0x800DDC2C: sw          $ra, 0x14($sp)
+    MEM_W(0X14, ctx->r29) = ctx->r31;
+    // 0x800DDC30: sw          $a0, 0x48($sp)
+    MEM_W(0X48, ctx->r29) = ctx->r4;
+    // 0x800DDC34: lh          $t6, 0x14($a1)
+    ctx->r14 = MEM_H(ctx->r5, 0X14);
+    // 0x800DDC38: or          $a2, $a1, $zero
+    ctx->r6 = ctx->r5 | 0;
+    // 0x800DDC3C: addiu       $a0, $sp, 0x3C
+    ctx->r4 = ADD32(ctx->r29, 0X3C);
+    // 0x800DDC40: beq         $t6, $zero, L_800DDD04
+    if (ctx->r14 == 0) {
+        // 0x800DDC44: lui         $at, 0x8013
+        ctx->r1 = S32(0X8013 << 16);
+            goto L_800DDD04;
+    }
+    // 0x800DDC44: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDC48: lwc1        $f0, -0x36B8($at)
+    ctx->f0.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDC4C: addiu       $v0, $sp, 0x30
+    ctx->r2 = ADD32(ctx->r29, 0X30);
+    // 0x800DDC50: or          $v1, $a2, $zero
+    ctx->r3 = ctx->r6 | 0;
+    // 0x800DDC54: addiu       $a1, $sp, 0x3C
+    ctx->r5 = ADD32(ctx->r29, 0X3C);
+    // 0x800DDC58: lh          $t7, 0x8($v1)
+    ctx->r15 = MEM_H(ctx->r3, 0X8);
+    // 0x800DDC5C: addiu       $v0, $v0, 0x4
+    ctx->r2 = ADD32(ctx->r2, 0X4);
+    // 0x800DDC60: mtc1        $t7, $f16
+    ctx->f16.u32l = ctx->r15;
+    // 0x800DDC64: nop
+
+    // 0x800DDC68: cvt.s.w     $f16, $f16
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 16);
+    ctx->f16.fl = CVT_S_W(ctx->f16.u32l);
+    // 0x800DDC6C: mul.s       $f18, $f16, $f0
+    CHECK_FR(ctx, 18);
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 0);
+    NAN_CHECK(ctx->f16.fl); NAN_CHECK(ctx->f0.fl); 
+    ctx->f18.fl = MUL_S(ctx->f16.fl, ctx->f0.fl);
+    // 0x800DDC70: beql        $v0, $a1, L_800DDCBC
+    if (ctx->r2 == ctx->r5) {
+        // 0x800DDC74: swc1        $f18, 0x0($a0)
+        MEM_W(0X0, ctx->r4) = ctx->f18.u32l;
+            goto L_800DDCBC;
+    }
+    goto skip_0;
+    // 0x800DDC74: swc1        $f18, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f18.u32l;
+    skip_0:
+    // 0x800DDC78: swc1        $f18, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f18.u32l;
+L_800DDC7C:
+    // 0x800DDC7C: lh          $t8, 0xE($v1)
+    ctx->r24 = MEM_H(ctx->r3, 0XE);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 24953
+    ctx->r29 = ADD32(ctx->r29, -0X48);
+    // 0x800DDC2C: sw          $ra, 0x14($sp)
+    MEM_W(0X14, ctx->r29) = ctx->r31;
+    // 0x800DDC30: sw          $a0, 0x48($sp)
+    MEM_W(0X48, ctx->r29) = ctx->r4;
+    // 0x800DDC34: lh          $t6, 0x14($a1)
+    ctx->r14 = MEM_H(ctx->r5, 0X14);
+    // 0x800DDC38: or          $a2, $a1, $zero
+    ctx->r6 = ctx->r5 | 0;
+    // 0x800DDC3C: addiu       $a0, $sp, 0x3C
+    ctx->r4 = ADD32(ctx->r29, 0X3C);
+    // 0x800DDC40: beq         $t6, $zero, L_800DDD04
+    if (ctx->r14 == 0) {
+        // 0x800DDC44: lui         $at, 0x8013
+        ctx->r1 = S32(0X8013 << 16);
+            goto L_800DDD04;
+    }
+    // 0x800DDC44: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDC48: lwc1        $f0, -0x36B8($at)
+    ctx->f0.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDC4C: addiu       $v0, $sp, 0x30
+    ctx->r2 = ADD32(ctx->r29, 0X30);
+    // 0x800DDC50: or          $v1, $a2, $zero
+    ctx->r3 = ctx->r6 | 0;
+    // 0x800DDC54: addiu       $a1, $sp, 0x3C
+    ctx->r5 = ADD32(ctx->r29, 0X3C);
+    // 0x800DDC58: lh          $t7, 0x8($v1)
+    ctx->r15 = MEM_H(ctx->r3, 0X8);
+    // 0x800DDC5C: addiu       $v0, $v0, 0x4
+    ctx->r2 = ADD32(ctx->r2, 0X4);
+    // 0x800DDC60: mtc1        $t7, $f16
+    ctx->f16.u32l = ctx->r15;
+    // 0x800DDC64: nop
+
+    // 0x800DDC68: cvt.s.w     $f16, $f16
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 16);
+    ctx->f16.fl = CVT_S_W(ctx->f16.u32l);
+    // 0x800DDC6C: mul.s       $f18, $f16, $f0
+    CHECK_FR(ctx, 18);
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 0);
+    NAN_CHECK(ctx->f16.fl); NAN_CHECK(ctx->f0.fl); 
+    ctx->f18.fl = MUL_S(ctx->f16.fl, ctx->f0.fl);
+    // 0x800DDC70: beql        $v0, $a1, L_800DDCBC
+    if (ctx->r2 == ctx->r5) {
+        // 0x800DDC74: swc1        $f18, 0x0($a0)
+        MEM_W(0X0, ctx->r4) = ctx->f18.u32l;
+            goto L_800DDCBC;
+    }
+    goto skip_0;
+    // 0x800DDC74: swc1        $f18, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f18.u32l;
+    skip_0:
+    // 0x800DDC78: swc1        $f18, 0x0($a0)
+    MEM_W(0X0, ctx->r4) = ctx->f18.u32l;
+L_800DDC7C:
+    // 0x800DDC7C: lh          $t8, 0xE($v1)
+    ctx->r24 = MEM_H(ctx->r3, 0XE);
+    // 0x800DDC80: addiu       $v0, $v0, 0x4
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25155
+    // 0x800DDD38: jal         0x800EE88C
+    // 0x800DDD3C: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDD3C: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDD40: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    // 0x800DDD44: jal         0x800EE88C
+    // 0x800DDD48: addiu       $a1, $s0, 0xE
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    func_800EE88C(rdram, ctx);
+        goto after_1;
+    // 0x800DDD48: addiu       $a1, $s0, 0xE
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    after_1:
+    // 0x800DDD4C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD50: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD54: jal         0x800EF334
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF334(rdram, ctx);
+        goto after_2;
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_2:
+    // 0x800DDD5C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD60: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD64: jal         0x800EF334
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF334(rdram, ctx);
+        goto after_3;
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    after_3:
+    // 0x800DDD6C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD70: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD74: jal         0x800EF04C
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF04C(rdram, ctx);
+        goto after_4;
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_4:
+    // 0x800DDD7C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD80: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD84: jal         0x800EF04C
+    // 0x800DDD88: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25156
+    // 0x800DDD3C: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDD3C: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDD40: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    // 0x800DDD44: jal         0x800EE88C
+    // 0x800DDD48: addiu       $a1, $s0, 0xE
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    func_800EE88C(rdram, ctx);
+        goto after_1;
+    // 0x800DDD48: addiu       $a1, $s0, 0xE
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    after_1:
+    // 0x800DDD4C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD50: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD54: jal         0x800EF334
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF334(rdram, ctx);
+        goto after_2;
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_2:
+    // 0x800DDD5C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD60: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD64: jal         0x800EF334
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF334(rdram, ctx);
+        goto after_3;
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    after_3:
+    // 0x800DDD6C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD70: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD74: jal         0x800EF04C
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF04C(rdram, ctx);
+        goto after_4;
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_4:
+    // 0x800DDD7C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD80: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD84: jal         0x800EF04C
+    // 0x800DDD88: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF04C(rdram, ctx);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25167
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    func_800EE88C(rdram, ctx);
+        goto after_1;
+    // 0x800DDD48: addiu       $a1, $s0, 0xE
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    after_1:
+    // 0x800DDD4C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD50: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD54: jal         0x800EF334
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF334(rdram, ctx);
+        goto after_2;
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_2:
+    // 0x800DDD5C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD60: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD64: jal         0x800EF334
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF334(rdram, ctx);
+        goto after_3;
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    after_3:
+    // 0x800DDD6C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD70: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD74: jal         0x800EF04C
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF04C(rdram, ctx);
+        goto after_4;
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_4:
+    // 0x800DDD7C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD80: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD84: jal         0x800EF04C
+    // 0x800DDD88: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF04C(rdram, ctx);
+        goto after_5;
+    // 0x800DDD88: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    after_5:
+    // 0x800DDD8C: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    // 0x800DDD90: jal         0x800E3D0C
+    // 0x800DDD94: addiu       $a1, $sp, 0x28
+    ctx->r5 = ADD32(ctx->r29, 0X28);
+    func_800E3D0C(rdram, ctx);
+        goto after_6;
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25168
+    func_800EE88C(rdram, ctx);
+        goto after_1;
+    // 0x800DDD48: addiu       $a1, $s0, 0xE
+    ctx->r5 = ADD32(ctx->r16, 0XE);
+    after_1:
+    // 0x800DDD4C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD50: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD54: jal         0x800EF334
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF334(rdram, ctx);
+        goto after_2;
+    // 0x800DDD58: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_2:
+    // 0x800DDD5C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD60: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDD64: jal         0x800EF334
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF334(rdram, ctx);
+        goto after_3;
+    // 0x800DDD68: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    after_3:
+    // 0x800DDD6C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD70: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD74: jal         0x800EF04C
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    func_800EF04C(rdram, ctx);
+        goto after_4;
+    // 0x800DDD78: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    after_4:
+    // 0x800DDD7C: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDD80: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDD84: jal         0x800EF04C
+    // 0x800DDD88: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    func_800EF04C(rdram, ctx);
+        goto after_5;
+    // 0x800DDD88: addiu       $a0, $sp, 0x28
+    ctx->r4 = ADD32(ctx->r29, 0X28);
+    after_5:
+    // 0x800DDD8C: addiu       $a0, $sp, 0x34
+    ctx->r4 = ADD32(ctx->r29, 0X34);
+    // 0x800DDD90: jal         0x800E3D0C
+    // 0x800DDD94: addiu       $a1, $sp, 0x28
+    ctx->r5 = ADD32(ctx->r29, 0X28);
+    func_800E3D0C(rdram, ctx);
+        goto after_6;
+    // 0x800DDD94: addiu       $a1, $sp, 0x28
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25288
+        // 0x800DDDE8: addiu       $s1, $sp, 0x34
+        ctx->r17 = ADD32(ctx->r29, 0X34);
+            goto L_800DDE60;
+    }
+    // 0x800DDDE8: addiu       $s1, $sp, 0x34
+    ctx->r17 = ADD32(ctx->r29, 0X34);
+    // 0x800DDDEC: addiu       $s1, $sp, 0x34
+    ctx->r17 = ADD32(ctx->r29, 0X34);
+    // 0x800DDDF0: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDDF4: jal         0x800EE88C
+    // 0x800DDDF8: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDDF8: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDDFC: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDE00: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDE04: jal         0x800EF334
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    after_1:
+    // 0x800DDE0C: lh          $t7, 0xE($s0)
+    ctx->r15 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDE10: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DDE14: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DDE18: mtc1        $t7, $f4
+    ctx->f4.u32l = ctx->r15;
+    // 0x800DDE1C: lwc1        $f8, 0x0($v0)
+    ctx->f8.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DDE20: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDE24: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDE28: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDE2C: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDE30: jal         0x800E3E8C
+    // 0x800DDE34: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDE34: nop
+
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25289
+        ctx->r17 = ADD32(ctx->r29, 0X34);
+            goto L_800DDE60;
+    }
+    // 0x800DDDE8: addiu       $s1, $sp, 0x34
+    ctx->r17 = ADD32(ctx->r29, 0X34);
+    // 0x800DDDEC: addiu       $s1, $sp, 0x34
+    ctx->r17 = ADD32(ctx->r29, 0X34);
+    // 0x800DDDF0: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDDF4: jal         0x800EE88C
+    // 0x800DDDF8: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDDF8: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDDFC: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDE00: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDE04: jal         0x800EF334
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    after_1:
+    // 0x800DDE0C: lh          $t7, 0xE($s0)
+    ctx->r15 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDE10: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DDE14: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DDE18: mtc1        $t7, $f4
+    ctx->f4.u32l = ctx->r15;
+    // 0x800DDE1C: lwc1        $f8, 0x0($v0)
+    ctx->f8.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DDE20: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDE24: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDE28: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDE2C: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDE30: jal         0x800E3E8C
+    // 0x800DDE34: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDE34: nop
+
+    after_2:
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25302
+        goto after_0;
+    // 0x800DDDF8: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDDFC: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDE00: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDE04: jal         0x800EF334
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    after_1:
+    // 0x800DDE0C: lh          $t7, 0xE($s0)
+    ctx->r15 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDE10: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DDE14: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DDE18: mtc1        $t7, $f4
+    ctx->f4.u32l = ctx->r15;
+    // 0x800DDE1C: lwc1        $f8, 0x0($v0)
+    ctx->f8.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DDE20: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDE24: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDE28: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDE2C: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDE30: jal         0x800E3E8C
+    // 0x800DDE34: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDE34: nop
+
+    after_2:
+    // 0x800DDE38: beql        $v0, $zero, L_800DDF04
+    if (ctx->r2 == 0) {
+        // 0x800DDE3C: lw          $ra, 0x1C($sp)
+        ctx->r31 = MEM_W(ctx->r29, 0X1C);
+            goto L_800DDF04;
+    }
+    goto skip_0;
+    // 0x800DDE3C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+    skip_0:
+    // 0x800DDE40: lh          $v0, 0x10($s0)
+    ctx->r2 = MEM_H(ctx->r16, 0X10);
+    // 0x800DDE44: lw          $a0, 0x40($sp)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25303
+    // 0x800DDDF8: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDDFC: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDE00: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDE04: jal         0x800EF334
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDE08: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    after_1:
+    // 0x800DDE0C: lh          $t7, 0xE($s0)
+    ctx->r15 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDE10: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DDE14: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DDE18: mtc1        $t7, $f4
+    ctx->f4.u32l = ctx->r15;
+    // 0x800DDE1C: lwc1        $f8, 0x0($v0)
+    ctx->f8.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DDE20: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDE24: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDE28: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDE2C: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDE30: jal         0x800E3E8C
+    // 0x800DDE34: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDE34: nop
+
+    after_2:
+    // 0x800DDE38: beql        $v0, $zero, L_800DDF04
+    if (ctx->r2 == 0) {
+        // 0x800DDE3C: lw          $ra, 0x1C($sp)
+        ctx->r31 = MEM_W(ctx->r29, 0X1C);
+            goto L_800DDF04;
+    }
+    goto skip_0;
+    // 0x800DDE3C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+    skip_0:
+    // 0x800DDE40: lh          $v0, 0x10($s0)
+    ctx->r2 = MEM_H(ctx->r16, 0X10);
+    // 0x800DDE44: lw          $a0, 0x40($sp)
+    ctx->r4 = MEM_W(ctx->r29, 0X40);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25383
+    // 0x800DDE5C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+        goto L_800DDF04;
+    // 0x800DDE5C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+L_800DDE60:
+    // 0x800DDE60: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDE64: jal         0x800EE88C
+    // 0x800DDE68: addiu       $a1, $s0, 0x8
+    ctx->r5 = ADD32(ctx->r16, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_4;
+    // 0x800DDE68: addiu       $a1, $s0, 0x8
+    ctx->r5 = ADD32(ctx->r16, 0X8);
+    after_4:
+    // 0x800DDE6C: lh          $t8, 0xE($s0)
+    ctx->r24 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDE70: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DDE74: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DDE78: mtc1        $t8, $f10
+    ctx->f10.u32l = ctx->r24;
+    // 0x800DDE7C: lwc1        $f18, 0x0($v0)
+    ctx->f18.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DDE80: lw          $a0, 0x20($v0)
+    ctx->r4 = MEM_W(ctx->r2, 0X20);
+    // 0x800DDE84: cvt.s.w     $f16, $f10
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 10);
+    ctx->f16.fl = CVT_S_W(ctx->f10.u32l);
+    // 0x800DDE88: or          $a1, $s1, $zero
+    ctx->r5 = ctx->r17 | 0;
+    // 0x800DDE8C: mul.s       $f4, $f16, $f18
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 18);
+    NAN_CHECK(ctx->f16.fl); NAN_CHECK(ctx->f18.fl); 
+    ctx->f4.fl = MUL_S(ctx->f16.fl, ctx->f18.fl);
+    // 0x800DDE90: beq         $a0, $zero, L_800DDECC
+    if (ctx->r4 == 0) {
+        // 0x800DDE94: swc1        $f4, 0x30($sp)
+        MEM_W(0X30, ctx->r29) = ctx->f4.u32l;
+            goto L_800DDECC;
+    }
+    // 0x800DDE94: swc1        $f4, 0x30($sp)
+    MEM_W(0X30, ctx->r29) = ctx->f4.u32l;
+    // 0x800DDE98: jal         0x800ADE2C
+    // 0x800DDE9C: lh          $a1, 0x12($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0X12);
+    func_800ADE2C(rdram, ctx);
+        goto after_5;
+    // 0x800DDE9C: lh          $a1, 0x12($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0X12);
+    after_5:
+    // 0x800DDEA0: lui         $a0, 0x8013
+    ctx->r4 = S32(0X8013 << 16);
+    // 0x800DDEA4: addiu       $a0, $a0, -0x31A8
+    ctx->r4 = ADD32(ctx->r4, -0X31A8);
+    // 0x800DDEA8: jal         0x80019AA0
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25384
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+        goto L_800DDF04;
+    // 0x800DDE5C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+L_800DDE60:
+    // 0x800DDE60: or          $a0, $s1, $zero
+    ctx->r4 = ctx->r17 | 0;
+    // 0x800DDE64: jal         0x800EE88C
+    // 0x800DDE68: addiu       $a1, $s0, 0x8
+    ctx->r5 = ADD32(ctx->r16, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_4;
+    // 0x800DDE68: addiu       $a1, $s0, 0x8
+    ctx->r5 = ADD32(ctx->r16, 0X8);
+    after_4:
+    // 0x800DDE6C: lh          $t8, 0xE($s0)
+    ctx->r24 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDE70: lui         $v0, 0x8013
+    ctx->r2 = S32(0X8013 << 16);
+    // 0x800DDE74: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DDE78: mtc1        $t8, $f10
+    ctx->f10.u32l = ctx->r24;
+    // 0x800DDE7C: lwc1        $f18, 0x0($v0)
+    ctx->f18.u32l = MEM_W(ctx->r2, 0X0);
+    // 0x800DDE80: lw          $a0, 0x20($v0)
+    ctx->r4 = MEM_W(ctx->r2, 0X20);
+    // 0x800DDE84: cvt.s.w     $f16, $f10
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 10);
+    ctx->f16.fl = CVT_S_W(ctx->f10.u32l);
+    // 0x800DDE88: or          $a1, $s1, $zero
+    ctx->r5 = ctx->r17 | 0;
+    // 0x800DDE8C: mul.s       $f4, $f16, $f18
+    CHECK_FR(ctx, 4);
+    CHECK_FR(ctx, 16);
+    CHECK_FR(ctx, 18);
+    NAN_CHECK(ctx->f16.fl); NAN_CHECK(ctx->f18.fl); 
+    ctx->f4.fl = MUL_S(ctx->f16.fl, ctx->f18.fl);
+    // 0x800DDE90: beq         $a0, $zero, L_800DDECC
+    if (ctx->r4 == 0) {
+        // 0x800DDE94: swc1        $f4, 0x30($sp)
+        MEM_W(0X30, ctx->r29) = ctx->f4.u32l;
+            goto L_800DDECC;
+    }
+    // 0x800DDE94: swc1        $f4, 0x30($sp)
+    MEM_W(0X30, ctx->r29) = ctx->f4.u32l;
+    // 0x800DDE98: jal         0x800ADE2C
+    // 0x800DDE9C: lh          $a1, 0x12($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0X12);
+    func_800ADE2C(rdram, ctx);
+        goto after_5;
+    // 0x800DDE9C: lh          $a1, 0x12($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0X12);
+    after_5:
+    // 0x800DDEA0: lui         $a0, 0x8013
+    ctx->r4 = S32(0X8013 << 16);
+    // 0x800DDEA4: addiu       $a0, $a0, -0x31A8
+    ctx->r4 = ADD32(ctx->r4, -0X31A8);
+    // 0x800DDEA8: jal         0x80019AA0
+    // 0x800DDEAC: or          $a1, $v0, $zero
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25546
+    // 0x800DDF18: sw          $s0, 0x18($sp)
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DDF1C: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DDF20: sw          $ra, 0x1C($sp)
+    MEM_W(0X1C, ctx->r29) = ctx->r31;
+    // 0x800DDF24: sw          $a0, 0x38($sp)
+    MEM_W(0X38, ctx->r29) = ctx->r4;
+    // 0x800DDF28: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDF2C: jal         0x800EE88C
+    // 0x800DDF30: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDF30: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDF34: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDF38: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDF3C: jal         0x800EF334
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDF44: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDF48: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDF4C: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDF50: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDF54: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDF58: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDF5C: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDF60: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDF64: jal         0x800E3E8C
+    // 0x800DDF68: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDF68: nop
+
+    after_2:
+    // 0x800DDF6C: beql        $v0, $zero, L_800DDF90
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25547
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DDF1C: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DDF20: sw          $ra, 0x1C($sp)
+    MEM_W(0X1C, ctx->r29) = ctx->r31;
+    // 0x800DDF24: sw          $a0, 0x38($sp)
+    MEM_W(0X38, ctx->r29) = ctx->r4;
+    // 0x800DDF28: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDF2C: jal         0x800EE88C
+    // 0x800DDF30: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDF30: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDF34: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDF38: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDF3C: jal         0x800EF334
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDF44: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDF48: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDF4C: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDF50: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDF54: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDF58: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDF5C: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDF60: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDF64: jal         0x800E3E8C
+    // 0x800DDF68: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDF68: nop
+
+    after_2:
+    // 0x800DDF6C: beql        $v0, $zero, L_800DDF90
+    if (ctx->r2 == 0) {
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25560
+        goto after_0;
+    // 0x800DDF30: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDF34: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDF38: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDF3C: jal         0x800EF334
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDF44: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDF48: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDF4C: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDF50: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDF54: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDF58: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDF5C: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDF60: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDF64: jal         0x800E3E8C
+    // 0x800DDF68: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDF68: nop
+
+    after_2:
+    // 0x800DDF6C: beql        $v0, $zero, L_800DDF90
+    if (ctx->r2 == 0) {
+        // 0x800DDF70: lw          $ra, 0x1C($sp)
+        ctx->r31 = MEM_W(ctx->r29, 0X1C);
+            goto L_800DDF90;
+    }
+    goto skip_0;
+    // 0x800DDF70: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+    skip_0:
+    // 0x800DDF74: lh          $v0, 0x10($s0)
+    ctx->r2 = MEM_H(ctx->r16, 0X10);
+    // 0x800DDF78: lw          $a0, 0x38($sp)
+    ctx->r4 = MEM_W(ctx->r29, 0X38);
+    // 0x800DDF7C: beql        $v0, $zero, L_800DDF90
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25561
+    // 0x800DDF30: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDF34: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDF38: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDF3C: jal         0x800EF334
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDF40: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDF44: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDF48: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDF4C: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDF50: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDF54: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDF58: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDF5C: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDF60: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DDF64: jal         0x800E3E8C
+    // 0x800DDF68: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_2;
+    // 0x800DDF68: nop
+
+    after_2:
+    // 0x800DDF6C: beql        $v0, $zero, L_800DDF90
+    if (ctx->r2 == 0) {
+        // 0x800DDF70: lw          $ra, 0x1C($sp)
+        ctx->r31 = MEM_W(ctx->r29, 0X1C);
+            goto L_800DDF90;
+    }
+    goto skip_0;
+    // 0x800DDF70: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+    skip_0:
+    // 0x800DDF74: lh          $v0, 0x10($s0)
+    ctx->r2 = MEM_H(ctx->r16, 0X10);
+    // 0x800DDF78: lw          $a0, 0x38($sp)
+    ctx->r4 = MEM_W(ctx->r29, 0X38);
+    // 0x800DDF7C: beql        $v0, $zero, L_800DDF90
+    if (ctx->r2 == 0) {
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25657
+    // 0x800DDFA4: sw          $s0, 0x18($sp)
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DDFA8: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DDFAC: sw          $ra, 0x1C($sp)
+    MEM_W(0X1C, ctx->r29) = ctx->r31;
+    // 0x800DDFB0: sw          $a0, 0x38($sp)
+    MEM_W(0X38, ctx->r29) = ctx->r4;
+    // 0x800DDFB4: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDFB8: jal         0x800EE88C
+    // 0x800DDFBC: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDFBC: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDFC0: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDFC4: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDFC8: jal         0x800EF334
+    // 0x800DDFCC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDFCC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDFD0: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDFD4: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDFD8: jal         0x800EF04C
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF04C(rdram, ctx);
+        goto after_2;
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_2:
+    // 0x800DDFE0: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDFE4: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDFE8: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDFEC: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDFF0: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDFF4: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDFF8: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25658
+    MEM_W(0X18, ctx->r29) = ctx->r16;
+    // 0x800DDFA8: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DDFAC: sw          $ra, 0x1C($sp)
+    MEM_W(0X1C, ctx->r29) = ctx->r31;
+    // 0x800DDFB0: sw          $a0, 0x38($sp)
+    MEM_W(0X38, ctx->r29) = ctx->r4;
+    // 0x800DDFB4: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDFB8: jal         0x800EE88C
+    // 0x800DDFBC: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    func_800EE88C(rdram, ctx);
+        goto after_0;
+    // 0x800DDFBC: addiu       $a1, $a1, 0x8
+    ctx->r5 = ADD32(ctx->r5, 0X8);
+    after_0:
+    // 0x800DDFC0: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDFC4: lw          $a1, -0x36B8($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B8);
+    // 0x800DDFC8: jal         0x800EF334
+    // 0x800DDFCC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF334(rdram, ctx);
+        goto after_1;
+    // 0x800DDFCC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDFD0: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDFD4: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDFD8: jal         0x800EF04C
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF04C(rdram, ctx);
+        goto after_2;
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_2:
+    // 0x800DDFE0: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDFE4: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDFE8: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDFEC: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDFF0: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDFF4: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDFF8: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25683
+        goto after_1;
+    // 0x800DDFCC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDFD0: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDFD4: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDFD8: jal         0x800EF04C
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF04C(rdram, ctx);
+        goto after_2;
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_2:
+    // 0x800DDFE0: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDFE4: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDFE8: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDFEC: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDFF0: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDFF4: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDFF8: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDFFC: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DE000: jal         0x800E3E8C
+    // 0x800DE004: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_3;
+    // 0x800DE004: nop
+
+    after_3:
+    // 0x800DE008: beql        $v0, $zero, L_800DE02C
+    if (ctx->r2 == 0) {
+        // 0x800DE00C: lw          $ra, 0x1C($sp)
+        ctx->r31 = MEM_W(ctx->r29, 0X1C);
+            goto L_800DE02C;
+    }
+    goto skip_0;
+    // 0x800DE00C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+    skip_0:
+    // 0x800DE010: lh          $v0, 0x10($s0)
+    ctx->r2 = MEM_H(ctx->r16, 0X10);
+    // 0x800DE014: lw          $a0, 0x38($sp)
+    ctx->r4 = MEM_W(ctx->r29, 0X38);
+    // 0x800DE018: beql        $v0, $zero, L_800DE02C
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25684
+    // 0x800DDFCC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_1:
+    // 0x800DDFD0: lui         $a1, 0x8013
+    ctx->r5 = S32(0X8013 << 16);
+    // 0x800DDFD4: lw          $a1, -0x36B4($a1)
+    ctx->r5 = MEM_W(ctx->r5, -0X36B4);
+    // 0x800DDFD8: jal         0x800EF04C
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    func_800EF04C(rdram, ctx);
+        goto after_2;
+    // 0x800DDFDC: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    after_2:
+    // 0x800DDFE0: lh          $t6, 0xE($s0)
+    ctx->r14 = MEM_H(ctx->r16, 0XE);
+    // 0x800DDFE4: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DDFE8: lwc1        $f8, -0x36B8($at)
+    ctx->f8.u32l = MEM_W(ctx->r1, -0X36B8);
+    // 0x800DDFEC: mtc1        $t6, $f4
+    ctx->f4.u32l = ctx->r14;
+    // 0x800DDFF0: addiu       $a0, $sp, 0x2C
+    ctx->r4 = ADD32(ctx->r29, 0X2C);
+    // 0x800DDFF4: cvt.s.w     $f6, $f4
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 4);
+    ctx->f6.fl = CVT_S_W(ctx->f4.u32l);
+    // 0x800DDFF8: mul.s       $f0, $f6, $f8
+    CHECK_FR(ctx, 0);
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 8);
+    NAN_CHECK(ctx->f6.fl); NAN_CHECK(ctx->f8.fl); 
+    ctx->f0.fl = MUL_S(ctx->f6.fl, ctx->f8.fl);
+    // 0x800DDFFC: mfc1        $a1, $f0
+    ctx->r5 = (int32_t)ctx->f0.u32l;
+    // 0x800DE000: jal         0x800E3E8C
+    // 0x800DE004: nop
+
+    func_800E3E8C(rdram, ctx);
+        goto after_3;
+    // 0x800DE004: nop
+
+    after_3:
+    // 0x800DE008: beql        $v0, $zero, L_800DE02C
+    if (ctx->r2 == 0) {
+        // 0x800DE00C: lw          $ra, 0x1C($sp)
+        ctx->r31 = MEM_W(ctx->r29, 0X1C);
+            goto L_800DE02C;
+    }
+    goto skip_0;
+    // 0x800DE00C: lw          $ra, 0x1C($sp)
+    ctx->r31 = MEM_W(ctx->r29, 0X1C);
+    skip_0:
+    // 0x800DE010: lh          $v0, 0x10($s0)
+    ctx->r2 = MEM_H(ctx->r16, 0X10);
+    // 0x800DE014: lw          $a0, 0x38($sp)
+    ctx->r4 = MEM_W(ctx->r29, 0X38);
+    // 0x800DE018: beql        $v0, $zero, L_800DE02C
+    if (ctx->r2 == 0) {
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25946
+    // 0x800DE11C: sw          $t6, 0x48($sp)
+    MEM_W(0X48, ctx->r29) = ctx->r14;
+    // 0x800DE120: lh          $t8, 0x8($a1)
+    ctx->r24 = MEM_H(ctx->r5, 0X8);
+    // 0x800DE124: or          $s1, $zero, $zero
+    ctx->r17 = 0 | 0;
+    // 0x800DE128: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DE12C: blez        $t8, L_800DE198
+    if (SIGNED(ctx->r24) <= 0) {
+        // 0x800DE130: addiu       $s7, $sp, 0x48
+        ctx->r23 = ADD32(ctx->r29, 0X48);
+            goto L_800DE198;
+    }
+    // 0x800DE130: addiu       $s7, $sp, 0x48
+    ctx->r23 = ADD32(ctx->r29, 0X48);
+    // 0x800DE134: lui         $s6, 0x8013
+    ctx->r22 = S32(0X8013 << 16);
+    // 0x800DE138: lui         $s5, 0x8013
+    ctx->r21 = S32(0X8013 << 16);
+    // 0x800DE13C: addiu       $s5, $s5, -0x36B8
+    ctx->r21 = ADD32(ctx->r21, -0X36B8);
+    // 0x800DE140: addiu       $s6, $s6, -0x31A8
+    ctx->r22 = ADD32(ctx->r22, -0X31A8);
+    // 0x800DE144: lw          $a0, 0x20($s5)
+    ctx->r4 = MEM_W(ctx->r21, 0X20);
+L_800DE148:
+    // 0x800DE148: jal         0x800ADE2C
+    // 0x800DE14C: lh          $a1, 0xC($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0XC);
+    func_800ADE2C(rdram, ctx);
+        goto after_0;
+    // 0x800DE14C: lh          $a1, 0xC($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0XC);
+    after_0:
+    // 0x800DE150: or          $a0, $s6, $zero
+    ctx->r4 = ctx->r22 | 0;
+    // 0x800DE154: jal         0x80019AA0
+    // 0x800DE158: or          $a1, $v0, $zero
+    ctx->r5 = ctx->r2 | 0;
+    func_80019AA0(rdram, ctx);
+        goto after_1;
+    // 0x800DE158: or          $a1, $v0, $zero
+    ctx->r5 = ctx->r2 | 0;
+    after_1:
+    // 0x800DE15C: jal         0x80018BA8
+    // 0x800DE160: nop
+
+    func_80018BA8(rdram, ctx);
+        goto after_2;
+    // 0x800DE160: nop
+
+    after_2:
+    // 0x800DE164: lw          $t9, 0x0($s4)
+    ctx->r25 = MEM_W(ctx->r20, 0X0);
+    // 0x800DE168: or          $a0, $v0, $zero
+    ctx->r4 = ctx->r2 | 0;
+    // 0x800DE16C: or          $a1, $s7, $zero
+    ctx->r5 = ctx->r23 | 0;
+    // 0x800DE170: jalr        $t9
+    // 0x800DE174: lh          $a2, 0xE($s0)
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 25947
+    MEM_W(0X48, ctx->r29) = ctx->r14;
+    // 0x800DE120: lh          $t8, 0x8($a1)
+    ctx->r24 = MEM_H(ctx->r5, 0X8);
+    // 0x800DE124: or          $s1, $zero, $zero
+    ctx->r17 = 0 | 0;
+    // 0x800DE128: or          $s0, $a1, $zero
+    ctx->r16 = ctx->r5 | 0;
+    // 0x800DE12C: blez        $t8, L_800DE198
+    if (SIGNED(ctx->r24) <= 0) {
+        // 0x800DE130: addiu       $s7, $sp, 0x48
+        ctx->r23 = ADD32(ctx->r29, 0X48);
+            goto L_800DE198;
+    }
+    // 0x800DE130: addiu       $s7, $sp, 0x48
+    ctx->r23 = ADD32(ctx->r29, 0X48);
+    // 0x800DE134: lui         $s6, 0x8013
+    ctx->r22 = S32(0X8013 << 16);
+    // 0x800DE138: lui         $s5, 0x8013
+    ctx->r21 = S32(0X8013 << 16);
+    // 0x800DE13C: addiu       $s5, $s5, -0x36B8
+    ctx->r21 = ADD32(ctx->r21, -0X36B8);
+    // 0x800DE140: addiu       $s6, $s6, -0x31A8
+    ctx->r22 = ADD32(ctx->r22, -0X31A8);
+    // 0x800DE144: lw          $a0, 0x20($s5)
+    ctx->r4 = MEM_W(ctx->r21, 0X20);
+L_800DE148:
+    // 0x800DE148: jal         0x800ADE2C
+    // 0x800DE14C: lh          $a1, 0xC($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0XC);
+    func_800ADE2C(rdram, ctx);
+        goto after_0;
+    // 0x800DE14C: lh          $a1, 0xC($s0)
+    ctx->r5 = MEM_H(ctx->r16, 0XC);
+    after_0:
+    // 0x800DE150: or          $a0, $s6, $zero
+    ctx->r4 = ctx->r22 | 0;
+    // 0x800DE154: jal         0x80019AA0
+    // 0x800DE158: or          $a1, $v0, $zero
+    ctx->r5 = ctx->r2 | 0;
+    func_80019AA0(rdram, ctx);
+        goto after_1;
+    // 0x800DE158: or          $a1, $v0, $zero
+    ctx->r5 = ctx->r2 | 0;
+    after_1:
+    // 0x800DE15C: jal         0x80018BA8
+    // 0x800DE160: nop
+
+    func_80018BA8(rdram, ctx);
+        goto after_2;
+    // 0x800DE160: nop
+
+    after_2:
+    // 0x800DE164: lw          $t9, 0x0($s4)
+    ctx->r25 = MEM_W(ctx->r20, 0X0);
+    // 0x800DE168: or          $a0, $v0, $zero
+    ctx->r4 = ctx->r2 | 0;
+    // 0x800DE16C: or          $a1, $s7, $zero
+    ctx->r5 = ctx->r23 | 0;
+    // 0x800DE170: jalr        $t9
+    // 0x800DE174: lh          $a2, 0xE($s0)
+    ctx->r6 = MEM_H(ctx->r16, 0XE);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 26356
+    // 0x800DE350: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE354: sw          $zero, -0x37CC($at)
+    MEM_W(-0X37CC, ctx->r1) = 0;
+    // 0x800DE358: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE35C: sw          $zero, -0x37C8($at)
+    MEM_W(-0X37C8, ctx->r1) = 0;
+    // 0x800DE360: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE364: sw          $zero, -0x37C4($at)
+    MEM_W(-0X37C4, ctx->r1) = 0;
+    // 0x800DE368: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE36C: sw          $zero, -0x37BC($at)
+    MEM_W(-0X37BC, ctx->r1) = 0;
+    // 0x800DE370: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE374: sw          $zero, -0x37B8($at)
+    MEM_W(-0X37B8, ctx->r1) = 0;
+    // 0x800DE378: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DE37C: lui         $a2, 0x8013
+    ctx->r6 = S32(0X8013 << 16);
+    // 0x800DE380: addiu       $a2, $a2, -0x3658
+    ctx->r6 = ADD32(ctx->r6, -0X3658);
+    // 0x800DE384: sw          $zero, 0x18($v0)
+    MEM_W(0X18, ctx->r2) = 0;
+    // 0x800DE388: sw          $zero, 0x20($v0)
+    MEM_W(0X20, ctx->r2) = 0;
+    // 0x800DE38C: sw          $zero, 0x14($v0)
+    MEM_W(0X14, ctx->r2) = 0;
+    // 0x800DE390: sb          $zero, 0x24($v0)
+    MEM_B(0X24, ctx->r2) = 0;
+    // 0x800DE394: sw          $zero, 0x1C($v0)
+    MEM_W(0X1C, ctx->r2) = 0;
+    // 0x800DE398: sw          $zero, 0x28($v0)
+    MEM_W(0X28, ctx->r2) = 0;
+    // 0x800DE39C: sw          $zero, 0x30($v0)
+    MEM_W(0X30, ctx->r2) = 0;
+    // 0x800DE3A0: sw          $zero, 0x34($v0)
+    MEM_W(0X34, ctx->r2) = 0;
+    // 0x800DE3A4: sw          $zero, 0x2C($v0)
+    MEM_W(0X2C, ctx->r2) = 0;
+    // 0x800DE3A8: sw          $zero, 0x38($v0)
+    MEM_W(0X38, ctx->r2) = 0;
+    // 0x800DE3AC: sw          $zero, 0x0($a2)
+    MEM_W(0X0, ctx->r6) = 0;
+    // 0x800DE3B0: sw          $zero, 0x8($a2)
+    MEM_W(0X8, ctx->r6) = 0;
+    // 0x800DE3B4: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE3B8: sw          $zero, -0x3648($at)
+    MEM_W(-0X3648, ctx->r1) = 0;
+    // 0x800DE3BC: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE3C0: sw          $zero, -0x35E8($at)
+    MEM_W(-0X35E8, ctx->r1) = 0;
+    // 0x800DE3C4: lui         $v1, 0x8013
+    ctx->r3 = S32(0X8013 << 16);
+    // 0x800DE3C8: lui         $at, 0x8013
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 26357
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE354: sw          $zero, -0x37CC($at)
+    MEM_W(-0X37CC, ctx->r1) = 0;
+    // 0x800DE358: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE35C: sw          $zero, -0x37C8($at)
+    MEM_W(-0X37C8, ctx->r1) = 0;
+    // 0x800DE360: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE364: sw          $zero, -0x37C4($at)
+    MEM_W(-0X37C4, ctx->r1) = 0;
+    // 0x800DE368: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE36C: sw          $zero, -0x37BC($at)
+    MEM_W(-0X37BC, ctx->r1) = 0;
+    // 0x800DE370: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE374: sw          $zero, -0x37B8($at)
+    MEM_W(-0X37B8, ctx->r1) = 0;
+    // 0x800DE378: addiu       $v0, $v0, -0x36B8
+    ctx->r2 = ADD32(ctx->r2, -0X36B8);
+    // 0x800DE37C: lui         $a2, 0x8013
+    ctx->r6 = S32(0X8013 << 16);
+    // 0x800DE380: addiu       $a2, $a2, -0x3658
+    ctx->r6 = ADD32(ctx->r6, -0X3658);
+    // 0x800DE384: sw          $zero, 0x18($v0)
+    MEM_W(0X18, ctx->r2) = 0;
+    // 0x800DE388: sw          $zero, 0x20($v0)
+    MEM_W(0X20, ctx->r2) = 0;
+    // 0x800DE38C: sw          $zero, 0x14($v0)
+    MEM_W(0X14, ctx->r2) = 0;
+    // 0x800DE390: sb          $zero, 0x24($v0)
+    MEM_B(0X24, ctx->r2) = 0;
+    // 0x800DE394: sw          $zero, 0x1C($v0)
+    MEM_W(0X1C, ctx->r2) = 0;
+    // 0x800DE398: sw          $zero, 0x28($v0)
+    MEM_W(0X28, ctx->r2) = 0;
+    // 0x800DE39C: sw          $zero, 0x30($v0)
+    MEM_W(0X30, ctx->r2) = 0;
+    // 0x800DE3A0: sw          $zero, 0x34($v0)
+    MEM_W(0X34, ctx->r2) = 0;
+    // 0x800DE3A4: sw          $zero, 0x2C($v0)
+    MEM_W(0X2C, ctx->r2) = 0;
+    // 0x800DE3A8: sw          $zero, 0x38($v0)
+    MEM_W(0X38, ctx->r2) = 0;
+    // 0x800DE3AC: sw          $zero, 0x0($a2)
+    MEM_W(0X0, ctx->r6) = 0;
+    // 0x800DE3B0: sw          $zero, 0x8($a2)
+    MEM_W(0X8, ctx->r6) = 0;
+    // 0x800DE3B4: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE3B8: sw          $zero, -0x3648($at)
+    MEM_W(-0X3648, ctx->r1) = 0;
+    // 0x800DE3BC: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE3C0: sw          $zero, -0x35E8($at)
+    MEM_W(-0X35E8, ctx->r1) = 0;
+    // 0x800DE3C4: lui         $v1, 0x8013
+    ctx->r3 = S32(0X8013 << 16);
+    // 0x800DE3C8: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 26706
+    func_800DE318(rdram, ctx);
+        goto after_7;
+    // 0x800DE56C: nop
+
+    after_7:
+    // 0x800DE570: b           L_800DF310
+    // 0x800DE574: or          $v0, $zero, $zero
+    ctx->r2 = 0 | 0;
+        goto L_800DF310;
+    // 0x800DE574: or          $v0, $zero, $zero
+    ctx->r2 = 0 | 0;
+L_800DE578:
+    // 0x800DE578: beq         $a1, $zero, L_800DE5E8
+    if (ctx->r5 == 0) {
+        // 0x800DE57C: lui         $s0, 0x8013
+        ctx->r16 = S32(0X8013 << 16);
+            goto L_800DE5E8;
+    }
+    // 0x800DE57C: lui         $s0, 0x8013
+    ctx->r16 = S32(0X8013 << 16);
+    // 0x800DE580: addiu       $s0, $s0, -0x36B8
+    ctx->r16 = ADD32(ctx->r16, -0X36B8);
+    // 0x800DE584: lw          $v1, 0x1C($s0)
+    ctx->r3 = MEM_W(ctx->r16, 0X1C);
+    // 0x800DE588: lui         $at, 0x4F80
+    ctx->r1 = S32(0X4F80 << 16);
+    // 0x800DE58C: beql        $v1, $zero, L_800DE5A0
+    if (ctx->r3 == 0) {
+        // 0x800DE590: lw          $t6, 0x10($a1)
+        ctx->r14 = MEM_W(ctx->r5, 0X10);
+            goto L_800DE5A0;
+    }
+    goto skip_0;
+    // 0x800DE590: lw          $t6, 0x10($a1)
+    ctx->r14 = MEM_W(ctx->r5, 0X10);
+    skip_0:
+    // 0x800DE594: b           L_800DE5A4
+    // 0x800DE598: or          $v0, $v1, $zero
+    ctx->r2 = ctx->r3 | 0;
+        goto L_800DE5A4;
+    // 0x800DE598: or          $v0, $v1, $zero
+    ctx->r2 = ctx->r3 | 0;
+    // 0x800DE59C: lw          $t6, 0x10($a1)
+    ctx->r14 = MEM_W(ctx->r5, 0X10);
+L_800DE5A0:
+    // 0x800DE5A0: addu        $v0, $a1, $t6
+    ctx->r2 = ADD32(ctx->r5, ctx->r14);
+L_800DE5A4:
+    // 0x800DE5A4: lhu         $t7, 0x14($v0)
+    ctx->r15 = MEM_HU(ctx->r2, 0X14);
+    // 0x800DE5A8: mtc1        $t7, $f10
+    ctx->f10.u32l = ctx->r15;
+    // 0x800DE5AC: bgez        $t7, L_800DE5C0
+    if (SIGNED(ctx->r15) >= 0) {
+        // 0x800DE5B0: cvt.s.w     $f14, $f10
+        CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 10);
+    ctx->f14.fl = CVT_S_W(ctx->f10.u32l);
+            goto L_800DE5C0;
+    }
+    // 0x800DE5B0: cvt.s.w     $f14, $f10
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 26707
+        goto after_7;
+    // 0x800DE56C: nop
+
+    after_7:
+    // 0x800DE570: b           L_800DF310
+    // 0x800DE574: or          $v0, $zero, $zero
+    ctx->r2 = 0 | 0;
+        goto L_800DF310;
+    // 0x800DE574: or          $v0, $zero, $zero
+    ctx->r2 = 0 | 0;
+L_800DE578:
+    // 0x800DE578: beq         $a1, $zero, L_800DE5E8
+    if (ctx->r5 == 0) {
+        // 0x800DE57C: lui         $s0, 0x8013
+        ctx->r16 = S32(0X8013 << 16);
+            goto L_800DE5E8;
+    }
+    // 0x800DE57C: lui         $s0, 0x8013
+    ctx->r16 = S32(0X8013 << 16);
+    // 0x800DE580: addiu       $s0, $s0, -0x36B8
+    ctx->r16 = ADD32(ctx->r16, -0X36B8);
+    // 0x800DE584: lw          $v1, 0x1C($s0)
+    ctx->r3 = MEM_W(ctx->r16, 0X1C);
+    // 0x800DE588: lui         $at, 0x4F80
+    ctx->r1 = S32(0X4F80 << 16);
+    // 0x800DE58C: beql        $v1, $zero, L_800DE5A0
+    if (ctx->r3 == 0) {
+        // 0x800DE590: lw          $t6, 0x10($a1)
+        ctx->r14 = MEM_W(ctx->r5, 0X10);
+            goto L_800DE5A0;
+    }
+    goto skip_0;
+    // 0x800DE590: lw          $t6, 0x10($a1)
+    ctx->r14 = MEM_W(ctx->r5, 0X10);
+    skip_0:
+    // 0x800DE594: b           L_800DE5A4
+    // 0x800DE598: or          $v0, $v1, $zero
+    ctx->r2 = ctx->r3 | 0;
+        goto L_800DE5A4;
+    // 0x800DE598: or          $v0, $v1, $zero
+    ctx->r2 = ctx->r3 | 0;
+    // 0x800DE59C: lw          $t6, 0x10($a1)
+    ctx->r14 = MEM_W(ctx->r5, 0X10);
+L_800DE5A0:
+    // 0x800DE5A0: addu        $v0, $a1, $t6
+    ctx->r2 = ADD32(ctx->r5, ctx->r14);
+L_800DE5A4:
+    // 0x800DE5A4: lhu         $t7, 0x14($v0)
+    ctx->r15 = MEM_HU(ctx->r2, 0X14);
+    // 0x800DE5A8: mtc1        $t7, $f10
+    ctx->f10.u32l = ctx->r15;
+    // 0x800DE5AC: bgez        $t7, L_800DE5C0
+    if (SIGNED(ctx->r15) >= 0) {
+        // 0x800DE5B0: cvt.s.w     $f14, $f10
+        CHECK_FR(ctx, 14);
+    CHECK_FR(ctx, 10);
+    ctx->f14.fl = CVT_S_W(ctx->f10.u32l);
+            goto L_800DE5C0;
+    }
+    // 0x800DE5B0: cvt.s.w     $f14, $f10
+    CHECK_FR(ctx, 14);
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 26804
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f12.fl); NAN_CHECK(ctx->f4.fl); 
+    ctx->f12.fl = ctx->f12.fl + ctx->f4.fl;
+    // 0x800DE5E0: b           L_800DE604
+    // 0x800DE5E4: addiu       $a0, $sp, 0xEC
+    ctx->r4 = ADD32(ctx->r29, 0XEC);
+        goto L_800DE604;
+    // 0x800DE5E4: addiu       $a0, $sp, 0xEC
+    ctx->r4 = ADD32(ctx->r29, 0XEC);
+L_800DE5E8:
+    // 0x800DE5E8: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE5EC: lwc1        $f14, -0x35E0($at)
+    ctx->f14.u32l = MEM_W(ctx->r1, -0X35E0);
+    // 0x800DE5F0: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE5F4: lui         $s0, 0x8013
+    ctx->r16 = S32(0X8013 << 16);
+    // 0x800DE5F8: addiu       $s0, $s0, -0x36B8
+    ctx->r16 = ADD32(ctx->r16, -0X36B8);
+    // 0x800DE5FC: lwc1        $f12, -0x35E4($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X35E4);
+L_800DE600:
+    // 0x800DE600: addiu       $a0, $sp, 0xEC
+    ctx->r4 = ADD32(ctx->r29, 0XEC);
+L_800DE604:
+    // 0x800DE604: swc1        $f12, 0xD8($sp)
+    MEM_W(0XD8, ctx->r29) = ctx->f12.u32l;
+    // 0x800DE608: jal         0x800EEF94
+    // 0x800DE60C: swc1        $f14, 0xD4($sp)
+    MEM_W(0XD4, ctx->r29) = ctx->f14.u32l;
+    func_800EEF94(rdram, ctx);
+        goto after_8;
+    // 0x800DE60C: swc1        $f14, 0xD4($sp)
+    MEM_W(0XD4, ctx->r29) = ctx->f14.u32l;
+    after_8:
+    // 0x800DE610: lui         $at, 0x457A
+    ctx->r1 = S32(0X457A << 16);
+    // 0x800DE614: mtc1        $at, $f6
+    ctx->f6.u32l = ctx->r1;
+    // 0x800DE618: lwc1        $f12, 0xD8($sp)
+    ctx->f12.u32l = MEM_W(ctx->r29, 0XD8);
+    // 0x800DE61C: lwc1        $f14, 0xD4($sp)
+    ctx->f14.u32l = MEM_W(ctx->r29, 0XD4);
+    // 0x800DE620: c.le.s      $f6, $f0
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 0);
+    c1cs = ctx->f6.fl <= ctx->f0.fl;
+    // 0x800DE624: swc1        $f0, 0xDC($sp)
+    MEM_W(0XDC, ctx->r29) = ctx->f0.u32l;
+    // 0x800DE628: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE62C: bc1f        L_800DE68C
+    if (!c1cs) {
+        // 0x800DE630: nop
+    
+            goto L_800DE68C;
+    }
+    // 0x800DE630: nop
+============================================================
+FILE: C:\BanjoProject\BTRecomp\RecompiledFuncs\funcs_30.c
+LINE: 26805
+    CHECK_FR(ctx, 12);
+    CHECK_FR(ctx, 4);
+    NAN_CHECK(ctx->f12.fl); NAN_CHECK(ctx->f4.fl); 
+    ctx->f12.fl = ctx->f12.fl + ctx->f4.fl;
+    // 0x800DE5E0: b           L_800DE604
+    // 0x800DE5E4: addiu       $a0, $sp, 0xEC
+    ctx->r4 = ADD32(ctx->r29, 0XEC);
+        goto L_800DE604;
+    // 0x800DE5E4: addiu       $a0, $sp, 0xEC
+    ctx->r4 = ADD32(ctx->r29, 0XEC);
+L_800DE5E8:
+    // 0x800DE5E8: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE5EC: lwc1        $f14, -0x35E0($at)
+    ctx->f14.u32l = MEM_W(ctx->r1, -0X35E0);
+    // 0x800DE5F0: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE5F4: lui         $s0, 0x8013
+    ctx->r16 = S32(0X8013 << 16);
+    // 0x800DE5F8: addiu       $s0, $s0, -0x36B8
+    ctx->r16 = ADD32(ctx->r16, -0X36B8);
+    // 0x800DE5FC: lwc1        $f12, -0x35E4($at)
+    ctx->f12.u32l = MEM_W(ctx->r1, -0X35E4);
+L_800DE600:
+    // 0x800DE600: addiu       $a0, $sp, 0xEC
+    ctx->r4 = ADD32(ctx->r29, 0XEC);
+L_800DE604:
+    // 0x800DE604: swc1        $f12, 0xD8($sp)
+    MEM_W(0XD8, ctx->r29) = ctx->f12.u32l;
+    // 0x800DE608: jal         0x800EEF94
+    // 0x800DE60C: swc1        $f14, 0xD4($sp)
+    MEM_W(0XD4, ctx->r29) = ctx->f14.u32l;
+    func_800EEF94(rdram, ctx);
+        goto after_8;
+    // 0x800DE60C: swc1        $f14, 0xD4($sp)
+    MEM_W(0XD4, ctx->r29) = ctx->f14.u32l;
+    after_8:
+    // 0x800DE610: lui         $at, 0x457A
+    ctx->r1 = S32(0X457A << 16);
+    // 0x800DE614: mtc1        $at, $f6
+    ctx->f6.u32l = ctx->r1;
+    // 0x800DE618: lwc1        $f12, 0xD8($sp)
+    ctx->f12.u32l = MEM_W(ctx->r29, 0XD8);
+    // 0x800DE61C: lwc1        $f14, 0xD4($sp)
+    ctx->f14.u32l = MEM_W(ctx->r29, 0XD4);
+    // 0x800DE620: c.le.s      $f6, $f0
+    CHECK_FR(ctx, 6);
+    CHECK_FR(ctx, 0);
+    c1cs = ctx->f6.fl <= ctx->f0.fl;
+    // 0x800DE624: swc1        $f0, 0xDC($sp)
+    MEM_W(0XDC, ctx->r29) = ctx->f0.u32l;
+    // 0x800DE628: lui         $at, 0x8013
+    ctx->r1 = S32(0X8013 << 16);
+    // 0x800DE62C: bc1f        L_800DE68C
+    if (!c1cs) {
+        // 0x800DE630: nop
+    
+            goto L_800DE68C;
+    }
+    // 0x800DE630: nop
+
