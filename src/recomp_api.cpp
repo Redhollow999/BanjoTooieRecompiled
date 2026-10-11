@@ -315,13 +315,131 @@ extern "C" void tooie_probe(uint8_t* rdram, recomp_context* ctx, uint32_t id) {
                     static_cast<gpr>(static_cast<int32_t>(asset));
 
                 std::fprintf(stderr, "[mapasset105-bytes]");
-                for (uint32_t i = 0; i < 32; i++) {
+                for (uint32_t i = 0; i < 0x38; i++) {
                     std::fprintf(
                         stderr,
                         " %02X",
                         static_cast<unsigned>(MEM_BU(i, asset_addr))
                     );
                 }
+                std::fprintf(stderr, "\n");
+
+                const uint16_t header_tri_count =
+                    static_cast<uint16_t>(MEM_HU(0x30, asset_addr));
+                const uint16_t header_vertex_count =
+                    static_cast<uint16_t>(MEM_HU(0x32, asset_addr));
+
+                std::fprintf(
+                    stderr,
+                    "[mapfp105] hdrTri=%u hdrVtx=%u",
+                    static_cast<unsigned>(header_tri_count),
+                    static_cast<unsigned>(header_vertex_count)
+                );
+
+                if (part10 >= 0x80000000u && part10 < 0x80800000u) {
+                    const gpr vertex_addr =
+                        static_cast<gpr>(static_cast<int32_t>(part10));
+
+                    const uint16_t list_vertex_count =
+                        static_cast<uint16_t>(MEM_HU(0x14, vertex_addr));
+                    const uint16_t global_norm =
+                        static_cast<uint16_t>(MEM_HU(0x16, vertex_addr));
+
+                    std::fprintf(
+                        stderr,
+                        " vtxListCount=%u match=%s vtx+16=0x%04X",
+                        static_cast<unsigned>(list_vertex_count),
+                        header_vertex_count == list_vertex_count ? "YES" : "NO",
+                        static_cast<unsigned>(global_norm)
+                    );
+                }
+
+                if (part0 >= 0x80000000u && part0 < 0x80800000u) {
+                    const gpr collision_addr =
+                        static_cast<gpr>(static_cast<int32_t>(part0));
+
+                    std::fprintf(
+                        stderr,
+                        " collGeo=%u collScale=%u collTri=%u",
+                        static_cast<unsigned>(MEM_HU(0x10, collision_addr)),
+                        static_cast<unsigned>(MEM_HU(0x12, collision_addr)),
+                        static_cast<unsigned>(MEM_HU(0x14, collision_addr))
+                    );
+                }
+
+                std::fprintf(stderr, "\n");
+
+                const int16_t texture_offset =
+                    static_cast<int16_t>(MEM_HU(0x08, asset_addr));
+                const uint32_t gfx_offset =
+                    static_cast<uint32_t>(MEM_W(0x0C, asset_addr));
+
+                const uint32_t texture_ptr =
+                    static_cast<uint32_t>(
+                        asset + static_cast<int32_t>(texture_offset)
+                    );
+                const uint32_t gfx_ptr =
+                    static_cast<uint32_t>(asset + gfx_offset);
+
+                std::fprintf(
+                    stderr,
+                    "[mapfmt105] texOff=0x%04X gfxOff=0x%08X",
+                    static_cast<unsigned>(
+                        static_cast<uint16_t>(texture_offset)
+                    ),
+                    gfx_offset
+                );
+
+                if (texture_ptr >= 0x80000000u &&
+                    texture_ptr < 0x80800000u) {
+
+                    const gpr texture_addr =
+                        static_cast<gpr>(
+                            static_cast<int32_t>(texture_ptr)
+                        );
+
+                    std::fprintf(
+                        stderr,
+                        " texSize=0x%08X texCount=%u texPad=0x%04X",
+                        static_cast<uint32_t>(
+                            MEM_W(0x00, texture_addr)
+                        ),
+                        static_cast<unsigned>(
+                            MEM_HU(0x04, texture_addr)
+                        ),
+                        static_cast<unsigned>(
+                            MEM_HU(0x06, texture_addr)
+                        )
+                    );
+                }
+
+                if (gfx_ptr >= 0x80000000u &&
+                    gfx_ptr < 0x80800000u) {
+
+                    const gpr gfx_addr =
+                        static_cast<gpr>(
+                            static_cast<int32_t>(gfx_ptr)
+                        );
+
+                    std::fprintf(
+                        stderr,
+                        " gfxSize=0x%08X gfxPad=0x%08X"
+                        " gfxFirst=%08X/%08X",
+                        static_cast<uint32_t>(
+                            MEM_W(0x00, gfx_addr)
+                        ),
+                        static_cast<uint32_t>(
+                            MEM_W(0x04, gfx_addr)
+                        ),
+                        static_cast<uint32_t>(
+                            MEM_W(0x08, gfx_addr)
+                        ),
+                        static_cast<uint32_t>(
+                            MEM_W(0x0C, gfx_addr)
+                        )
+                    );
+                }
+
                 std::fprintf(stderr, "\n");
             }
 

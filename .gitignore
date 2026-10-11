@@ -27,3 +27,6 @@ package/
 # Python bytecode from the tools.
 __pycache__/
 *.pyc
+research/project-a/bk-assets/
+research/project-a/bt-candidates/
+src/*.bak
