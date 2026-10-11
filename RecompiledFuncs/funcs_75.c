@@ -7970,6 +7970,7 @@ L_80800980:
     // 0x80800990: or          $a0, $v0, $zero
     ctx->r4 = ctx->r2 | 0;
     after_13:
+    tooie_probe(rdram, ctx, 111);
     // 0x80800994: sw          $v0, 0x38($s0)
     MEM_W(0X38, ctx->r16) = ctx->r2;
     // 0x80800998: jal         0x800D70D0

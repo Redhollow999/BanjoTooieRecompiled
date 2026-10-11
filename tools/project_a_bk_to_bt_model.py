@@ -46,12 +46,18 @@ def translate_f3dex2(buf,gfx_off):
         elif op==0xB4: buf[off]=0xE1
         elif op==0xB5: buf[off]=0x07
         elif op==0xB6:
-            clear_bits=u32(buf,off+4)
-            write_cmd(buf,off,0xD9000000|((~clear_bits)&0x00FFFFFF),0)
+            # Conservative Tooie/F3DEX2 geometry-mode form proven visually
+            # in Project A and matching the historical BK2BT approach.
+            write_cmd(buf,off,0xD9C0F9FB,0x00000000)
         elif op==0xB7:
-            set_bits=u32(buf,off+4)
-            write_cmd(buf,off,0xD9FFFFFF,set_bits)
-        elif op==0xB8: write_cmd(buf,off,0xDF000000,0)
+            write_cmd(buf,off,0xD9FFFFFF,0x00200004)
+        elif op==0xB8:
+            # With the simple BT geometry layout below, keep only the final
+            # ENDDL. Intermediate BK sub-list terminators become NOPs.
+            if i == count - 1:
+                write_cmd(buf,off,0xDF000000,0)
+            else:
+                write_cmd(buf,off,0x00000000,0)
         elif op==0xB9: buf[off]=0xE2
         elif op==0xBA: buf[off]=0xE3
         elif op==0xBB:
@@ -91,9 +97,26 @@ def convert(inp: bytes):
         if old<old_desc_end: raise ValueError(f'root +0x{field:02X} points inside texture descriptor area')
         p32(out,field,old+delta)
     vtx=u32(out,0x10); check_range(out,vtx,0x18,'vertex header')
-    bk_count=u16(out,vtx+0x14); bk_global=u16(out,vtx+0x16)
+    bk_count=u16(out,vtx+0x14)
     if bk_count*2>0xFFFF: raise ValueError('vertex count too large for BT count*2 encoding')
-    p16(out,vtx+0x14,bk_global); p16(out,vtx+0x16,bk_count*2)
+
+    # Known-good Tooie-style 24-byte vertex header used for the live
+    # Spiral Mountain proof-of-concept, preserving the verified +0x16 count*2.
+    vtx_template = bytes.fromhex(
+        'BC 47 ED AE C1 40 3E 01 37 58 3D 2A '
+        'FD 24 12 83 FF 35 A0 C0 A0 C0'
+    ) + struct.pack('>H', bk_count * 2)
+    out[vtx:vtx+0x18] = vtx_template
+
+    # Replace BK geometry layout with the simple Tooie level layout used by
+    # the historical converter. Do not truncate the remaining payload.
+    geo=u32(out,0x04); check_range(out,geo,0x1C,'geometry layout')
+    bt_geo = bytes.fromhex(
+        '00 00 00 03 00 00 00 10 00 00 00 30 00 00 00 00 '
+        '00 00 00 03 00 00 00 00 00 00 00 30'
+    )
+    out[geo:geo+0x1C] = bt_geo
+
     gfx=u32(out,0x0C); hist=translate_f3dex2(out,gfx)
     if u16(out,0x08)!=0x50 or u16(out,0x44)!=tri_count or u16(out,0x46)!=bk_count: raise ValueError('post-conversion header validation failed')
     if u16(out,vtx+0x16)!=bk_count*2: raise ValueError('post-conversion vertex header validation failed')

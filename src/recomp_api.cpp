@@ -32,6 +32,7 @@
 #include <cstring>
 #include <span>
 #include <thread>
+#include <vector>
 
 #include "funcs.h"
 #include "recomp.h"
@@ -251,6 +252,130 @@ extern "C" void tooie_boot_pi_raw_start_dma(uint8_t* rdram,
 extern "C" void tooie_probe(uint8_t* rdram, recomp_context* ctx, uint32_t id) {
     (void)rdram;
 
+    if (id == 111) {
+        const gpr state = ctx->r16;
+
+        const uint32_t map =
+            static_cast<uint32_t>(MEM_HU(0x58, state));
+
+        const uint32_t resB =
+            static_cast<uint32_t>(MEM_HU(0x5C, state));
+
+        std::fprintf(
+            stderr,
+            "[mapstage111] map=0x%04X resB=0x%04X "
+            "v0=0x%08X\n",
+            map,
+            resB,
+            static_cast<uint32_t>(ctx->r2)
+        );
+
+        static bool attempted_bk_sm_resb = false;
+
+        if (!attempted_bk_sm_resb &&
+            map == 0x018Bu &&
+            resB == 0x1CFAu) {
+
+            attempted_bk_sm_resb = true;
+
+            constexpr const char* path =
+                "research/project-a/bt-candidates/"
+                "14D0.model.btcandidate.bin";
+
+            constexpr std::size_t expected_size = 0xD5DC;
+
+            std::FILE* f = std::fopen(path, "rb");
+
+            if (f == nullptr) {
+                std::fprintf(
+                    stderr,
+                    "[bkinjectB] FAILED open %s\n",
+                    path
+                );
+            } else {
+                std::vector<uint8_t> bytes(expected_size);
+
+                const std::size_t got =
+                    std::fread(
+                        bytes.data(),
+                        1,
+                        bytes.size(),
+                        f
+                    );
+
+                std::fclose(f);
+
+                const uint32_t original_resB_asset =
+                    static_cast<uint32_t>(ctx->r2);
+
+                const uint32_t resA_asset =
+                    static_cast<uint32_t>(MEM_W(0x0C, state));
+
+                // Put 14D0 after the end of converted 14CF.
+                const uint32_t asset =
+                    resA_asset + 0x60000u;
+
+                if (got != bytes.size()) {
+                    std::fprintf(
+                        stderr,
+                        "[bkinjectB] FAILED short read "
+                        "0x%zX / 0x%zX\n",
+                        got,
+                        bytes.size()
+                    );
+                } else if (
+                    asset < 0x80000000u ||
+                    asset >= 0x80800000u ||
+                    bytes.size() >
+                        static_cast<std::size_t>(
+                            0x80800000u - asset
+                        )
+                ) {
+                    std::fprintf(
+                        stderr,
+                        "[bkinjectB] FAILED target "
+                        "0x%08X size=0x%zX\n",
+                        asset,
+                        bytes.size()
+                    );
+                } else {
+                    const gpr dst =
+                        static_cast<gpr>(
+                            static_cast<int32_t>(asset)
+                        );
+
+                    for (std::size_t i = 0;
+                         i < bytes.size();
+                         i++) {
+                        MEM_B(i, dst) = bytes[i];
+                    }
+
+                    // Return the scratch model pointer so gcmapDll
+                    // stores it as the loaded resB asset.
+                    ctx->r2 =
+                        static_cast<gpr>(
+                            static_cast<int32_t>(asset)
+                        );
+
+                    std::fprintf(
+                        stderr,
+                        "[bkinjectB] SUCCESS "
+                        "map=0x%04X resB=0x%04X "
+                        "asset=0x%08X bytes=0x%zX\n",
+                        map,
+                        resB,
+                        asset,
+                        bytes.size()
+                    );
+                }
+            }
+
+            std::fflush(stderr);
+        }
+
+        return;
+    }
+
     if (id >= 106 && id <= 110) {
         const gpr state = ctx->r16;
 
@@ -259,6 +384,116 @@ extern "C" void tooie_probe(uint8_t* rdram, recomp_context* ctx, uint32_t id) {
 
         const uint32_t resA =
             static_cast<uint32_t>(MEM_HU(0x5A, state));
+
+        // Project A first BK -> BT live transplant.
+        // Inject BK Spiral Mountain opaque model only when Tooie is loading
+        // Spiral Mountain's resA.  RAM-only; ROM is untouched.
+        if (id == 107 && map == 0x018Bu && resA == 0x1CF9u) {
+            static bool attempted_bk_sm_injection = false;
+
+            if (!attempted_bk_sm_injection) {
+                attempted_bk_sm_injection = true;
+
+                constexpr const char* candidate_path =
+                    "research/project-a/bt-candidates/"
+                    "14CF.model.btcandidate.bin";
+
+                constexpr std::size_t expected_size = 0x5E3C4;
+
+                std::FILE* candidate =
+                    std::fopen(candidate_path, "rb");
+
+                if (candidate == nullptr) {
+                    std::fprintf(
+                        stderr,
+                        "[bkinject] FAILED: could not open %s\n",
+                        candidate_path
+                    );
+                } else {
+                    std::fseek(candidate, 0, SEEK_END);
+                    const long file_size_long = std::ftell(candidate);
+                    std::rewind(candidate);
+
+                    if (file_size_long !=
+                        static_cast<long>(expected_size)) {
+
+                        std::fprintf(
+                            stderr,
+                            "[bkinject] FAILED: candidate size "
+                            "0x%lX expected 0x%zX\n",
+                            file_size_long,
+                            expected_size
+                        );
+                    } else {
+                        std::vector<uint8_t> bytes(expected_size);
+
+                        const std::size_t read_count =
+                            std::fread(
+                                bytes.data(),
+                                1,
+                                bytes.size(),
+                                candidate
+                            );
+
+                        const uint32_t asset =
+                            static_cast<uint32_t>(ctx->r2);
+
+                        if (read_count != bytes.size()) {
+                            std::fprintf(
+                                stderr,
+                                "[bkinject] FAILED: short read "
+                                "0x%zX / 0x%zX\n",
+                                read_count,
+                                bytes.size()
+                            );
+                        } else if (
+                            asset < 0x80000000u ||
+                            asset >= 0x80800000u ||
+                            bytes.size() >
+                                static_cast<std::size_t>(
+                                    0x80800000u - asset
+                                )
+                        ) {
+                            std::fprintf(
+                                stderr,
+                                "[bkinject] FAILED: invalid target "
+                                "asset=0x%08X size=0x%zX\n",
+                                asset,
+                                bytes.size()
+                            );
+                        } else {
+                            const gpr asset_addr =
+                                static_cast<gpr>(
+                                    static_cast<int32_t>(asset)
+                                );
+
+                            for (std::size_t i = 0;
+                                 i < bytes.size();
+                                 i++) {
+
+                                MEM_B(i, asset_addr) =
+                                    bytes[i];
+                            }
+
+                            std::fprintf(
+                                stderr,
+                                "[bkinject] SUCCESS "
+                                "map=0x%04X resA=0x%04X "
+                                "asset=0x%08X bytes=0x%zX\n",
+                                map,
+                                resA,
+                                asset,
+                                bytes.size()
+                            );
+                        }
+                    }
+
+                    std::fclose(candidate);
+                }
+
+                std::fflush(stderr);
+            }
+        }
 
         std::fprintf(
             stderr,
