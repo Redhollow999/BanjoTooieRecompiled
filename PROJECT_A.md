@@ -22,6 +22,7 @@ The GitHub branch may lag some local/runtime experiments. Documentation therefor
 
 - [Status](docs/project-a/STATUS.md) — quick snapshot of what works and what does not.
 - [Roadmap](docs/project-a/ROADMAP.md) — highest-value next technical steps.
+- [FAQ](docs/project-a/FAQ.md) — short answers for public/technical questions, including AI use and reproducibility.
 - [Research log](docs/project-a/PROJECT_A_LOG.md) — chronological experiments, corrections, and milestones.
 - [Current findings](docs/project-a/PROJECT_A_FINDINGS.md) — present best-supported architecture and results.
 - [Reproduction guide](docs/project-a/PROJECT_A_REPRODUCTION.md) — how findings should be independently reproduced and recorded.
