@@ -11,6 +11,11 @@ package/
 *.exp
 *.exe
 
+# Never commit user-supplied N64 ROM images.
+*.z64
+*.n64
+*.v64
+
 # force_keep is ACCUMULATED STATE that cannot be regenerated, so it is kept even
 # though it lives under build/. See "Traps" in AGENTS.md.
 !build/force_keep*
@@ -27,6 +32,16 @@ package/
 # Python bytecode from the tools.
 __pycache__/
 *.pyc
+
+# Project A generated/extracted game data. The public repository should contain
+# extraction/conversion tools, hashes, reports and documentation — not Rare/
+# Nintendo game assets generated from a user's ROM.
 research/project-a/bk-assets/
 research/project-a/bt-candidates/
+research/project-a/bk-music/
+research/project-a/bt-music/
+research/project-a/**/*.model.bin
+research/project-a/**/*.btcandidate.bin
+research/project-a/**/*-probe.zip
+
 src/*.bak
