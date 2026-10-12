@@ -28,6 +28,7 @@ The GitHub branch may lag some local/runtime experiments. Documentation therefor
 - [Reproduction guide](docs/project-a/PROJECT_A_REPRODUCTION.md) — how findings should be independently reproduced and recorded.
 - [Unknowns and failed experiments](docs/project-a/PROJECT_A_UNKNOWNS.md) — unresolved questions, negative results, and unsafe assumptions.
 - [BK ↔ BT architecture crosswalk](docs/project-a/BK_BT_CROSSWALK.md) — side-by-side structural correspondence and confidence levels.
+- [Runtime adapter audit](docs/project-a/RUNTIME_ADAPTER.md) — current prototype coupling, fragility, and target backend boundary.
 - [Public sources and upstream references](docs/project-a/SOURCES.md) — external decomp/recomp material used to validate the work.
 - [Contributing research](docs/project-a/CONTRIBUTING.md) — evidence and contribution standards.
 - [Raw research material](research/project-a/README.md) — guide to the static-analysis extracts already in this branch.
@@ -41,8 +42,9 @@ If you are here to audit the work rather than run the game, read in this order:
 3. `BK_BT_CROSSWALK.md`
 4. `SOURCES.md`
 5. `PROJECT_A_UNKNOWNS.md`
-6. `PROJECT_A_REPRODUCTION.md`
-7. the chronological log/raw extracts only when you need the underlying trail
+6. `RUNTIME_ADAPTER.md`
+7. `PROJECT_A_REPRODUCTION.md`
+8. the chronological log/raw extracts only when you need the underlying trail
 
 ## Evidence policy
 
