@@ -2,21 +2,29 @@
 
 Project A is an experimental reverse-engineering effort exploring how much of **Banjo-Kazooie** can be translated into structures understood by **Banjo-Tooie** and its recompilation runtime.
 
-This is **not a finished mod** and is not presented as a production-ready merge of the two games. The current goal is narrower: document the shared architecture, build reproducible conversion tools, test hypotheses against the games, and leave behind useful technical work even if the runtime prototype changes or disappears.
+This is **not a finished mod** and is not presented as a production-ready merge of the two games. The goal is to document the shared architecture, build reproducible conversion tools, test hypotheses against the games, and better understand how the two titles “communicate” across generations: which map, model, collision, animation, resource, actor, audio, and state systems remained evolutionary relatives and which require an explicit translation layer.
 
-## Current status — 2026-10-12
+## Current status — 2026-10-14
 
-Verified experimental results include:
+Verified experimental results now include:
 
-- Banjo-Kazooie's Spiral Mountain level models can be converted into Tooie-compatible candidates and rendered in Tooie's Spiral Mountain map.
-- Imported terrain has demonstrated working collision, jumping, flight, water traversal, bridge/fence interaction, and at least one Tooie-only grip-grab on BK geometry.
-- A secondary-model corruption issue was traced to incompatible copied mesh/effect metadata at model-header `+0x24`; disabling that metadata stopped the observed runtime vertex mutations and fixed the bridge/fence presentation in the tested candidate.
-- Reload/return experiments have demonstrated re-entry to the imported Spiral Mountain environment in the working research build.
-- BK and BT model/collision structures show a strong structural relationship, including the `+0x10` vertex-list-like section and `+0x1C` collision-list-like section.
-- BK music sequences can be transformed into a BT-compatible header layout and parsed successfully by Tooie's generated C sequence reader in offline verification. Audible BK music playback in the game is **not yet established**.
-- BK Gruntilda's Lair and BT's native lair entrance share substantial exact geometry: 376 shared vertex positions and 743 shared unique collision triangles in the current comparison.
+- Banjo-Kazooie's Spiral Mountain terrain running inside Tooie with collision, movement, flight, water traversal, bridge/fence interaction, and a tested Tooie grip-grab on BK geometry.
+- Multiple connected BK Gruntilda's Lair rooms hosted inside Tooie's native lair scene, with native Tooie scene transitions, room-specific arrival handling, return routes, collision, and state-preserving reloads.
+- Lair 3 secondary water terrain rendered and swimmable, plus a scoped native climb registration that restored the tested BK vine route.
+- A stable Mumbo's Mountain exterior prototype with BK primary/secondary terrain, water/swimming, entry from the imported lair, and return to the lair through Tooie's native transition backend.
+- The BK world-exit-pad model rendered inside the MM prototype after resolving load-order, cache-ownership, and stale-pointer problems. Native model-cache entries may relocate while still owned, so host-side draw code must resolve the current address by resource ID rather than retain a guest pointer.
+- Live RT64 tracing shows deferred texture consumption can occur after a model resource has moved; in one captured run, texture reads still referenced the prior pad range after the native cache had relocated the model. This is a current renderer/lifetime research issue, not a finished root-cause claim.
+- A narrower MM doorway trigger was user-confirmed to reject side approaches while retaining normal center entry.
+- The first live imported BK Ticker has spawned/rendered in Tooie, briefly animated, collided with Banjo, and produced contact damage. Stable looping animation, hurt/death behavior, AI, and normal combat remain unfinished.
+- The next Gruntilda's Lair route toward the Treasure Trove Cove lobby has been converted and integrated as another logical hosted room; broader world-door/setup behavior remains in progress.
+- BK and BT model/collision structures continue to show strong structural correspondence, including vertex-list-like data at header `+0x10` and collision-list-like data at `+0x1C`.
+- BK compact music sequences can be transformed into a BT-compatible header layout and parsed successfully by Tooie's generated sequence reader in offline verification. Audible BK music playback in-game is still not established.
 
-The GitHub branch may lag some local/runtime experiments. Documentation therefore distinguishes **observed behavior** from **repository artifact status**. A claim being documented does not automatically mean the corresponding runtime patch is already committed on this branch.
+## Important architecture note
+
+Much of the current lair/world prototype uses Tooie's native map/scene machinery as a **host** while swapping or privately loading translated BK resources as logical rooms. This is why some native Tooie setup behavior, actors, title text, and scene presentation can remain visible in imported BK spaces. The long-term goal is not to leave every imported area as a remap of one native setup; setup/object/progression integration is a separate research layer.
+
+The public branch may still lag the newest local/runtime experiment. Documentation distinguishes **observed behavior** from **repository artifact status**. A claim being documented does not automatically mean the corresponding runtime patch, owner-supplied asset, or current executable is committed here.
 
 ## Documentation
 
@@ -54,11 +62,11 @@ Project A uses three technical confidence levels:
 2. **Strongly supported** — multiple independent observations agree, but a semantic interpretation is not yet fully proven.
 3. **Speculative** — plausible working hypothesis that still needs direct evidence.
 
-Names are kept conservative until evidence earns a semantic label. Failed experiments are retained because they prevent future researchers from repeating dead ends.
+Names are kept conservative until evidence earns a semantic label. Failed experiments and corrected assumptions are retained because they prevent future researchers from repeating dead ends.
 
 ## AI assistance
 
-Project A is openly AI-assisted. AI is used for source analysis, hypothesis generation, code generation, experiment planning, and documentation.
+Project A is openly AI-assisted. AI is used for source analysis, hypothesis generation, code generation, experiment planning, debugging, and documentation.
 
 **AI output is not treated as evidence.** A technical claim is promoted only when supported by reproducible static analysis, runtime probes, controlled experiments, hashes, source references, or independent implementation tests.
 
