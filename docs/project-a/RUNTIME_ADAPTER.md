@@ -1,67 +1,129 @@
 # Project A — Runtime Adapter Audit
 
-This document separates **Project A's game-format research** from the **current BanjoTooieRecompiled injection prototype**.
+This document separates **Project A's game-format research** from the **current BanjoTooieRecompiled runtime prototype**.
 
-That distinction matters because upstream recomp changes may invalidate hook points or memory assumptions without invalidating the BK↔BT conversion findings.
+That distinction matters because upstream recomp/runtime changes may invalidate hook points or memory assumptions without invalidating the BK↔BT conversion findings.
 
-## Current public-branch prototype
+Last updated: **2026-10-14**
 
-At the time of this audit, Project A runtime injection code is embedded directly in `src/recomp_api.cpp`, primarily inside the general `tooie_probe` diagnostic path.
+## Public branch versus current experimental runtime
 
-The committed prototype includes behavior such as:
+The public `project-a` branch contains the documented research base and some early conversion/runtime tooling, but the newest verified gameplay experiments can still exist only as guarded local installer packages, user-owned extracted assets, or laptop checkpoints.
 
-- hard-coded candidate paths under `research/project-a/bt-candidates/`,
-- hard-coded expected candidate sizes,
-- direct byte copies into guest RDRAM,
-- a secondary-model scratch address computed as `resA_asset + 0x60000`,
-- process-lifetime `static bool` guards for one-shot injection attempts,
-- map/resource conditions mixed into the generic probe handler.
+Do **not** assume that a documented runtime milestone is already committed as a directly runnable branch state. Artifact status remains part of the evidence record.
 
-These choices were useful for proving feasibility quickly. They are **not** the desired long-term Project A architecture.
+## How the runtime architecture has evolved
 
-The public branch can also lag the newest verified local experiment, so this document describes the committed prototype rather than claiming it is the latest working runtime state.
+The earliest public prototype used direct injection from `src/recomp_api.cpp`, hard-coded candidate paths/sizes, scratch placement, and process-lifetime guards. Those techniques were useful for proving feasibility but are not a durable architecture.
 
-## Why this layer is fragile
+The later Project A line has moved toward a more disciplined model:
 
-### 1. Allocation ownership
+- private resource IDs for imported BK world/model resources,
+- native Tooie allocation/cache/model-manager ownership where practical,
+- explicit logical-room identity separate from native host-map identity,
+- room/resource staging scopes to prevent prefetch/cache contamination,
+- native Tooie scene transitions and arrival-controller ownership,
+- guarded per-scene lifetime/release hooks,
+- exact hashes/size validation for owner-supplied converted resources,
+- checkpoint/restore installers rather than irreversible source replacement.
 
-A pointer being inside RDRAM does not establish that enough memory is owned by the loaded resource.
+The current experimental implementation is still highly coupled to generated/native function bodies and should not be mistaken for the final compatibility-layer API.
 
-The primary proof-of-concept currently copies candidate bytes at the address returned by the native load path. For larger imports, capacity must be established or a correctly sized owned allocation must be supplied.
+## Major runtime lessons now established
 
-### 2. Secondary scratch placement
+### 1. Capacity and ownership must be explicit
 
-`resA + 0x60000` was an expedient experimental location for the Spiral Mountain secondary model. An RDRAM-bounds check proves only that the address is inside RDRAM; it does not prove the region is unowned or safe for the required lifetime.
+A pointer being inside RDRAM proves neither capacity nor ownership.
 
-### 3. Lifecycle coupling
+Larger imported models require verified capacity before copy/allocation. The Lair and MM work moved away from blindly copying into smaller native allocations and toward private resource identities using the native loader/cache stack.
 
-One-shot `static bool` guards are incompatible with a robust map unload/reload lifecycle. Newer local experiments have already moved toward per-load reset behavior, but the public prototype should not be treated as the final lifecycle design.
+### 2. Cache identity must be scoped
 
-### 4. Probe/runtime mixing
+A logical-room request cannot simply remain globally pending while unrelated native prefetches occur.
 
-Diagnostic probes and actual compatibility-layer behavior currently share a large source file. This makes it harder to distinguish:
+An earlier Lair-room experiment showed that pending replacement state could populate a native cache identity with the wrong room's geometry. Delegation/staging scopes now restrict replacement to the exact private resource load being serviced.
 
-- instrumentation,
-- experimental patches,
-- durable runtime behavior,
-- generic recomp infrastructure.
+### 3. Ownership does not mean pointer stability
 
-### 5. Upstream sensitivity
+This is one of the most important corrections to the earlier runtime model.
 
-Changes to any of the following may break this layer:
+The MM exit-pad resource remained present and pinned in Tooie's native model/raw caches while its guest address changed. Host code retained the old guest pointer; after relocation, that old address pointed into the moved model's own display-list bytes.
 
-- generated-function ABI,
-- hook/patch locations,
-- RDRAM helper conventions,
-- asset-loader/cache behavior,
-- recomp memory-management facilities,
-- overlay or syscall implementation details.
+The resulting renderer fault interpreted a graphics-command word (`F5000100`) as a model vertex-header offset.
 
-None of those changes automatically invalidate the model/collision/music research.
+**Rule:** if the native cache may relocate a resource, store/own it by resource identity and resolve its current guest address when needed. Do not treat a cached guest pointer as permanently stable merely because the resource remains owned.
+
+### 4. Scene load order matters even with correct ownership
+
+The MM pad initially caused corruption when loaded too early during native world setup.
+
+Source tracing identified native world-loader/cache state that is consumed after primary/secondary resource requests. A nested Project A model load can perturb that state if inserted at the wrong moment.
+
+Deferring the pad acquisition until the MM secondary/world initialization completed eliminated the earlier load-time corruption in repeated live tests.
+
+**Rule:** replacement/private loads must respect the host engine's ordering contracts, not merely its allocation APIs.
+
+### 5. Draw-time CPU pointers are only part of the lifetime problem
+
+After the stale host pointer was fixed, a brief multicolored/striped MM exit-pad flash remained.
+
+The following were checked in live captures:
+
+- full converted asset bytes remained intact,
+- texture/palette and display-list hashes remained stable,
+- CPU-emitted segment bases used the current relocated model address,
+- explicit neutral draw tint did not eliminate the flash.
+
+RT64 source tracing shows that texture load operations can be recorded and consume RDRAM/TMEM data later during synchronization/upload processing.
+
+A live consumer trace captured texture reads from the **previous** pad address after Tooie's native cache had already relocated the model. This is strong evidence of a renderer-facing lifetime/synchronization hazard, but the final root cause/fix is still open.
+
+### 6. Logical-room identity is not native map identity
+
+Many imported Lair rooms and MM currently run inside native Tooie map/scene machinery.
+
+Project A therefore tracks at least two concepts:
+
+- **host scene/map identity** — what Tooie believes is loaded,
+- **logical Project A room/world identity** — which translated BK resource/route is active.
+
+This architecture enables fast experimentation, but it also explains inherited native actors, title text, music, environment state, and setup behavior.
+
+Long-term setup/object translation should reduce this leakage rather than indefinitely accumulating manual actor relocations.
+
+## Current fragility / technical debt
+
+### Generated-function coupling
+
+Several experiments patch or wrap specific generated/native functions. Upstream recomp regeneration can move or rewrite these bodies.
+
+Every such patch should:
+
+- validate exact expected body/source hashes,
+- fail closed on drift,
+- preserve unrelated functions,
+- create rollback/checkpoint state,
+- distinguish reusable game-format knowledge from backend-specific hook locations.
+
+### Cross-cutting runtime code
+
+Project A behavior still spans host C++ runtime code and generated/native C patches. This is harder to audit than a narrow dedicated adapter.
+
+### Non-distributable resources
+
+Current working room/model candidates are generated from owner-supplied BK data. The public repository can distribute extraction/conversion recipes, manifests, hashes, and verification code, but not the copyrighted outputs themselves.
+
+### Host-scene setup leakage
+
+Because the logical-room design reuses native scene machinery, imported terrain can inherit Tooie actors/setup/title/music. This is currently intentional scaffolding, not a completed compatibility result.
+
+### Rapid-transition lifecycle
+
+Ordinary Lair/MM traversal works in tested runs, but aggressive repeated-transition stress has produced a graphics resource-creation failure. Post-arrival cooldown can also interact badly with finite trigger volumes. Lifecycle hardening remains incomplete.
 
 ## Target architecture
 
-The desired boundary is:
+The desired boundary remains:
 
 ```text
 BK ROM / extracted user-owned data
@@ -77,17 +139,18 @@ BK ROM / extracted user-owned data
      current recomp backend
 ```
 
-Only the bottom two boxes should need significant work when the recomp backend changes.
+The runtime adapter should eventually depend on stable capabilities rather than many specific generated-function bodies.
 
 ## Recommended source split
 
-A future no-behavior-change cleanup should move Project A-specific runtime code out of `recomp_api.cpp` into a small adapter module, for example:
+A future behavior-preserving cleanup should move Project A-specific host/runtime policy out of generic recomp plumbing, for example:
 
 ```text
 src/project_a/
 ├── project_a_runtime.cpp
 ├── project_a_runtime.hpp
 ├── project_a_assets.cpp
+├── project_a_rooms.cpp
 └── project_a_state.hpp
 ```
 
@@ -95,72 +158,90 @@ Suggested responsibilities:
 
 ### `project_a_assets`
 
-- load local candidate files,
-- validate expected size/hash/manifest,
-- perform no map-specific injection by itself.
+- validate local candidate files/manifests,
+- request/release private resource identities,
+- expose resource IDs/metadata rather than long-lived guest pointers,
+- perform no room-specific route policy itself.
 
 ### `project_a_state`
 
-- requested mode,
-- active/verified mode,
-- current map/resource identity,
-- per-load injection status,
-- owned primary/secondary allocation handles once established.
+- requested/active mode,
+- native host map identity,
+- logical Project A room identity,
+- pending transition/arrival context,
+- resource ownership IDs,
+- per-scene generation/lifetime state.
+
+### `project_a_rooms`
+
+- logical room definitions,
+- private resource IDs,
+- route/arrival evidence,
+- setup-retain/suppress/replace policy,
+- world-specific transition regions.
 
 ### `project_a_runtime`
 
-- receive narrow events from the recomp/backend layer,
-- decide whether a Project A replacement applies,
-- request/own correctly sized memory,
-- perform replacement,
-- reset state on unload/reload.
+- receive narrow lifecycle events from the recomp/backend layer,
+- decide whether a Project A resource/route applies,
+- request/release native resources,
+- resolve current guest addresses only when needed,
+- coordinate transition/scene teardown state.
 
-### `recomp_api.cpp`
+### generic recomp layer
 
-Should eventually know as little as possible about BK asset IDs, candidate filenames, or Project A-specific policy.
+Should eventually know as little as possible about BK asset IDs, Project A room numbers, candidate filenames, or gameplay policy.
+
+## Minimum backend contract to aim for
+
+Conceptually, Project A wants capabilities such as:
+
+```text
+on_scene_begin(native_map_id, scene_generation)
+on_world_resource_request(resource_id, role)
+on_world_resource_ready(resource_id)
+on_scene_teardown(native_map_id, scene_generation)
+
+load_private_resource(resource_id, expected_size, expected_hash)
+pin_resource(resource_id)
+unpin_resource(resource_id)
+resolve_current_resource_address(resource_id)
+release_resource(resource_id)
+
+queue_native_transition(...)
+register_arrival_context(...)
+```
+
+Renderer-facing resources may also need an explicit contract preventing relocation/reuse until deferred render consumption is finished, or an equivalent safe-copy/synchronization mechanism. The exact API is **not established** yet.
+
+## Near-term runtime priorities
+
+1. Complete/verify the Lair 3 ↔ TTC-lobby route while preserving existing logical-room/cache identity rules.
+2. Add explicit policy for inherited native setup actors (retain/relocate/suppress/replace) instead of letting every logical room inherit the host population accidentally.
+3. Finish the MM pad renderer-lifetime investigation using actual RT64 consumer evidence; do not solve it by disabling compaction without proof.
+4. Replace fixed post-arrival trigger cooldown assumptions with scene-readiness/transition-state logic where practical.
+5. Continue Ticker live behavior work without coupling its resource/actor ownership to unrelated map hooks.
+6. Only then undertake a larger behavior-preserving adapter refactor.
 
 ## Refactor rule
 
-Do **not** combine this architectural cleanup with new memory-allocation behavior in the same experiment.
+Do **not** combine architectural cleanup with a new behavioral/memory model in the same experiment.
 
-First perform a behavior-preserving extraction of the existing prototype behind a narrow interface. Verify that the same known Spiral Mountain test still behaves identically. Only then change allocation/cache behavior.
-
-That gives us a clean control and makes future upstream migration far less ambiguous.
-
-## Minimum adapter contract to aim for
-
-Conceptually, the runtime backend should only need to provide events/capabilities such as:
-
-```text
-on_world_resource_request(map_id, resource_id, native_ptr, native_capacity?)
-on_world_resource_loaded(...)
-on_map_unload(map_id)
-allocate_guest_bytes(size, alignment)
-release_guest_bytes(handle)
-```
-
-The exact API is not established yet. This is a design target, not a claim about facilities the current recomp already provides.
-
-## Next runtime experiments
-
-Highest value:
-
-1. Trace ownership/capacity around the native primary loader and its caller-supplied destination path.
-2. Establish which cache layer can bypass the loader on repeat visits.
-3. Tie replacement state to map-resource load lifetime rather than process lifetime.
-4. Only after those are understood, replace scratch placement with owned allocations.
-5. Then test the larger BK lair primary and separate translucent model.
+First extract the known working behavior behind a narrower interface and verify the same gameplay checkpoint. Then change ownership/lifetime/backend semantics in a separate experiment.
 
 ## What survives an upstream rewrite
 
-Even if every current hook in `recomp_api.cpp` becomes unusable, these Project A outputs should remain valid unless separately disproven:
+Even if every current hook becomes unusable, these Project A outputs should remain valuable unless separately disproven:
 
-- BK model extraction/inspection tooling,
-- BK→BT model conversion findings,
+- BK extraction/inspection tooling,
+- BK→BT static-model conversion findings,
 - vertex/collision structural correspondence,
 - display-list translation findings,
-- exact lair geometry comparison,
+- exact Lair geometry comparison,
 - compact-sequence format comparison,
+- Ticker geometry/animation/matrix cross-game findings,
+- logical-room/arrival evidence derived from BK source/setup data,
+- native cache relocation/pointer-lifetime findings,
 - documented failed experiments and corrections.
 
-That is the primary reason to keep the runtime adapter intentionally small.
+That is the primary reason to keep the runtime adapter conceptually smaller than the reverse-engineering knowledge it consumes.
