@@ -188,7 +188,7 @@ Later, after FALLPROOF, Jamjars teaches Padless Flight.
 
 **Jamjars:** "Alright you filthy maggots, here's the plan! We'll have birdbrain fly from where you stand! Press and hold Z, then double tap A. You'll reach those Jinjos and save the day!"
 
-**Kazooie:** "Wait... you mean I can fly from whenever?!"
+**Kazooie:** "Wait... you mean I can fly from wherever?!"
 
 **Jamjars:** "Hold your horses, you runt. You won't be able to fly as efficiently as you can on a pad. But with this pad flight should be even easier! DISMISSED!"
 
