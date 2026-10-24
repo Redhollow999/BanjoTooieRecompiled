@@ -45,3 +45,9 @@ research/project-a/**/*.btcandidate.bin
 research/project-a/**/*-probe.zip
 
 src/*.bak
+
+# Owner-local portrait inputs and generated sprites/previews.
+research/project-a/ugger-portrait-reference-20261021/
+research/project-a/ugger-portrait-prototype-20261024/
+research/project-a/ticker-portrait-voice/
+ExtractedSoundbank*.dls
