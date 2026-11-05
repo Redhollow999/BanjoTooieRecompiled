@@ -31,3 +31,8 @@ before inventing new progression or encounter design.
 Release publication is disabled in this preparation branch. A PR is not permission
 to publish packaged game content. The maintainer reviews source, provenance and
 playable acceptance before enabling a release process.
+
+Publication-control changes require independent maintainer review under
+[the control-review policy](docs/alpha/PUBLICATION_REVIEW.md). CODEOWNERS and
+required repository review rules must be enabled before publication; local
+content checks do not grant approval to change their own enforcement.

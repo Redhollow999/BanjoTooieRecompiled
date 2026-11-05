@@ -41,3 +41,10 @@ directory or blindly cherry-pick unpublished development checkpoints.
 This commit is deliberately a preparation commit. It does not claim the private
 showcase's gameplay is already synchronized. Keep the full gameplay PR blocked
 until the generation, licensing and clean-checkout gates above are satisfied.
+
+Preparation follow-up: manual validation now uses an explicit approved baseline,
+empty comparisons fail, forced research additions and non-regular file types are
+blocked, and deletions/mode changes are reported. Changes to workflows, validators
+or their ownership/policy require the independent review described in
+[PUBLICATION_REVIEW.md](PUBLICATION_REVIEW.md). The required GitHub branch rules
+have not been configured; this remains a pre-publication gate.

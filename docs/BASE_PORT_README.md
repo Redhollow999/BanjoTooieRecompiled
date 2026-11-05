@@ -87,7 +87,7 @@ without them**:
   reconstruction, and `cop0 Count` support), plus batched failure reporting and
   content-skip output writing.
 
-They live in [`patches/`](patches/) as ordinary `.patch` files, generated against
+They live in [`patches/`](../patches/) as ordinary `.patch` files, generated against
 the exact submodule commits this repository pins. `tools/setup_deps.py` applies
 them:
 
@@ -262,7 +262,7 @@ ldd BanjoTooieRecompiled | grep 'not found'
 ## Releases
 
 Releases are built and published by
-[`.github/workflows/build.yml`](.github/workflows/build.yml); there is no manual
+[`.github/workflows/build.yml`](../.github/workflows/build.yml); there is no manual
 release step. Every release carries both packages, built from the same commit:
 
 |Archive|Platform|
@@ -325,7 +325,7 @@ BanjoTooieRecomp/
 └── tools/                  build and diagnostics scripts (see below)
 ```
 
-**Before changing anything, read [`AGENTS.md`](AGENTS.md).** It records why the
+**Before changing anything, read [`AGENTS.md`](../AGENTS.md).** It records why the
 code is shaped the way it is — the overlay subsystem, the boundary-detection
 rules, the three dependency patches, and the traps that cost real time to find.
 
@@ -413,7 +413,7 @@ Also worth knowing:
 
 ## Licensing
 
-The port's own code is **GPL-3.0** (see [`COPYING`](COPYING)), the same license
+The port's own code is **GPL-3.0** (see [`COPYING`](../COPYING)), the same license
 as [BanjoRecomp](https://github.com/BanjoRecomp/BanjoRecomp).
 
 Dependencies keep their own licenses: N64Recomp and RT64 are MIT;

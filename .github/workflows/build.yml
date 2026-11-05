@@ -4,6 +4,12 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      approved_baseline:
+        description: 'Approved earlier commit SHA (never the commit being screened)'
+        required: true
+        default: 'f017902a90252c276107ce177ccc12c75d297482'
+        type: string
 
 permissions:
   contents: read
@@ -20,12 +26,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Check public additions
-        env:
-          REVIEW_BASE: ${{ github.event.pull_request.base.sha || github.sha }}
-        run: python tools/validate_public_additions.py --base "$REVIEW_BASE"
       - name: Test metadata preflight controls
         run: python tools/test_alpha_preparation.py
+      - name: Check public additions
+        env:
+          REVIEW_BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || inputs.approved_baseline }}
+        run: python tools/validate_public_additions.py --base "$REVIEW_BASE" --head HEAD
 
 # No contents:write, release job, package upload, or game-asset generation.
 # Enable build/release jobs only after the source and resource gates are reviewed.
