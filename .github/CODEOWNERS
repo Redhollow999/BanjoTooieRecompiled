@@ -1,0 +1,10 @@
+# Branch rules must require code-owner approval and dismiss stale approvals.
+# This file and in-branch checks alone cannot enforce repository settings.
+/.github/workflows/ @Redhollow999
+/.github/CODEOWNERS @Redhollow999
+/.gitignore @Redhollow999
+/.gitattributes @Redhollow999
+/tools/validate_public_additions.py @Redhollow999
+/tools/alpha_preflight.py @Redhollow999
+/tools/test_alpha_preparation.py @Redhollow999
+/docs/alpha/PUBLICATION_REVIEW.md @Redhollow999
