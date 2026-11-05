@@ -27,3 +27,45 @@ package/
 # Python bytecode from the tools.
 __pycache__/
 *.pyc
+
+# Alpha preparation: private development resources and personal outputs.
+# Already tracked files are unaffected; review public-history issues separately.
+research/
+candidates/
+checkpoints/
+private/
+generated/private/
+*.z64
+*.n64
+*.v64
+*.rom
+*.bin
+*.zip
+*.7z
+*.dls
+*.sf2
+*.mid
+*.midi
+*.wav
+*.flac
+*.ogg
+*.mp4
+*.dmp
+*.rdram*
+*.eep
+*.sra
+*.fla
+*.sav
+*.mode
+*.png
+*.jpg
+*.jpeg
+*.glb
+*.gltf
+*.bak*
+.env
+.env.*
+!.env.example
+project-a-*.txt
+project-a-*.json
+msvc_env.bat
